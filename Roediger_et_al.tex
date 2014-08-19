@@ -283,7 +283,7 @@ is freely available.
 Quantitative polymerase chain reaction (qPCR) and quantitative isothermal 
 amplification (qIA) are standard methods to amplify nucleic acids (e.g., genomic 
 DNA, copy DNA). Main differences between qPCR and qIA are the thermal cycling 
-conditions, the measuring point and the curve shape Isothermal amplifications 
+conditions, the measuring point and the curve shape isothermal amplifications 
 are monocyclic reactions at a constant temperature. Conversely, PCR is a 
 polycyclic reaction with thermal cycling condition steps (denaturation, 
 annealing, elongation) and measurements at discrete cycle steps. The curve shape 
@@ -346,7 +346,7 @@ effects, different signal levels) illustrated in Figure~\ref{figure:problems}.
 Misinterpretations are more likely if non or manual (``arbitrary'') corrections 
 are performed. A manual alteration is in contradiction to reproducible research. 
 The presence of noise may lead to false conclusions and performance estimation. 
-Noise is challenging because derivative processes as used for `cycle of 
+Noise is challenging because derivative processes as used for ``cycle of 
 quantification'' methods (e.g., Second Derivative Maximum method) lead to an 
 amplification of noise \cite{roediger_RJ_2013, larionov_2005, tuomi_2010, 
 ruijter_2013, tellinghuisen_2014}.
@@ -363,16 +363,17 @@ interested reader to the manual for further information and use case scenarios.
 \section*{Implementation}
 
 $\emph{chipPCR}$ package was implemented in the \textbf{R} software environment 
-for statistical computing and graphics. We used Donald Knuth's literate 
-programming principle to present the source code in the most convenient way for 
-the users \cite{Knuth1984}. The package is available at CRAN 
+for statistical computing and graphics. Supplemental materials, avaible as the
+packages vignettes use Donald Knuth's literate 
+programming principle~\cite{Knuth1984} to present the source code in the most convenient 
+way for the users. The package is available at CRAN 
 (\url{http://cran.r-project.org/web/packages/chipPCR/index.html}) along with an 
 extensive documentation and examples. The latest source code is hosted at GitHub 
 (\url{https://github.com/michbur/chipPCR}) with an issue tracker for bug reports 
 or feature requests. For the present paper $\emph{chipPCR}$ version~0.0.8 was 
 used. The naming convention in $\emph{chipPCR}$ is \textit{period.separated} 
 names \cite{Baaaath_2012}. However, due to the organic growth of the package  
-several element violate this convention (e.g., functions names). 
+several elements violate this convention (e.g., functions names). 
 $\emph{chipPCR}$ is a relative of \emph{MBmca} \cite{roediger_RJ_2013} and 
 \emph{dpcR} but is mainly focused on the processing of amplification curve data.
 
