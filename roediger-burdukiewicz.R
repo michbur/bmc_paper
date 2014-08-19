@@ -980,8 +980,8 @@ data_sets_list <- list(phasp_error = phasp_error,
 fixNA_summ <- do.call(rbind, lapply(data_sets_list, function(data_set)
               apply(data_set[, c("bg.raw", "bg.fix", "cpD2.raw", 
                                  "cpD2.fix", "Cy0.raw", "Cy0.fix", "NRMSE")], 2,
-                    function(i) paste0(format(mean(i), digits = 2), " \\pm ", 
-                                       format(sd(i), digits = 3)))))
+                    function(i) paste0("$", format(mean(i), digits = 2, nsmall = 2), " \\pm ", 
+                                       format(sd(i), digits = 3), "$"))))
 rownames(fixNA_summ) <- c("Linear phase - 1 NA", "Exponential phase - 1 NA",
                           "Plateau phase  - 1 NA", "Linear phase - 3 NA", 
                           "Exponential phase - 3 NA", "Plateau phase  - 3 NA")
@@ -989,6 +989,8 @@ colnames(fixNA_summ) <- c("Background - raw data", "Background - fixed NA",
                           "cpD2 - raw data", "cpD2 - fixed NA",
                           "Cy0 - raw data", "Cy0 - fixed NA",
                           "NRMSE")
+
+#print(xtable(fixNA_summ[, 1:4]),sanitize.text.function=function(x){x})
 
 imp_measurements <- c("cpD2.fix", "Cy0.fix")
 kr_tests <- sapply(imp_measurements, function(data_column) {
