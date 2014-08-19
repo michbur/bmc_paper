@@ -1,0 +1,1008 @@
+%% BioMed_Central_Tex_Template_v1.06
+%%                                      %
+%  bmc_article.tex            ver: 1.06 %
+%                                       %
+
+%%IMPORTANT: do not delete the first line of this template
+%%It must be present to enable the BMC Submission system to
+%%recognise this template!!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                     %%
+%%  LaTeX template for BioMed Central  %%
+%%     journal article submissions     %%
+%%                                     %%
+%%          <8 June 2012>              %%
+%%                                     %%
+%%                                     %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                 %%
+%% For instructions on how to fill out this Tex template           %%
+%% document please refer to Readme.html and the instructions for   %%
+%% authors page on the biomed central website                      %%
+%% http://www.biomedcentral.com/info/authors/                      %%
+%%                                                                 %%
+%% Please do not use \input{...} to include other tex files.       %%
+%% Submit your LaTeX manuscript as one .tex document.              %%
+%%                                                                 %%
+%% All additional figures and files should be attached             %%
+%% separately and not embedded in the \TeX\ document itself.       %%
+%%                                                                 %%
+%% BioMed Central currently use the MikTex distribution of         %%
+%% TeX for Windows) of TeX and LaTeX.  This is available from      %%
+%% http://www.miktex.org                                           %%
+%%                                                                 %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% additional documentclass options:
+%  [doublespacing]
+%  [linenumbers]   - put the line numbers on margins
+
+%%% loading packages, author definitions
+
+\documentclass[twocolumn]{bmcart}% uncomment this for twocolumn layout and 
+%comment line below
+%\documentclass{bmcart}
+
+%%% Load packages
+%\usepackage{amsthm,amsmath}
+%\RequirePackage{natbib}
+\RequirePackage{hyperref}
+\usepackage[utf8]{inputenc} %unicode support
+\usepackage{listings}
+%\usepackage[applemac]{inputenc} %applemac support if unicode package fails
+%\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                             %%
+%%  If you wish to display your graphics for   %%
+%%  your own use using includegraphic or       %%
+%%  includegraphics, then comment out the      %%
+%%  following two lines of code.               %%
+%%  NB: These line *must* be included when     %%
+%%  submitting to BMC.                         %%
+%%  All figure files must be submitted as      %%
+%%  separate graphics through the BMC          %%
+%%  submission process, not included in the    %%
+%%  submitted article.                         %%
+%%                                             %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\def\includegraphic{}
+\def\includegraphics{}
+
+
+
+%%% Put your definitions there:
+\startlocaldefs
+\endlocaldefs
+
+
+%%% Begin ...
+\begin{document}
+
+%%% Start of article front matter
+\begin{frontmatter}
+
+\begin{fmbox}
+\dochead{Software}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Enter the title of your article here     %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{chipPCR: an R Package to Pre-Process Amplification Curve 
+Data}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Enter the authors here                   %%
+%%                                          %%
+%% Specify information, if available,       %%
+%% in the form:                             %%
+%%   <key>={<id1>,<id2>}                    %%
+%%   <key>=                                 %%
+%% Comment or delete the keys which are     %%
+%% not used. Repeat \author command as much %%
+%% as required.                             %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author[
+   addressref={aff1},                   % id's of addresses, e.g. {aff1,aff2}
+   corref={aff1},                       % id of corresponding address, if any
+   email={stefan.roediger@hs-lausitz.de}   % email address
+]{\inits{S}\fnm{Stefan} \snm{R\"odiger}}
+\author[
+   addressref={aff2},
+   email={michalburdukiewicz@gmail.com}
+]{\inits{M}\fnm{Micha\l{}} \snm{Burdukiewicz}}
+\author[
+   addressref={aff1},
+   email={peter.schierack@hs-lausitz.de}
+]{\inits{P}\fnm{Peter} \snm{Schierack}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Enter the authors' addresses here        %%
+%%                                          %%
+%% Repeat \address commands as much as      %%
+%% required.                                %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\address[id=aff1]{%                           % unique id
+  \orgname{Faculty of Natural Sciences, Brandenburg University of Technology 
+Cottbus--Senftenberg}, % university, etc
+  \street{Gro\ss{}enhainer 57},                     %
+  \postcode{01968}                                % post or zip code
+  \city{Senftenberg},                              % city
+  \cny{Germany}                                    % country
+}
+\address[id=aff2]{%
+  \orgname{Department of Genomics, Faculty of Biotechnoloy, University of 
+Wroc\l{}aw},
+  \street{Fryderyka Joliot-Curie 14a},
+  \postcode{50-383}
+  \city{Wroc\l{}aw},
+  \cny{Poland}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Enter short notes here                   %%
+%%                                          %%
+%% Short notes will be after addresses      %%
+%% on first page.                           %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{artnotes}
+%\note{Sample of title note}     % note to the article
+%\note[id=n1]{Equal contributor} % note, connected to author
+\end{artnotes}
+
+%\end{fmbox}% comment this for two column layout
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% The Abstract begins here                 %%
+%%                                          %%
+%% Please refer to the Instructions for     %%
+%% authors on http://www.biomedcentral.com  %%
+%% and include the section headings         %%
+%% accordingly for your article type.       %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{abstractbox}
+
+\begin{abstract} % abstract
+\parttitle{Background} %if any
+The quantitative real-time polymerase chain reaction (qPCR) and isothermal 
+amplification are standard methods for quantification of nucleic acids. Numerous 
+real-time read-out technologies with different technical foundation have been 
+developed. However, the amplification curve analysis consists of cascaded steps, 
+which are carried out similarly in all technologies. Despite the continuous 
+interest in amplification based techniques, there are only few transparent tools 
+for amplification data pre-processing. It is a major setback especially during 
+development of new instruments, when the precise control on raw data is 
+indispensable.
+
+\parttitle{Results} %if any
+$\emph{chipPCR}$ is an \textbf{R} package for pre-processing and quality 
+analysis 
+of amplification curve data from conventional quantitative polymerase chain 
+reactions (qPCR) and quantitative isothermal amplification (qIA). The package 
+takes advantage of \textbf{R}’s \emph{S4} object model. Algorithms to normalize 
+amplification curves, to detect the start and end of an amplification reaction, 
+to distinguish positive and negative amplification reactions and a powerful 
+wrapper for smoothers are part of the software. Moreover, $\emph{chipPCR}$ 
+employs 
+a 5-point stencil for derivative interpolation, which has not been described 
+for \textbf{R} to the best of our knowledge. The package contains several data 
+sets, which were generated by helicase dependent amplification (HDA) or 
+polymerase chain reaction (PCR) under various temperature conditions and 
+detection systems, such as hydrolysis probes and intercalating dyes.
+
+\parttitle{Conclusion}
+We have developed $\emph{chipPCR}$, which is a versatile software tailored for 
+the 
+pre-processing of amplification curve data. Its utility is elaborated on both 
+real and simulated data sets. The structure of the packages is open for 
+integration to Web based and standalone \emph{shiny} applications. The 
+\textbf{R} package along codes used for creation of figures used in publication 
+is freely available.
+\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% The keywords begin here                  %%
+%%                                          %%
+%% Put each keyword in separate \kwd{}.     %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{keyword}
+\kwd{R package}
+\kwd{Amplification curve}
+\kwd{Data analysis}
+\kwd{Quantitative polymerase chain reaction}
+\kwd{Quantitative isothermal amplification}
+\end{keyword}
+
+% MSC classifications codes, if any
+%\begin{keyword}[class=AMS]
+%\kwd[Primary ]{}
+%\kwd{}
+%\kwd[; secondary ]{}
+%\end{keyword}
+
+\end{abstractbox}
+%
+\end{fmbox}% uncomment this for twcolumn layout
+
+\end{frontmatter}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% The Main Body begins here                %%
+%%                                          %%
+%% Please refer to the instructions for     %%
+%% authors on:                              %%
+%% http://www.biomedcentral.com/info/authors%%
+%% and include the section headings         %%
+%% accordingly for your article type.       %%
+%%                                          %%
+%% See the Results and Discussion section   %%
+%% for details on how to create sub-sections%%
+%%                                          %%
+%% use \cite{...} to cite references        %%
+%%  \cite{koon} and                         %%
+%%  \cite{oreg,khar,zvai,xjon,schn,pond}    %%
+%%  \nocite{smith,marg,hunn,advi,koha,mouse}%%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%% start of article main body
+% <put your article body there>
+
+%%%%%%%%%%%%%%%%
+%% Background %%
+%%
+\section*{Background}
+
+Quantitative polymerase chain reaction (qPCR) and quantitative isothermal 
+amplification (qIA) are standard methods to amplify nucleic acids (e.g., genomic 
+DNA, copy DNA). Main differences between qPCR and qIA are the thermal cycling 
+conditions, the measuring point and the curve shape Isothermal amplifications 
+are monocyclic reactions at a constant temperature. Conversely, PCR is a 
+polycyclic reaction with thermal cycling condition steps (denaturation, 
+annealing, elongation) and measurements at discrete cycle steps. The curve shape 
+of an isothermal amplification does not necessarily follow a S-shaped structure. 
+The measurement of isothermal amplification reaction is time-based (continuous, 
+not mandatory equidistant) in contrast to a cycle-based (discontinuous) 
+measurement of qPCRs. The number of measure points in most cases higher than 
+qPCR. Both amplification methods are used in different real-time monitoring 
+technologies, such as our previously reported VideoScan technology, microfluidic 
+systems, point-of-care devices and microbead-chip technologies and commercial 
+real-time thermo cyclers \cite{chang_2012, roediger_highly_2013, 
+roediger_bead_qPCR_2013, rodiger_nucleic_2014}. Real-time technologies enable 
+the quantification of nucleic acids by calculation of specific curve parameters 
+like the quantification point (Cq) and the amplification efficiency (AE) as 
+described elsewhere \cite{ruijter_2013,tellinghuisen_2014}. Fundamental steps of 
+amplification curve analysis are: (1) raw data read-in, (2) amplification curve 
+pre-processing (e.g., noise reduction, outlier removal), (3) amplification curve 
+processing (e.g., Cq and AE calculation), (4) post-processing and quantification 
+of secondary parameters (e.g., Delta-Delta-Ct for gene expression analysis), 
+and (5) data export and visualization.
+
+  \textbf{R} is one of the most used tools in bioinformatics and is known to be 
+an early adopter of emerging technologies \cite{pabinger_2014}. Most \textbf{R} 
+packages focus on the read-in and (post)-processing of data sets, which 
+originate from commercial qPCR systems. Sophisticated 
+\textbf{R} packages for the steps 1. and 3.--5. are available 
+from Bioconductor and CRAN. This includes packages to read-in qPCR data and to 
+perform a selection of optimal reference genes for the data normalization. One 
+of the most comprehensive packages is \emph{qpcR} \cite{ritz_2008}, which 
+provides methods quantification and automatic optimization procedures to fit 
+curves. Other packages were designed as frameworks for high-throughput 
+analysis. The \emph{HTqPCR} package \cite{Dvinge_2009} can be used for the 
+high-throughput data analysis (e.g., normalization, tested for differential 
+expression) and visualization of different cards (samples). \emph{ReadqPCR} and 
+\emph{NormqPCR} packages \cite{perkins_2012}) allow high-throughput qPCR data 
+analysis. Main features include methods to select reference genes, 
+normalization methods, and algorithms for differential expression between 
+samples. The popular Delta-Delta-Ct ($ddCt$) algorithm \cite{livak_2001} is an 
+approximation method to determine relative gene expression. qPCR is the method 
+of choice for \emph{exact} gene expression analysis and an important step to 
+validate experiments from microarrays, bead arrays and related technologies. 
+Implementations are available from the \emph{ddCt}, \emph{NormqPCR} and 
+\emph{qPCR.CT} package. The packages can be used to collect, analyze and 
+visualize qPCRs. The \emph{SLqPCR} package can be used to normalize qPCR data 
+and to compute the gene expression stability data. Other methods than the 
+$ddCt$~algorithm have been proposed elsewhere \cite{heckmann_2011}.
+
+However, novel developed qPCR and qIA technologies initially depend on 
+independent tools to pre-process the raw data. Ideally, the experimenter 
+receives a data output in an 
+easily interpretable form. Pre-processing specifically addresses raw data 
+inspection, steps to transform raw data in a compatible format for successive 
+analysis steps (e.g., smoothing, removal of missing values), data reduction 
+(e.g., removal of invalid sets) and data quality management. The data quality of 
+experimental instruments is often not ready for end-user analysis and 
+presentation. However, during the early stages of the development it is 
+important to use as many raw data as possible. Pre-processing algorithms remove 
+stochastic errors and artifacts (e.g., noise, photo-bleaching effects, degassing 
+effects, different signal levels) illustrated in Figure~\ref{figure:problems}. 
+Misinterpretations are more likely if non or manual (``arbitrary'') corrections 
+are performed. A manual alteration is in contradiction to reproducible research. 
+The presence of noise may lead to false conclusions and performance estimation. 
+Noise is challenging because derivative processes as used for `cycle of 
+quantification'' methods (e.g., Second Derivative Maximum method) lead to an 
+amplification of noise \cite{roediger_RJ_2013, larionov_2005, tuomi_2010, 
+ruijter_2013, tellinghuisen_2014}.
+
+The $\emph{chipPCR}$ package ($\emph{chipPCR}$: ``Lab-on-a-\textbf{Chip}'' \& 
+PCR) was developed to automatize pre-processing, ease data analysis and to offer 
+a quality control for the statistical data analysis of qPCR and qIA 
+experiments. $\emph{chipPCR}$ is primarily targeted at users of experimental 
+nucleic acid amplification systems and users who have access to the raw data of 
+commercial systems. The following sections highlights pinnacles of the 
+$\emph{chipPCR}$ package. Due to the vast amount of information we refer the 
+interested reader to the manual for further information and use case scenarios.
+
+\section*{Implementation}
+
+$\emph{chipPCR}$ package was implemented in the \textbf{R} software environment 
+for statistical computing and graphics. We used Donald Knuth's literate 
+programming principle to present the source code in the most convenient way for 
+the users \cite{Knuth1984}. The package is available at CRAN 
+(\url{http://cran.r-project.org/web/packages/chipPCR/index.html}) along with an 
+extensive documentation and examples. The latest source code is hosted at GitHub 
+(\url{https://github.com/michbur/chipPCR}) with an issue tracker for bug reports 
+or feature requests. For the present paper $\emph{chipPCR}$ version~0.0.8 was 
+used. The naming convention in $\emph{chipPCR}$ is \textit{period.separated} 
+names \cite{Baaaath_2012}. However, due to the organic growth of the package  
+several element violate this convention (e.g., functions names). 
+$\emph{chipPCR}$ is a relative of \emph{MBmca} \cite{roediger_RJ_2013} and 
+\emph{dpcR} but is mainly focused on the processing of amplification curve data.
+
+  $\emph{chipPCR}$ uses \textbf{R}’s object model, designated \emph{S4} class 
+system, which is implemented in the \emph{methods} package. In contrast to 
+\textbf{R}’s \emph{S3} class system it is a requirement in \emph{S4} to declare 
+classes, slots, methods relationships explicitly and to establish formal 
+declarations of methods. This means that the number and types of slots in an 
+instance of a class have to be established at the time the class definition and 
+the objects from the class are validated against this definition and have to 
+comply to it at any time. \emph{S4} methods are declared by calls to 
+\textsl{setMethod} together with the names and signatures of the arguments. 
+Signatures are used for identification of classes of one or more arguments of 
+the methods. \textsl{setGeneric} can be used to declare generic functions. One 
+disadvantage of \emph{S4} classes is a higher ``package author effort'' in 
+comparison to \emph{S3} classes. However, \emph{S4} provides better assurance 
+that each object in a class has the required slots, that data in the slots have 
+consistent names and classes, and the possibility to include additional 
+information (e.g., results, parameters) \cite{Karatzoglou_2004}.
+
+Central functions of this package encompass: 
+
+\begin{itemize}
+\item \textsl{AmpSim}: a 5-parameter model for a 
+S-shaped amplification curves accompanied by \textsl{AmpSim.gui} a \emph{shiny} 
+GUI, for \textsl{AmpSim},
+\item \textsl{bg.max}: a function to detect the start and end of an 
+amplification reaction,
+\item \textsl{CPP}: wrapper for several pre-processing functions,
+\item \textsl{fixNA}: to impute missing values in a data column,
+\item \textsl{inder}: for interpolating first and second derivatives 
+interpolation using the five-point stencil (accompanied by 
+\textsl{rounder} function),
+\item \textsl{MFIaggr}: to analyze a bulk of 
+replicates of an amplification 
+reaction, 
+\item \textsl{smoother}: to smooth the curve data by different functions 
+(e.g., moving average, Savitzky-Golay smoothing).
+\end{itemize}
+
+In addition further (auxiliary)functions (\textsl{amptester}, 
+\textsl{effcalc}, \textsl{humanrater}, \textsl{lm.coefs}, \textsl{normalizer}, 
+\textsl{plotCurves}, \textsl{th.cyc}) typically used for post-processing (e.g., 
+Cq calculation, amplification efficiency calculation) are available. For more 
+information please refer to the the comprehensive supplement.
+
+During the past years, several high-throughput technologies emerged, which 
+require higher computing power. The core structures of $\emph{chipPCR}$ avoid 
+loops to keep the code fast. Structures for parallel computing have been 
+implemented in \textsl{smoother}. $\emph{chipPCR}$ includes a set of classes 
+for plotting. The \textbf{R} graphics system allows fine control over the small 
+details of plots \cite{Murrell_2012}. Although, we keep the output 
+of our custom made plots simple, many parameters can be adjusted directly or by 
+the ellipse parameter.
+
+ $\emph{chipPCR}$ has no build-in functionality for data import or specialized 
+parsers since \textbf{R} has numerous tools and axillary packages for customized 
+parsers. Rather we have chose to rely entirely on \textbf{R} workspaces as 
+default data format and standard import and export as described elsewhere 
+\cite{RDCT2010c}. @MICHAL{Something about the chipPCR objects here} To spread 
+the use among novice and less routinized users we believe that a graphical user 
+interface (GUI) is important. Currently there are several \textbf{R} GUI 
+projects \cite{Valero_2012} to chose from. Some functionality of 
+$\emph{chipPCR}$ (e.g., removal of missing values, smoothing, ...) originates 
+from experimental \textbf{RKWard} plugins \cite{roediger_bead_qPCR_2013, 
+roediger_RKWard_2013}. \textbf{RKWard} \cite{rodiger_rkward_2012} is a 
+cross-platform GUI and integrated development environment for \textbf{R}. 
+However, the functionality of $\emph{chipPCR}$ went beyond the functions of the 
+plugins. Recently, \emph{shiny} emerged as a very interesting framework to build 
+GUIs for the desktop (web browser) or services for interactive web applications, 
+which can be deployed virtually anywhere. \emph{shiny} is a technology to build 
+web applications with highly customizable widgets (e.g., sliders, plots, tables, 
+reports) in a plugin-like approach. The combination \textbf{R} and \emph{shiny} 
+technology allows a simple and repaid extension of the software. The 
+\emph{shiny} applications update live and interactively. The user interfaces can 
+be built entirely using R and operates in any R environment (see \emph{shiny} 
+manual for details). Currently, \emph{shiny} GUIs for the functions 
+\textsl{AmpSim}, \textsl{bg.max} (\textsl{AmpSim.gui} app) and 
+\textsl{amptester} (\textsl{amptester.gui} app) are available (e.g., 
+Figure~\ref{figure:browser}). Similarly to \textbf{QPCR} \cite{pabinger_2009} is 
+\emph{shiny} in combination with \textbf{R} the foundation to build monolithic 
+systems to parse, pre-process and analyze amplification curve data in a combined 
+workflow. The GUIs are available on-line without requiring prior installation as 
+seen in the code snippet below.
+
+Data sets are an essential element of \textbf{R} packages \cite{hofmann_2013} 
+and an indispensable requirement for reproducible research \cite{Leeper_2014}. 
+The $\emph{chipPCR}$ package contains 22 data sets along with a description of 
+the experimental procedure. The data sets stem from commercial qPCR cyclers 
+(e.g., Bio-Rad iQ5, Bio-Rad CFX 96) and experimental systems. The later 
+encompass the VideoScan heating/cooling unit (VideoScan HCU) 
+\cite{roediger_highly_2013} and the capillary convective PCR (ccPCR) (see 
+manual 
+of $\emph{chipPCR}$). The experiments were performed under different condition 
+including conventional qPCR, isothermal amplification by helicase dependent 
+amplification (HDA) \cite{rodiger_nucleic_2014}. The overview can be 
+conveniently invoked via \textsl{?chipPCR.datasets}
+
+\begin{figure*}
+\begin{verbatim}
+# Load the shiny package (chipPCR should already be loaded).
+# Run from a R console following commands.
+require(shiny)
+
+# Invoke the shiny AmpSim app in the default browser.
+runApp(paste(find.package("chipPCR")[1],"/AmpSim.gui", sep = ""))
+
+# Call shiny app AmpSim directly from gist
+runGist('https://gist.github.com/michbur/e1def41598f1d0c1e2e6')
+\end{verbatim}
+\end{figure*}
+
+\section*{Result and discussion}
+
+$\emph{chipPCR}$ is an \textbf{R} package, which offers routines for 
+pre-processing and quality management of experiments curves from real-time 
+isothermal amplification and qPCR experiments. Implemented as \textbf{R} 
+console tool it can be accessed and operated by an integrated development 
+environment, RScript or related approaches. However, due to the use of the 
+\emph{shiny} technology it can be accessed from a web browser from network 
+connected computers or as local service. This allows to analyze, pre-process 
+and to visualize results.
+
+\subsection*{Multiple comparison of the cycle dependent variance of the 
+amplification curves}
+
+ \textsl{MFIaggr} is a powerful analytical and graphical tool for fast multiple 
+comparison of the cycle dependent signal dispersion and distribution. The 
+continuous response variable $y'$ is used to describe the relationships to one 
+or more continuous predictor variables $y_1, ..., y_n$. Use cases include the 
+comparison of independent reaction vessels or the analysis of replicate 
+experiments. The basic idea is to analyze only a region of interest (ROI) from 
+a 
+data set. \textsl{MFIaggr} is a relative of the \textsl{MFIerror} function from 
+the \emph{MBmca} package. However, this functions enables a fine grained 
+analysis of specific parts of the curve data. The function returns an object of 
+the class list with the columns ``Cycle'', ``Location'' (Mean, Median), 
+``Deviation'' (Standard Deviation, Median Absolute Deviation) and ``Coefficient 
+of Variation''. Using the option $rob = TRUE$ the median and the median 
+absolute 
+deviation (MAD) are calculated instead of the mean and standard deviation. 
+\textsl{MFIaggr} has parameter $llul$ to define the lower and upper data limit 
+(cycle) for a ROI. The results for the ROI can be invoke by $@stats$. The 
+output 
+includes the mean, median, standard deviation (sd), median absolute deviation 
+(mad), inter quartile range (IQR), medcouple (robust measure of skewness), 
+skewness (Pearson's second skewness coefficient; 
+$skewness~=~3~(mean(x)~-~median(x))~/~sd(x)$), signal-to-noise ratio (SNR), 
+variance-to-mean ratio (VRM), number of missing values (NAs) and results from a 
+linear fit of the ROI (intercept, slope, r.squared). In our example we analyzed 
+the raw fluorescence from 96 replicates of a qPCR experiment for the human gene 
+\textit{Vimentin}. The \textsl{MFIaggr} plot shows that the first ten cycles 
+(noise) follow a normal distribution (Figure~\ref{figure:MFIaggr}). In 
+contrast, 
+the analysis of all cycles shows expectedly a distribution, which significantly 
+differs from a normal distribution (Figure~\ref{figure:MFIaggr2}). Setting the 
+option $CV = FLASE$ shows the relative standard deviation (RSD,~\%).
+
+\begin{figure*}
+\begin{verbatim}
+par(las = 0, bty = "n", cex.axis = 1.2, cex.lab = 1.2, 
+    font = 2, cex.main = 1.2, oma = c(1,1,1,1))
+
+plot(MFIaggr(VIMCFX96_60[, 1], VIMCFX96_60[, 2:ncol(VIMCFX96_60)], 
+     llul = c(1,10)), CV = FALSE)
+
+plot(MFIaggr(VIMCFX96_60[, 1], VIMCFX96_60[, 2:ncol(VIMCFX96_60)], 
+     llul = c(1,40)), CV = FALSE)
+\end{verbatim}
+\end{figure*}
+
+Ideally the variance between the amplification curves is low. Other results of 
+\textsl{MFIaggr} include the density analysis ($@density$), the quantile 
+($@qqnorm.data$), and the results of the linear regression ($@lm.roi$) from the 
+ROI. In particular, this function might be useful for quality management during 
+the development of high-throughput technologies. An analysis via a the 
+\emph{shiny} \textsl{MFIaggr.gui} app is shown in Figure~\ref{figure:MFIaggr2}.
+
+\subsection*{humanrater - a human machine interface}
+
+The \emph{chipPCR} package has numerous function to 
+build streamlined work-flows for unsupervised pre-processing (see subsequent 
+sections). However, as any unsupervised system is prone to errors we designed 
+\textsl{humanrater}, which is a graphical interface to rate (``qualitative'' 
+and/or ``quantitative'') curves interactively in an \textbf{R} GUI. All curves 
+can be analyzed in random sequence, to reduce the risk of bias, or natural 
+sequence. The number of replicate 
+rating runs is user definable. A curve and prompts an input field for the user. 
+This function can be used to 	 the human rating and the rating of a machine. 
+Results of the analysis can be used for further processing such as Kappa 
+statistics (Figure~S\ref{figure:MFIaggr2}).
+
+\subsection*{Imputation of missing values in amplification curves}
+
+  Experimental technologies may produce missing values (NA) at 
+random due to sensor drop-outs or other technical difficulties. Many analytical 
+functions stop to progress or discard entire data sets. This 
+behavior is rational for unknown data structures. However, in case of 
+amplification curve data it is justified to impute NAs because the structure 
+generally resembles an S-shaped curve. Standard approaches include substitution 
+with most frequent values, mean value imputation, last value carried forward, 
+bootstrapping, or substitution by correlation with replicate measurements 
+\cite{Harrell_2001}. In case of amplification curves other approaches are 
+favorable. Particularly, the transitions phases (e.g., background phase to 
+exponential phase) is prone to bias.
+
+  The function \textsl{fixNA} package imputes missing values in a single column 
+of data. The imputation is based either on a linear approximation or an 
+approximation by cubic splines (default) (Figure~\ref{figure:fixNA}). 
+Experiments showed that cubic spline interpolation yielded the most probable 
+values and therefore led to the least effect on tested statistical parameters 
+(Cq, background signal, Pearson correlation coefficient) the exponential phase 
+and is therefore the recommended approach to remove missing values 
+(Figure~\ref{figure:??}). We observed no significant bias by cubic spline 
+interpolation (Table~S\ref{table:??}). The performance of \textsl{fixNA} using 
+cubic splines was better than a linear interpolation (Figure~S\ref{figure:??}). 
+However, the linear 
+approximation might be applicable in measurements with high sample rates (e.g., 
+isothermal amplification) (not shown). Any method requires a minimum number of 
+data points as foundation for a meaningful imputation. \textsl{fixNA} tries to 
+take care of such pitfalls. By rule of thumbs we determined that the number of 
+missing elements in relation to the total number of elements. In case more than 
+30~\% of all values are NAs gives \textsl{fixNA} a warning.
+
+\subsection*{Smoothing and filtering}
+
+  Amplification curve data of experimental thermo-cyclers may deliver results, 
+which are hard to interpret due to noise and scatter. For data presentation it 
+is often useful to smooth or filter the data. Smoothing and filtering are 
+different approaches with a similar outcome. Both pre-process an input signal as 
+output for subsequent analysis steps. Filtering uses 
+methods of signal processing. They take a data input and apply a function to 
+form an output. Smoothing in contrast uses statistical approaches. Such 
+approaches use for example local regression models (e.g., least squares 
+estimate) or cubic splines. Different smooth and filter functions were 
+integrated in the \textsl{smoother} function to remove noise from amplification 
+curves. The smoothing and filter routines of \textsl{smoother} 
+are inherited from the parent functions as indicated in 
+Table~\ref{table:tab1}. The function \textsl{smoother} is a 
+wrapper for smoother functions and filters commonly used to process 
+amplification curve data. It was enhanced by functionality of \textsl{fixNA} and 
+\textsl{CPP}. Figure~\ref{figure:smoother} shows results of the 
+\textsl{smoother} function an amplification curve data. Many functions (e.g., 
+Savitsky-Golay filter) of $\emph{chipPCR}$ assume uniform (equally spaced) 
+sampling. Therefore it is recommended to pre-process the data to have equally 
+spaced values. The function \textsl{smoother} and \textsl{CPP} (inherited from 
+\textsl{smoother}) give a warning in such cases. The \textsl{smoother} function 
+enables users to tune behavior of the chosen smoothing algorithm by using nearly 
+all parameters available in called subroutines and at the same time uniforms 
+input and output.
+
+The functionality of smoother greatly outgrowths applications only in 
+amplification curve analysis. Incorporating most of the best smoothing 
+algorithms, \textsl{smoother} is a powerful tool which provides access to the 
+best methods minizing the drawback of learning syntax of specific functions.
+ 
+  Many methods integrated the moving average as first pre-processing step  
+(e.g., \cite{shain_2008}). The moving average filter is linear filter, which 
+replaces sequentially data points with the average of the neighbor data points. 
+The average is calculated from a defined span (``window'') of odd count (e.g., 
+3, 5). The ``average'' herein may refer to the arithmetic mean, the median, the 
+geometric or the exponential mean. The \textsl{smoother} function uses 
+exclusively the arithmetic mean. Moving average is intuitive and easy to 
+implement but it lags behind a trend and ignores rapid changes. For example, the 
+3- and 5-window moving average (running mean) filters are useful to pre-process 
+data, but always leads to a forerun of few cycles. This is in particular 
+problematic in the exponential phase. Splines apply non-parametric regression by 
+local cubic polynomials between knot points \cite{Nie_2012}. Other examples for 
+smoothers include Savitzky-Golay smoothing filter, Friedman's SuperSmoother, and 
+the Weighted Whittaker smoother.
+
+  It should be noted that smoothing may alter the curve shape and 
+thus lead to artificial results. Smoothed data are easier to interpretable but 
+introduce an additional bias to the pre-processed data. Therefore the prime use 
+of smoothers is processing data for visualization purposes. However, it is 
+not 
+recommended to smooth signals unsupervised prior to statistical procedures 
+(e.g., least-squares curve fitting). All smoothing algorithms are ``lossy'' to a 
+certain extent and may change the curve shape significantly. In particular, the 
+residual evaluation of a fit may lead to false prediction, because noise after 
+smoothing may be mistaken for signal. Signals after curve smoothing can be used 
+to locate peaks but it should cautiously be used to measure peaks.
+
+\subsection*{Normalization of amplification curve data}
+
+It is a common characteristic of amplification curve data that the fluorescence 
+values between samples vary due to high background, sample inhomogeneities and 
+variances in dye quantities (Figure~\ref{figure:normalization}~\emph{A}). 
+Therefore, normalization of amplification curve data is a common task during the 
+data analysis. To scale the fluorescence between 0 and 1 a \emph{Min-Max 
+normalization} (Equation~\ref{eq:normalization}) can be used 
+\cite{roediger_RJ_2013}. We propose an alternative normalization based on 
+quantiles (Equation~\ref{eq:quantile_normalization}). Quantiles are less 
+affected by outliers. The method can be invoked by the parameter $norm = 
+"luqn"$. Although this does not scale all values between zero and one we found 
+it to be useful for noisy data. The parameter $qnL$ is symmetrically used to set 
+the level for the quantiles. By default the 3~\% and 97~\% quantiles are used 
+for the normalization. In addition a normalization to maximum 
+(Equation~\ref{eq:max_normalization}, 
+Figure~\ref{figure:normalization}~\emph{D}) and by standard score 
+(Equation~\ref{eq:zscore_normalization}, 
+Figure~\ref{figure:normalization}~\emph{F}).
+
+\begin{equation} \label{eq:normalization}
+RFU_{minmax} = \frac{RFU - \min(RFU)}{\max(RFU) - \min(RFU)}
+\end{equation}
+
+\begin{equation} \label{eq:max_normalization}
+RFU_{max} = \frac{RFU}{\max(RFU)}
+\end{equation}
+
+\begin{equation} \label{eq:quantile_normalization}
+RFU_{luqn} = \frac{RFU - Q_{p}(RFU)}{Q_{1 - p}(RFU) - 
+Q_{p}(RFU)}
+\end{equation}
+
+\begin{equation} \label{eq:zscore_normalization}
+RFU_{zscore} = \frac{RFU - \bar{x}_{RFU}}{s_{RFU}}
+\end{equation}
+
+  The slope in a curve can be corrected by a linear regression. \textsl{CPP} 
+offers four linear regression models to calculate the slope based on the 
+background range. This includes a ordinary least squares method (\textsl{lm}, 
+\emph{stats}) but also three robust methods. The robust regression methods are 
+considered to be less vulnerable to outliers. This feature is especially useful, 
+when the background range contains considerable noise. The methods are (I) a 
+nonparametric rank-based estimator \cite{Kloke_2012}, (II) quantile regression 
+\cite{Koenker_2008} and (III) a MM-type estimators for linear regression 
+\cite{Todorov_2009}. By default the MM-type estimator is used. In all cases 
+takes \textsl{CPP} a defined range of the amplification curve to extrapolate the 
+linear trend over the entire data set. However, this step his to be performed 
+with caution since this operation effects the amplification efficiency. The 
+background is assumed to be constant for the entire measurement. 
+
+\subsection*{Interpolation of derivatives}
+ 
+  Many methods for curves analysis require the calculation of derivatives. It 
+is 
+possible to solve this by fitting a curve to a function and performing symbolic 
+derivation. Unfortunately, this approach causes information loss through the 
+fit 
+and unnecessary adds additional assumptions regarding the relation between 
+cycle number and fluorescence level. Hence, we integrated the \textsl{inder} 
+function. \textsl{inder} (``in'' and ``der'' = interpolate derivatives) finds 
+numeric derivatives by a five-point stencil, a commonly used finite difference 
+method. These methods approximate derivative in a given point by adding up 
+products of nearby values of function and their weights~\cite{Dahlquist_2008}. 
+This function can be used to estimate the approximate cycle of quantification 
+(Cq). Differentiation is a method for background suppression and reduction of 
+the inter sample background amplitude variations 
+(Figure~\ref{figure:inder_fit}~A~and~B). Smoothing may enhance the calculation 
+of derivatives calculation and optimize the signal-to-noise ratio. Therefore, 
+we 
+implemented spline interpolation. Friedman's SuperSmoother is also implemented. 
+However, the use of this smoother is limited for the use in other functions 
+such 
+as \textsl{bg.max}. The parameter $Nip$ (default $Nip = 4$) is used to define 
+how often an interpolation takes place at n equidistant points within the first 
+and the last cycle. A high Nip may improve the precision. However, $Nip$ less 
+than 2 and higher than 20 are not meaningful for conventional qPCR with 30 to 
+50 
+cycles. In context of qIA, a higher $Nip$ might be appropriate.
+
+\subsection*{Estimating the start and the end of amplification process}
+
+  The correction of background fluorescence is an important steps in 
+amplification curve analysis. Background herein refers to a level of 
+fluorescence measured before any specific amplification is detectable. It has 
+influence on amplification efficiency calculation and model fitting 
+\cite{tuomi_2010, rutledge_2008, ruijter_2009}. There are numerous ways of 
+compensating background noise, ranging from simple to very sophisticated 
+solutions. For a detailed description see the manual of the \textsl{chipPCR} 
+package v.~0.0.8 in section \textsl{bg.max} ``Details''. The function 
+\textsl{bg.max} is a fit-free method to estimate the range of the background 
+starting from the raw data. The raw data (e.g., fluorescence intensity) 
+measured 
+after each step (cycle or time point) follow a non-linear progress. The 
+\textsl{bg.max} algorithm assumes that the signal difference $\Delta{y}$ of 
+successive cycles ($\Delta{y} = y_{n + 1} - y_n$) in the linear ground phase is 
+approximately constant. After transition in the early exponential phase the 
+signal changes drastically. First data are smoothed by Friedman’s ’super 
+smoother’ (\textsl{supsmu}, \emph{stats}). Thereof the approximate first and 
+second derivative are calculated. The difference of cycles at the maxima of the 
+first and second approximate derivative and a correction factor are used to 
+estimate the range before the exponential phase. This simple function finds the 
+background range without modeling the function. The start of the background 
+range is defined be a fixed value. Since many signals tend to overshot in the 
+first cycles a default value of two is chosen. \textsl{bg.max} tries also to 
+estimate the end of an amplification reaction (Figure~\ref{figure:bgmax}).
+
+\subsection*{Proposed work-flow}
+
+The function \textsl{CPP} (``Curve Pre-Processor'') is a wrapper for several 
+functions described before in this study. \textsl{CPP} 
+can be considered as proposed workflow for an amplification curve 
+pre-processing. In particular, the functions \textsl{fixNA} $\rightarrow$ 
+\textsl{bg.max} $\rightarrow$ \textsl{smoother} $\rightarrow$ 
+\textsl{normalizer} $\rightarrow$ \textsl{amptester} were cascaded. A typical 
+output of \textsl{CPP} is shown in Figure~\ref{figure:fixNA_CPP} and 
+Figure~\ref{figure:normalization}.
+
+\section*{Conclusions}
+
+To the best of our knowledge is the $\emph{chipPCR}$ is the first \textbf{R} 
+package for the pre-processing and raw data quality analysis of amplification 
+curve data. Others and we share the philosophy that software in research should 
+not be a black-box and but part of an transparent ecosystem for reproducible 
+research and exploration of new information from existing data 
+\cite{Thioulouse_2010, roediger_RJ_2013, hofmann_2013, Leeper_2014, liu_2014}. 
+In particular, the smoothing methods and algorithms for the derivatives are 
+often not documented and therefore hard to judge by others. The $\emph{chipPCR}$ 
+package is open source (with GPL-3 license) and freely available through CRAN. 
+$\emph{chipPCR}$ primarily targets pre-processing. However, the $\emph{chipPCR}$ 
+has also implementations to process amplification curve data. These can be 
+embedded in customized routines with other packages mentioned in this study 
+(see supplement). In fact, the packages \emph{dpcR} and \emph{MBmca} depend on 
+$\emph{chipPCR}$ technology. We showed that $\emph{chipPCR}$ is build from 
+smaller blocks and show how users can do estimation of background by hand, 
+solely by \textsl{inder}, \textsl{smoother} (\textsl{smoother} will be a method 
+of smoothing in \textsl{inder}) and by putting data in \textsl{bg} object with 
+\textsl{summary-der} for $SDm$ and $SDM$. It should be quite easy even for an 
+inexperienced user. We can claim that modular structure of $\emph{chipPCR}$ 
+package allows user to perform flexible data analysis adjusted to their needs. A 
+limitation of all \textbf{R} packages related to qPCR and qIA is the lack of a 
+comprehensive GUI. We argue that that our \emph{shiny} GUI approach might be a 
+promising approach. Similar applies to a standard for data exchange. A 
+standardized might be embedded in structures for models (e.g., Predictive Model 
+Markup Language (PMML) \cite{Guazzelli_2009}) and data exchange (e.g., XML-based 
+Real-Time PCR Data Markup Language (RDML) \cite{lefever_2009}, binary formats 
+\cite{michna_2013}). However, work on this hasn't started yet. In 
+high-throughput systems might computing speed be an issue. Therefore further 
+parallelization of computing processes as described elsewhere 
+\cite{Schmidberger_2009, boehringer_2013} is part of future developments. 
+
+\section*{Availability and requirements}
+Project name: chipPCR, 
+Project homepage (development):
+\url{https://github.com/michbur/chipPCR}, 
+Project homepage at CRAN: 
+\url{http://cran.r-project.org/web/packages/chipPCR/index.html}, 
+Operating System: Platform independent, 
+Other requirement: R 3.0.0 or higher, 
+License: GPL-3
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Backmatter begins here                   %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{backmatter}
+
+\section*{Competing interests}
+The authors declare that they have no competing interests.
+
+\section*{Authors' contributions}
+SR conceived of the study, and participated in its design and coordination and 
+wrote the manuscript. SR and MB jointly developed the software. All authors read 
+and approved the final manuscript.
+
+\section*{Acknowledgment}
+Part of this work was funded by the BMBF InnoProfile-Projekt 03 IPT 611X. 
+Grateful thanks belong to all authors of the cited \textbf{R} packages, the 
+\textbf{R} community and \textbf{RKWard} developers. We would like to thank 
+Claudia Deutschmann (Brandenburg University of Technology Cottbus - Senftenberg, 
+Germany), Ralf Himmelreich (Fraunhofer ICT-IMM, Germany) and Katharina Klat 
+(Darmstadt University of Applied Sciences, Germany) for the contribution of 
+data.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                  The Bibliography                       %%
+%%                                                         %%
+%%  Bmc_mathpys.bst  will be used to                       %%
+%%  create a .BBL file for submission.                     %%
+%%  After submission of the .TEX file,                     %%
+%%  you will be prompted to submit your .BBL file.         %%
+%%                                                         %%
+%%                                                         %%
+%%  Note that the displayed Bibliography will not          %%
+%%  necessarily be rendered by Latex exactly as specified  %%
+%%  in the online Instructions for Authors.                %%
+%%                                                         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% if your bibliography is in bibtex format, use those commands:
+\bibliographystyle{bmc-mathphys} % Style BST file
+\bibliography{roediger-burdukiewicz}      % Bibliography file (usually '*.bib' )
+
+% or include bibliography directly:
+% \begin{thebibliography}
+% \bibitem{b1}
+% \end{thebibliography}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                               %%
+%% Figures                       %%
+%%                               %%
+%% NB: this is for captions and  %%
+%% Titles. All graphics must be  %%
+%% submitted separately and NOT  %%
+%% included in the Tex document  %%
+%%                               %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%
+%% Do not use \listoffigures as most will included as separate files
+
+\section*{Figures}
+  \begin{figure}[h]
+  \caption{\label{figure:problems}
+  \csentence{Analysis and interpretation of real-time amplification curves.} 
+Analysis and interpretation of real-time amplification curves. \emph{(A)} The 
+fluorescence values are plotted against the cycle. The amplification curve has a 
+sigmoidal shape. Amplification curve raw data are affected by many influences. 
+This includes noise introduced by the detection system and sensor errors. 
+Measurements can occasionally contain missing values (``NA'') and outliers 
+(orange circle). Outliers are often present in the first cycle due to sensor 
+adjustments. The signal difference between the background phase (first cycles) 
+and the plateau phase (last cycles) can be expressed as signal-to-noise ratio 
+(SNR). The SNR between different between samples (e.g., black line and red line) 
+can vary. For interpretation it is better to compensate the 
+differences. Negative samples (blue line) need to be (automatically) identified. 
+\emph{(B)} pre-processed raw data. ``NAs'' were imputed and the noise slightly 
+removed. The curves were adjusted to have the same baseline and plateau level. 
+The quantification point (Cq) of the positive reactions are determined in the 
+exponential phase (``Threshold method'' is used in this example). Negative 
+sample are automatically set to zero.
+}
+      \end{figure}
+
+\begin{figure}[h]
+  \caption{\label{figure:browser}
+  \csentence{Locally running \emph{shiny} \textsl{AmpSim.gui} app.} \emph{(Top)} 
+The plot of the \textsl{AmpSim.gui} is shown in a standard browser 
+(\textbf{Iceweasel}, v. 29.0.1) along with the parameters (left panel). The code 
+(``server.R'', ``ui.R'') of the \emph{shiny} app is accessible too. All 
+parameters (e.g., Cq value, Baseline) of the \textsl{AmpSim} function are 
+accessible. \emph{(Bottom)} In addition shows \textsl{AmpSim.gui} the plot 
+output and the textual results of \textsl{bg.max}}
+      \end{figure}
+      
+\begin{figure}[h]
+  \caption{\label{figure:MFIaggr}
+  \csentence{Amplification curve analysis of the \textsl{VIMCFX96\_60} data 
+set.} The cycles 1 -- 10 were selected as region of interest (ROI). The function 
+\textsl{MFIaggr} was used to analyze the variance of a 96-well plate cycler 
+(Bio-Rad CFX96) and EvaGreen for detection (left panel). The mean and the median 
+were almost identical. The density plot (right upper panel) and 
+quantile-quantile analysis (right lower panel). Both analytical plots indicate 
+that the data of the background range are normal distributed. Note that both the 
+$median \pm mad$ and the $mean \pm sd$ have similar results. }
+      \end{figure}       
+
+\begin{figure}[h]
+  \caption{\label{figure:smoother}
+  \csentence{Smoother and filter methods of the $\emph{chipPCR}$ package.} 
+\emph{(A)} Raw data were generated using the \textsl{AmpSim} simulation 
+function. \emph{(B)} The difference of the raw data to the smoothed data was 
+plotted. ``savgol'' (Savitzky-Golay Smoothing), ``lowess'' (locally-weighted 
+polynomial regression), ``mova3'' (moving average with window size of 3), 
+``smooth'' (cubic smoothing spline), ``spline'' (Interpolating cubic spline), 
+``supsmu'' (Friedman's SuperSmoother), ``whit1'' (weighted Whittaker smoothing 
+with a finite difference penalty of order 1), ``whit2'' (weighted Whittaker 
+smoothing with a finite difference penalty of order 2). The ``savgol'', 
+``smooth'', ``spline'' ``whit1'' , and ``whit2'' nearly preserved the original 
+curve. The other functions resulted in alteration in the transition phases of 
+the amplification curve. Optimized time series smoother, like the Kalman 
+filter \cite{Tusell_2010}, are not yet integrated. }
+      \end{figure}       
+     
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                               %%
+%% Tables                        %%
+%%                               %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Use of \listoftables is discouraged.
+% %%
+\section*{Tables}
+\begin{table*}[b]
+\caption{\label{table:tab1} \csentence{Smoothing and filter methods of the 
+$\emph{chipPCR}$ package}. The parameter $lowess$ for LOWESS smoother 
+(locally-weighted polynomial regression) can be tuned by the parameters $f$ and 
+$iter$. The parameter $mova$ for moving average can be tuned by the parameter 
+$movaww$. $movaww$ is the window size used for the moving average. The parameter 
+$savgol$ for Savitzky-Golay smoothing filter can be tuned by the parameter $p$ 
+(see \textsl{sgolayfilt} (\emph{signal}) for details). The parameter $smooth$ 
+for cubic spline smooth can be tuned by the parameter $df.fact$. A $df.fact$ 
+value of 1 will leave the raw data almost unaffected while a value 0.5 will 
+smooth the curve considerably. The parameter $spline$ for standard cubic spline 
+smooth has currently no additional parameter. The parameter $supsmu$ for 
+Friedman's SuperSmoother can be tuned by the parameter \textsl{span}. The 
+parameter $whit1$ (first order finite difference penalty) and $whit2$ (second 
+order finite difference penalty) for Weighted Whittaker smoother smoothing 
+filter, derived from the \emph{ptw} package, can be tuned by the parameter 
+$lambda$. For further details on the smoothers refer to the documentation of the 
+parent functions.
+}
+\begin{tabular}{lccc}
+  \hline
+  Method & Parameter & value & Parent\\ \hline
+  LOWESS & $lowess$ & \textit{f} & \textsl{lowess}, \emph{stats} \\
+  Cubic spline & $smooth$ & \textit{df.fact} & \textsl{smooth.spline}, 
+\emph{stats} \\
+  Interpolating Splines & $spline$ & - & \textsl{spline}, \emph{stats} \\
+  Friedman's ``super smoother'' & $supsmu$ & \textit{span} & \textsl{supsmu}, 
+\emph{stats}\\
+  Savitsky-Golay & $savgol$ & - & \textsl{sgolayfilt}, \emph{signal} \\
+  Moving Average & $mova$ & \textit{movaww} (3, 5, ...) & \textsl{filter}, 
+\emph{stats} \\
+  Whittaker & $whit1$, $whit2$ & \textit{lambda} & \textsl{whit1}, 
+\textsl{whit2},
+\emph{ptw}  \\
+  All smoother & $all$ & defaults &
+  \\ \hline
+\end{tabular}
+\end{table*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                               %%
+%% Additional Files              %%
+%%                               %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Additional Files}
+  \subsection*{Additional file 1 --- Sample additional file title}
+    Additional file descriptions text (including details of how to
+    view the file, if it is in a non-standard format or the file extension).  This might
+    refer to a multi-page table or a figure.
+
+
+
+\end{backmatter}
+\end{document}
