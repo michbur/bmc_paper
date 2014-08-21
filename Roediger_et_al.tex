@@ -602,20 +602,21 @@ missing elements in relation to the total number of elements. In case more than
 \subsection*{Smoothing and filtering}
 
   Amplification curve data of experimental thermo-cyclers may deliver results, 
-which are hard to interpret due to noise and scatter. For data presentation it 
+which are hard to interpret due to noise. For data presentation it 
 is often useful to smooth or filter the data. Smoothing and filtering are 
 different approaches with a similar outcome. Both pre-process an input signal as 
-output for subsequent analysis steps. Filtering uses 
-methods of signal processing. They take a data input and apply a function to 
-form an output. Smoothing in contrast uses statistical approaches. Such 
-approaches use for example local regression models (e.g., least squares 
-estimate) or cubic splines. Different smooth and filter functions were 
-integrated in the \textsl{smoother} function to remove noise from amplification 
-curves. The smoothing and filter routines of \textsl{smoother} 
-are inherited from the parent functions as indicated in 
-Table~\ref{table:tab1}. The function \textsl{smoother} is a 
-wrapper for smoother functions and filters commonly used to process 
-amplification curve data. It was enhanced by functionality of \textsl{fixNA} and 
+output for subsequent analysis steps. Filtering uses methods of signal 
+processing and takes a data input and apply a function to form an output. 
+Smoothing in contrast uses statistical approaches, like local 
+regression models (e.g., least squares estimate) or cubic splines. 
+Therefore we developed the \textsl{smoother} function, which is a wrapper for 
+smoother functions and filters commonly used to process amplification curve 
+data. \textsl{smoother} inherited traits (Table~\ref{table:tab1})  of the 
+parent functions. However, the functionality of \textsl{smoother} greatly 
+outgrowths applications only in amplification curve analysis. Incorporating most 
+of the best proven algorithms, we offer the user a powerful tool to access the 
+methods while minimizing the drawback of learning syntax of specific functions. 
+\textsl{smoother} was enhanced by functionality of \textsl{fixNA} and 
 \textsl{CPP}. Figure~\ref{figure:smoother} shows results of the 
 \textsl{smoother} function an amplification curve data. Many functions (e.g., 
 Savitsky-Golay filter) of $\emph{chipPCR}$ assume uniform (equally spaced) 
@@ -624,34 +625,11 @@ spaced values. The function \textsl{smoother} and \textsl{CPP} (inherited from
 \textsl{smoother}) give a warning in such cases. The \textsl{smoother} function 
 enables users to tune behavior of the chosen smoothing algorithm by using nearly 
 all parameters available in called subroutines and at the same time uniforms 
-input and output.
-
-The functionality of smoother greatly outgrowths applications only in 
-amplification curve analysis. Incorporating most of the best smoothing 
-algorithms, \textsl{smoother} is a powerful tool which provides access to the 
-best methods minizing the drawback of learning syntax of specific functions.
- 
-  Many methods integrated the moving average as first pre-processing step  
-(e.g., \cite{shain_2008}). The moving average filter is linear filter, which 
-replaces sequentially data points with the average of the neighbor data points. 
-The average is calculated from a defined span (``window'') of odd count (e.g., 
-3, 5). The ``average'' herein may refer to the arithmetic mean, the median, the 
-geometric or the exponential mean. The \textsl{smoother} function uses 
-exclusively the arithmetic mean. Moving average is intuitive and easy to 
-implement but it lags behind a trend and ignores rapid changes. For example, the 
-3- and 5-window moving average (running mean) filters are useful to pre-process 
-data, but always leads to a forerun of few cycles. This is in particular 
-problematic in the exponential phase. Splines apply non-parametric regression by 
-local cubic polynomials between knot points \cite{Nie_2012}. Other examples for 
-smoothers include Savitzky-Golay smoothing filter, Friedman's SuperSmoother, and 
-the Weighted Whittaker smoother.
-
-  It should be noted that smoothing may alter the curve shape and 
-thus lead to artificial results. Smoothed data are easier to interpretable but 
-introduce an additional bias to the pre-processed data. Therefore the prime use 
-of smoothers is processing data for visualization purposes. However, it is 
-not 
-recommended to smooth signals unsupervised prior to statistical procedures 
+input and output. It should be noted that smoothing may alter the curve shape 
+and thus lead to artificial results. Smoothed data are easier to interpretable 
+but introduce an additional bias to the pre-processed data. Therefore the prime 
+use of smoothers is processing data for visualization purposes. However, it is 
+not recommended to smooth signals unsupervised prior to statistical procedures 
 (e.g., least-squares curve fitting). All smoothing algorithms are ``lossy'' to a 
 certain extent and may change the curve shape significantly. In particular, the 
 residual evaluation of a fit may lead to false prediction, because noise after 
