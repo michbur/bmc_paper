@@ -863,57 +863,65 @@ data.
 %% Do not use \listoffigures as most will included as separate files
 
 \section*{Figures}
-  \begin{figure}[h]
-  \includegraphics{problems}
+  \begin{figure*}[h]
+  \includegraphics[clip=true,trim=0cm 0cm 0cm 0cm,width=16cm]{problems}
   \caption{\label{figure:problems}
   \csentence{Analysis and interpretation of real-time amplification curves.} 
 Analysis and interpretation of real-time amplification curves. \emph{(A)} The 
-fluorescence values are plotted against the cycle. The amplification curve has a 
+fluorescence values are plotted against the cycle. The amplification curve has 
+a 
 sigmoidal shape. Amplification curve raw data are affected by many influences. 
 This includes noise introduced by the detection system and sensor errors. 
 Measurements can occasionally contain missing values (``NA'') and outliers 
 (orange circle). Outliers are often present in the first cycle due to sensor 
 adjustments. The signal difference between the background phase (first cycles) 
 and the plateau phase (last cycles) can be expressed as signal-to-noise ratio 
-(SNR). The SNR between different between samples (e.g., black line and red line) 
+(SNR). The SNR between different between samples (e.g., black line and red 
+line) 
 can vary. For interpretation it is better to compensate the 
-differences. Negative samples (blue line) need to be (automatically) identified. 
+differences. Negative samples (blue line) need to be (automatically) 
+identified. 
 \emph{(B)} pre-processed raw data. ``NAs'' were imputed and the noise slightly 
 removed. The curves were adjusted to have the same baseline and plateau level. 
 The quantification point (Cq) of the positive reactions are determined in the 
 exponential phase (``Threshold method'' is used in this example). Negative 
 sample are automatically set to zero.
 }
-      \end{figure}
+      \end{figure*}
 
-\begin{figure}[h]
-  \includegraphics{browser}
+\begin{figure*}[h]
+  \includegraphics[clip=true,trim=0cm 0cm 0cm 0cm,width=16cm]{browser}
   \caption{\label{figure:browser}
-  \csentence{Locally running \emph{shiny} \textsl{AmpSim.gui} app.} \emph{(Top)} 
+  \csentence{Locally running \emph{shiny} \textsl{AmpSim.gui} app.} 
+\emph{(Top)} 
 The plot of the \textsl{AmpSim.gui} is shown in a standard browser 
-(\textbf{Iceweasel}, v. 29.0.1) along with the parameters (left panel). The code 
+(\textbf{Iceweasel}, v. 29.0.1) along with the parameters (left panel). The 
+code 
 (``server.R'', ``ui.R'') of the \emph{shiny} app is accessible too. All 
 parameters (e.g., Cq value, Baseline) of the \textsl{AmpSim} function are 
 accessible. \emph{(Bottom)} In addition shows \textsl{AmpSim.gui} the plot 
 output and the textual results of \textsl{bg.max}}
-      \end{figure}
+      \end{figure*}
       
-\begin{figure}[h]
-  \includegraphics{MFIaggr}
+\begin{figure*}[h]
+  \includegraphics[clip=true,trim=0cm 0cm 0cm 0cm,width=16cm]{MFIaggr}
   \caption{\label{figure:MFIaggr}
   \csentence{Amplification curve analysis of the \textsl{VIMCFX96\_60} data 
-set.} The cycles 1 -- 10 were selected as region of interest (ROI). The function 
+set.} The cycles 1 -- 10 were selected as region of interest (ROI). The 
+function 
 \textsl{MFIaggr} was used to analyze the variance of a 96-well plate cycler 
-(Bio-Rad CFX96) and EvaGreen\textregistered for detection (left panel). The mean 
+(Bio-Rad CFX96) and EvaGreen\textregistered for detection (left panel). The 
+mean 
 and the median 
 were almost identical. The density plot (right upper panel) and 
 quantile-quantile analysis (right lower panel). Both analytical plots indicate 
-that the data of the background range are normal distributed. Note that both the 
+that the data of the background range are normal distributed. Note that both 
+the 
 $median \pm mad$ and the $mean \pm sd$ have similar results. }
-      \end{figure}       
+      \end{figure*}       
 
-\begin{figure}[h]
-  \includegraphics{smoother}
+\begin{figure*}[h]
+  \includegraphics[clip=true,trim=0cm 0cm 0cm 0cm,width=16cm]{smoother}
   \caption{\label{figure:smoother}
   \csentence{Smoother and filter methods of the $\emph{chipPCR}$ package.} 
 \emph{(A)} Raw data were generated using the \textsl{AmpSim} simulation 
@@ -928,7 +936,7 @@ smoothing with a finite difference penalty of order 2). The ``savgol'',
 curve. The other functions resulted in alteration in the transition phases of 
 the amplification curve. Optimized time series smoother, like the Kalman 
 filter \cite{Tusell_2010}, are not yet integrated. }
-      \end{figure}       
+      \end{figure*}       
      
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                               %%
