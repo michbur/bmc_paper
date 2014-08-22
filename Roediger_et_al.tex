@@ -409,10 +409,9 @@ amplification reaction,
 \item \textsl{inder}: for interpolating first and second derivatives 
 interpolation using the five-point stencil (accompanied by 
 \textsl{rounder} function),
-\item \textsl{MFIaggr}: to analyze a bulk of 
-replicates of an amplification 
+\item \textsl{MFIaggr}: to analyze a bulk of replicates of an amplification 
 reaction, 
-\item \textsl{smoother}: to smooth the curve data by different functions 
+\item \textsl{smoother}: to smooth the curve data by different methods 
 (e.g., moving average, Savitzky-Golay smoothing).
 \end{itemize}
 
@@ -508,32 +507,30 @@ comparison of the cycle dependent signal dispersion and distribution. The
 continuous response variable $y'$ is used to describe the relationships to one 
 or more continuous predictor variables $y_1, ..., y_n$. Use cases include the 
 comparison of independent reaction vessels or the analysis of replicate 
-experiments. The basic idea is to analyze only a region of interest (ROI) from 
-a 
+experiments. The basic idea is to analyze only a region of interest (ROI) from a 
 data set. \textsl{MFIaggr} is a relative of the \textsl{MFIerror} function from 
 the \emph{MBmca} package. However, this functions enables a fine grained 
 analysis of specific parts of the curve data. The function returns an object of 
 the class list with the columns ``Cycle'', ``Location'' (Mean, Median), 
 ``Deviation'' (Standard Deviation, Median Absolute Deviation) and ``Coefficient 
-of Variation''. Using the option $rob = TRUE$ the median and the median 
-absolute 
+of Variation''. Using the option $rob = TRUE$ the median and the median absolute 
 deviation (MAD) are calculated instead of the mean and standard deviation. 
 \textsl{MFIaggr} has parameter $llul$ to define the lower and upper data limit 
-(cycle) for a ROI. The results for the ROI can be invoke by $@stats$. The 
-output 
+(cycle) for a ROI. The results for the ROI can be invoke by $@stats$. The output 
 includes the mean, median, standard deviation (sd), median absolute deviation 
 (mad), inter quartile range (IQR), medcouple (robust measure of skewness), 
 skewness (Pearson's second skewness coefficient; 
 $skewness~=~3~(mean(x)~-~median(x))~/~sd(x)$), signal-to-noise ratio (SNR), 
 variance-to-mean ratio (VRM), number of missing values (NAs) and results from a 
-linear fit of the ROI (intercept, slope, r.squared). In our example we analyzed 
-the raw fluorescence from 96 replicates of a qPCR experiment for the human gene 
-\textit{Vimentin}. The \textsl{MFIaggr} plot shows that the first ten cycles 
-(noise) follow a normal distribution (Figure~\ref{figure:MFIaggr}). In 
-contrast, 
-the analysis of all cycles shows expectedly a distribution, which significantly 
-differs from a normal distribution (Figure~\ref{figure:MFIaggr2}). Setting the 
-option $CV = FLASE$ shows the relative standard deviation (RSD,~\%).
+linear fit of the ROI (intercept, slope, r.squared). Moreover, we included 
+the Breusch-Pagan test to test for heteroscedasticity in a linear regression 
+model. In our example we analyzed the raw fluorescence from 96 replicates of a 
+qPCR experiment for the human gene \textit{Vimentin}. The \textsl{MFIaggr} plot 
+shows that the first ten cycles (noise) follow a normal distribution 
+(Figure~\ref{figure:MFIaggr}). In contrast, the analysis of all cycles shows 
+expectedly a distribution, which significantly differs from a normal 
+distribution (Figure~\ref{figure:MFIaggr2}). Setting the option $CV = FLASE$ 
+shows the relative standard deviation (RSD,~\%).
 
 \begin{figure*}
 \begin{verbatim}
