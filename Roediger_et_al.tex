@@ -42,8 +42,6 @@
 %  [linenumbers]   - put the line numbers on margins
 
 %%% loading packages, author definitions
-\usepackage{xr}
-\externaldocument{chipPCR}
 
 \documentclass[twocolumn]{bmcart}% uncomment this for twocolumn layout and 
 %comment line below
@@ -57,7 +55,8 @@
 \usepackage{listings}
 %\usepackage[applemac]{inputenc} %applemac support if unicode package fails
 %\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
-
+\usepackage{xr}
+\externaldocument{chipPCR}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                             %%
@@ -75,15 +74,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\def\includegraphic{}
-\def\includegraphics{}
-
+%\def\includegraphic{}
+%\def\includegraphics{}
+\usepackage{graphicx}
+\graphicspath{ {./figures/} }
 
 
 %%% Put your definitions there:
 \startlocaldefs
 \endlocaldefs
-
 
 %%% Begin ...
 \begin{document}
@@ -859,6 +858,7 @@ data.
 
 \section*{Figures}
   \begin{figure}[h]
+  \includegraphics{problems}
   \caption{\label{figure:problems}
   \csentence{Analysis and interpretation of real-time amplification curves.} 
 Analysis and interpretation of real-time amplification curves. \emph{(A)} The 
@@ -881,6 +881,7 @@ sample are automatically set to zero.
       \end{figure}
 
 \begin{figure}[h]
+  \includegraphics{browser}
   \caption{\label{figure:browser}
   \csentence{Locally running \emph{shiny} \textsl{AmpSim.gui} app.} \emph{(Top)} 
 The plot of the \textsl{AmpSim.gui} is shown in a standard browser 
@@ -892,6 +893,7 @@ output and the textual results of \textsl{bg.max}}
       \end{figure}
       
 \begin{figure}[h]
+  \includegraphics{MFIaggr}
   \caption{\label{figure:MFIaggr}
   \csentence{Amplification curve analysis of the \textsl{VIMCFX96\_60} data 
 set.} The cycles 1 -- 10 were selected as region of interest (ROI). The function 
@@ -905,6 +907,7 @@ $median \pm mad$ and the $mean \pm sd$ have similar results. }
       \end{figure}       
 
 \begin{figure}[h]
+  \includegraphics{smoother}
   \caption{\label{figure:smoother}
   \csentence{Smoother and filter methods of the $\emph{chipPCR}$ package.} 
 \emph{(A)} Raw data were generated using the \textsl{AmpSim} simulation 
