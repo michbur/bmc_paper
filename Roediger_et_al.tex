@@ -215,9 +215,8 @@ detection systems, such as hydrolysis probes and intercalating dyes.
 
 \parttitle{Conclusion}
 We have developed $\emph{chipPCR}$, which is a versatile software tailored for 
-the 
-pre-processing of amplification curve data. Its utility is elaborated on both 
-real and simulated data sets. The structure of the packages is open for 
+the pre-processing of amplification curve data. Its utility is elaborated on 
+both real and simulated data sets. The structure of the packages is open for 
 integration to Web based and standalone \emph{shiny} applications. The 
 \textbf{R} package along codes used for creation of figures used in publication 
 is freely available.
@@ -284,9 +283,8 @@ Quantitative polymerase chain reaction (qPCR) and quantitative isothermal
 amplification (qIA) are standard methods to amplify nucleic acids (e.g., genomic 
 DNA, copy DNA). Recently amplification methods with a continuous temperature 
 gradient (e.g., microfluidics, capillary convective PCR (ccPCR)) emerged 
-\cite{bustin_miqe_2009, rodiger_nucleic_2014, chou_rapid_2011}. The main 
-differences between qPCR and qIA/ccPCR are the thermal cycling 
-conditions, the measuring point and the curve shape isothermal amplifications 
+\cite{bustin_miqe_2009, rodiger_nucleic_2014, chou_rapid_2011}. Isothermal 
+amplifications 
 are monocyclic reactions at a constant temperature. Conversely, PCR is a 
 polycyclic reaction with thermal cycling condition steps (denaturation, 
 annealing, elongation) and measurements at discrete cycle steps. The curve shape 
@@ -334,8 +332,8 @@ visualize qPCRs. The \emph{SLqPCR} package can be used to normalize qPCR data
 and to compute the gene expression stability data. Other methods than the 
 $ddCt$~algorithm have been proposed elsewhere \cite{heckmann_2011}.
 
-However, novel developed qPCR and qIA technologies initially depend on 
-independent tools to pre-process the raw data. Ideally, the experimenter 
+However, novel developed qPCR and qIA technologies initially depend on tools to 
+pre-process the raw data. Ideally, the experimenter 
 receives a data output in an 
 easily interpretable form. Pre-processing specifically addresses raw data 
 inspection, steps to transform raw data in a compatible format for successive 
@@ -366,10 +364,10 @@ interested reader to the manual for further information and use case scenarios.
 \section*{Implementation}
 
 $\emph{chipPCR}$ package was implemented in the \textbf{R} software environment 
-for statistical computing and graphics. Supplemental materials, avaible as the
-packages vignettes use Donald Knuth's literate 
-programming principle~\cite{Knuth1984} to present the source code in the most convenient 
-way for the users. The package is available at CRAN 
+for statistical computing and graphics. Supplemental materials, available as the 
+packages vignettes use Donald Knuth's literate programming 
+principle~\cite{Knuth1984} to present the source code in the most convenient way 
+for the users. The package is available at CRAN 
 (\url{http://cran.r-project.org/web/packages/chipPCR/index.html}) along with an 
 extensive documentation and examples. The latest source code is hosted at GitHub 
 (\url{https://github.com/michbur/chipPCR}) with an issue tracker for bug reports 
@@ -534,8 +532,14 @@ qPCR experiment for the human gene \textit{Vimentin}. The \textsl{MFIaggr} plot
 shows that the first ten cycles (noise) follow a normal distribution 
 (Figure~\ref{figure:MFIaggr}). In contrast, the analysis of all cycles shows 
 expectedly a distribution, which significantly differs from a normal 
-distribution (Figure~\ref{figure:MFIaggr2}). Setting the option $CV = FLASE$ 
-shows the relative standard deviation (RSD,~\%).
+distribution (Figure~\ref{figure:MFIaggr_all}). Setting the option $CV = FLASE$ 
+shows the relative standard deviation (RSD,~\%). Ideally the variance between 
+the amplification curves is low. Other results of 
+\textsl{MFIaggr} include the density analysis ($@density$), the quantile 
+($@qqnorm.data$), and the results of the linear regression ($@lm.roi$) from the 
+ROI. In particular, this function might be useful for quality management during 
+the development of high-throughput technologies. An analysis via a the 
+\emph{shiny} \textsl{MFIaggr.gui} app is shown in Figure~\ref{figure:MFIaggr2}.
 
 \begin{figure*}
 \begin{verbatim}
@@ -550,12 +554,7 @@ plot(MFIaggr(VIMCFX96_60[, 1], VIMCFX96_60[, 2:ncol(VIMCFX96_60)],
 \end{verbatim}
 \end{figure*}
 
-Ideally the variance between the amplification curves is low. Other results of 
-\textsl{MFIaggr} include the density analysis ($@density$), the quantile 
-($@qqnorm.data$), and the results of the linear regression ($@lm.roi$) from the 
-ROI. In particular, this function might be useful for quality management during 
-the development of high-throughput technologies. An analysis via a the 
-\emph{shiny} \textsl{MFIaggr.gui} app is shown in Figure~\ref{figure:MFIaggr2}.
+
 
 \subsection*{humanrater - a human machine interface}
 
@@ -595,13 +594,13 @@ and is therefore the recommended approach to remove missing values
 (Figure~\ref{figure:??}). We observed no significant bias by cubic spline 
 interpolation (Table~S\ref{table:??}). The performance of \textsl{fixNA} using 
 cubic splines was better than a linear interpolation (Figure~S\ref{figure:??}). 
-However, the linear 
-approximation might be applicable in measurements with high sample rates (e.g., 
-isothermal amplification) (not shown). Any method requires a minimum number of 
-data points as foundation for a meaningful imputation. \textsl{fixNA} tries to 
-take care of such pitfalls. By rule of thumbs we determined that the number of 
-missing elements in relation to the total number of elements. In case more than 
-30~\% of all values are NAs gives \textsl{fixNA} a warning.
+However, the linear approximation might be applicable in measurements with high 
+sample rates (e.g., isothermal amplification) (not shown). Any method requires a 
+minimum number of data points as foundation for a meaningful imputation. 
+\textsl{fixNA} tries to take care of such pitfalls. By rule of thumbs we 
+determined that the number of missing elements in relation to the total number 
+of elements. In case more than 30~\% of all values are NAs gives \textsl{fixNA} 
+a warning.
 
 \subsection*{Smoothing and filtering}
 
@@ -741,8 +740,9 @@ signal changes drastically. First data are smoothed by Friedman’s ’super
 smoother’ (\textsl{supsmu}, \emph{stats}). Thereof the approximate first and 
 second derivative are calculated. The difference of cycles at the maxima of the 
 first and second approximate derivative and a correction factor are used to 
-estimate the range before the exponential phase. This simple function finds the 
-background range without modeling the function. The start of the background 
+estimate the range before the exponential phase. \textsl{bg.max} finds 
+the background range without modeling of a fit function. The start of the 
+background 
 range is defined be a fixed value. Since many signals tend to overshot in the 
 first cycles a default value of two is chosen. \textsl{bg.max} tries also to 
 estimate the end of an amplification reaction (Figure~\ref{figure:bgmax}).
@@ -750,13 +750,13 @@ estimate the end of an amplification reaction (Figure~\ref{figure:bgmax}).
 \subsection*{Proposed work-flow}
 
 The function \textsl{CPP} (``Curve Pre-Processor'') is a wrapper for several 
-functions described before in this study. \textsl{CPP} 
-can be considered as proposed workflow for an amplification curve 
-pre-processing. In particular, the functions \textsl{fixNA} $\rightarrow$ 
-\textsl{bg.max} $\rightarrow$ \textsl{smoother} $\rightarrow$ 
+functions described before in this study. \textsl{CPP} can be considered as 
+proposed workflow for an amplification curve pre-processing 
+(Figure~\ref{figure:workflow}). In particular, the functions \textsl{fixNA} 
+$\rightarrow$ \textsl{bg.max} $\rightarrow$ \textsl{smoother} $\rightarrow$ 
 \textsl{normalizer} $\rightarrow$ \textsl{amptester} were cascaded. A typical 
-output of \textsl{CPP} is shown in Figure~\ref{figure:fixNA_CPP} and 
-Figure~\ref{figure:normalization}.
+output of \textsl{CPP} is shown in Figure~\ref{figure:HDA}, 
+\ref{figure:thcyc_ccPCR}, \ref{figure:CPP_C54} and \ref{figure:normalization}.
 
 \section*{Conclusions}
 
@@ -815,7 +815,7 @@ The authors declare that they have no competing interests.
 \section*{Authors' contributions}
 SR conceived of the study, and participated in its design and coordination and 
 wrote the manuscript. SR and MB jointly developed the software. All authors read 
-and approved the final manuscript.
+and approved the final manuscript. PS improved the manuscript.
 
 \section*{Acknowledgment}
 Part of this work was funded by the BMBF InnoProfile-Projekt 03 IPT 611X. 
@@ -869,22 +869,19 @@ data.
   \caption{\label{figure:problems}
   \csentence{Analysis and interpretation of real-time amplification curves.} 
 Analysis and interpretation of real-time amplification curves. \emph{(A)} The 
-fluorescence values are plotted against the cycle. The amplification curve has 
-a 
+fluorescence values are plotted against the cycle. The amplification curve has a 
 sigmoidal shape. Amplification curve raw data are affected by many influences. 
 This includes noise introduced by the detection system and sensor errors. 
 Measurements can occasionally contain missing values (``NA'') and outliers 
 (orange circle). Outliers are often present in the first cycle due to sensor 
 adjustments. The signal difference between the background phase (first cycles) 
 and the plateau phase (last cycles) can be expressed as signal-to-noise ratio 
-(SNR). The SNR between different between samples (e.g., black line and red 
-line) 
-can vary. For interpretation it is better to compensate the 
-differences. Negative samples (blue line) need to be (automatically) 
-identified. 
-\emph{(B)} pre-processed raw data. ``NAs'' were imputed and the noise slightly 
-removed. The curves were adjusted to have the same baseline and plateau level. 
-The quantification point (Cq) of the positive reactions are determined in the 
+(SNR). The SNR between different between samples (e.g., black line and red line) 
+can vary. For interpretation it is better to compensate the differences. 
+Negative samples (blue line) need to be (automatically) identified. \emph{(B)} 
+pre-processed raw data. ``NAs'' were imputed and the noise slightly removed. The 
+curves were adjusted to have the same baseline and plateau level. The 
+quantification point (Cq) of the positive reactions are determined in the 
 exponential phase (``Threshold method'' is used in this example). Negative 
 sample are automatically set to zero.
 }
