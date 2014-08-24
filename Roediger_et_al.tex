@@ -418,7 +418,7 @@ In addition further (auxiliary)functions (\textsl{amptester},
 \textsl{effcalc}, \textsl{humanrater}, \textsl{lm.coefs}, \textsl{normalizer}, 
 \textsl{plotCurves}, \textsl{th.cyc}) typically used for post-processing (e.g., 
 Cq calculation, amplification efficiency calculation) are available. For more 
-information please refer to the the comprehensive supplement.
+information please refer to the comprehensive supplement.
 
 During the past years, several high-throughput technologies emerged, which 
 require higher computing power. The core structures of $\emph{chipPCR}$ avoid 
@@ -434,10 +434,11 @@ parsers since \textbf{R} has numerous tools and axillary packages for customized
 parsers. Rather we have chose to rely entirely on \textbf{R} workspaces as 
 default data format and standard import and export as described elsewhere 
 \cite{RDCT2010c}. The results of $\emph{chipPCR}$ functions are usually S4 objects 
-accompanied with specifically tailored summary and plot methods. To spread 
-the use among novice and less routinized users we believe that a graphical user 
-interface (GUI) is important. Currently there are several \textbf{R} GUI 
-projects \cite{Valero_2012} to chose from. Some functionality of 
+accompanied with specifically tailored summary and plot methods.
+
+To spread the use among novice and less routinized users we believe that a 
+graphical user interface (GUI) is important. Currently there are several 
+\textbf{R} GUI projects \cite{Valero_2012} to chose from. Some functionality of 
 $\emph{chipPCR}$ (e.g., removal of missing values, smoothing, ...) originates 
 from experimental \textbf{RKWard} plugins \cite{roediger_bead_qPCR_2013, 
 roediger_RKWard_2013}. \textbf{RKWard} \cite{rodiger_rkward_2012} is a 
@@ -453,12 +454,15 @@ technology allows a simple and repaid extension of the software. The
 be built entirely using R and operates in any R environment (see \emph{shiny} 
 manual for details). Currently, \emph{shiny} GUIs for the functions 
 \textsl{AmpSim}, \textsl{bg.max} (\textsl{AmpSim.gui} app) and 
-\textsl{amptester} (\textsl{amptester.gui} app) are available (e.g., 
-Figure~\ref{figure:browser}). Similarly to \textbf{QPCR} \cite{pabinger_2009} is 
-\emph{shiny} in combination with \textbf{R} the foundation to build monolithic 
-systems to parse, pre-process and analyze amplification curve data in a combined 
-workflow. The GUIs are available on-line without requiring prior installation as 
-seen in the code snippet below.
+\textsl{amptester} (\textsl{amptester.gui} app) are available. However, it is 
+possible to run the applications as service on a server (REFERENCEORSUPPLEMENT), 
+on the local desktop (e.g., Figure~\ref{figure:browser}), or as deployed from an 
+external source for a local \textbf{R} installation (REFERENCEORSUPPLEMENT). 
+Similarly to \textbf{QPCR} \cite{pabinger_2009} is \emph{shiny} in combination 
+with \textbf{R} the foundation to build monolithic systems to parse, pre-process 
+and analyze amplification curve data in a combined work-flow. The GUIs are 
+available on-line without requiring prior installation as seen in the code 
+snippet below.
 
 Data sets are an essential element of \textbf{R} packages \cite{hofmann_2013} 
 and an indispensable requirement for reproducible research \cite{Leeper_2014}. 
@@ -730,8 +734,7 @@ compensating background noise, ranging from simple to very sophisticated
 solutions. For a detailed description see the manual of the \textsl{chipPCR} 
 package v.~0.0.8 in section \textsl{bg.max} ``Details''. The function 
 \textsl{bg.max} is a fit-free method to estimate the range of the background 
-starting from the raw data. The raw data (e.g., fluorescence intensity) 
-measured 
+starting from the raw data. The raw data (e.g., fluorescence intensity) measured 
 after each step (cycle or time point) follow a non-linear progress. The 
 \textsl{bg.max} algorithm assumes that the signal difference $\Delta{y}$ of 
 successive cycles ($\Delta{y} = y_{n + 1} - y_n$) in the linear ground phase is 
@@ -740,18 +743,18 @@ signal changes drastically. First data are smoothed by Friedman’s ’super
 smoother’ (\textsl{supsmu}, \emph{stats}). Thereof the approximate first and 
 second derivative are calculated. The difference of cycles at the maxima of the 
 first and second approximate derivative and a correction factor are used to 
-estimate the range before the exponential phase. \textsl{bg.max} finds 
-the background range without modeling of a fit function. The start of the 
-background 
+estimate the range before the exponential phase. \textsl{bg.max} finds the 
+background range without modeling of a fit function. The start of the background 
 range is defined be a fixed value. Since many signals tend to overshot in the 
 first cycles a default value of two is chosen. \textsl{bg.max} tries also to 
-estimate the end of an amplification reaction (Figure~\ref{figure:bgmax}).
+estimate the end of an amplification reaction (Figure~\ref{figure:bgmax}). See 
+also supplement Section~\ref{sec:bgmax}.
 
 \subsection*{Proposed work-flow}
 
 The function \textsl{CPP} (``Curve Pre-Processor'') is a wrapper for several 
 functions described before in this study. \textsl{CPP} can be considered as 
-proposed workflow for an amplification curve pre-processing 
+proposed work-flow for an amplification curve pre-processing 
 (Figure~\ref{figure:workflow}). In particular, the functions \textsl{fixNA} 
 $\rightarrow$ \textsl{bg.max} $\rightarrow$ \textsl{smoother} $\rightarrow$ 
 \textsl{normalizer} $\rightarrow$ \textsl{amptester} were cascaded. A typical 

@@ -838,7 +838,7 @@ effcalc(res[, 1], res[, 3])
 
 
 ##################################
-
+require(qpcR)
 library(reshape2)
 library(ggplot2)
 pdf(file = "fixNA_stats.pdf", width = 12, height = 10)

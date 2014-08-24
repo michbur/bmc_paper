@@ -153,7 +153,7 @@ Although the numbers already contain all accessible information, data
 visualization greatly simplifies further analysis. For example, outputs of the 
 \textsl{bg.max()} function can be added to the plots to provide even more 
 knowledge about the properties of analyzed experiments. Before the start of any 
-analysis, a user must must choose data set and proper tools.
+analysis, a user must choose data set and proper tools.
 
 <<load_data,message=FALSE>>=
 require(chipPCR)
