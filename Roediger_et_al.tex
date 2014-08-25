@@ -460,9 +460,9 @@ on the local desktop (e.g., Figure~\ref{figure:browser}), or as deployed from an
 external source for a local \textbf{R} installation (REFERENCEORSUPPLEMENT). 
 Similarly to \textbf{QPCR} \cite{pabinger_2009} is \emph{shiny} in combination 
 with \textbf{R} the foundation to build monolithic systems to parse, pre-process 
-and analyze amplification curve data in a combined work-flow. The GUIs are 
-available on-line without requiring prior installation as seen in the code 
-snippet below.
+and analyze amplification curve data in a combined work-flow. The GUI embedding chipPCR
+function are accessible as the web server service under the address: 
+\url{http://michbur.shinyapps.io/MFIaggr_gui/}.
 
 Data sets are an essential element of \textbf{R} packages \cite{hofmann_2013} 
 and an indispensable requirement for reproducible research \cite{Leeper_2014}. 
@@ -476,20 +476,6 @@ of $\emph{chipPCR}$). The experiments were performed under different condition
 including conventional qPCR, isothermal amplification by helicase dependent 
 amplification (HDA) \cite{rodiger_nucleic_2014}. The overview can be 
 conveniently invoked via \textsl{?chipPCR.datasets}
-
-\begin{figure*}
-\begin{verbatim}
-# Load the shiny package (chipPCR should already be loaded).
-# Run from a R console following commands.
-require(shiny)
-
-# Invoke the shiny AmpSim app in the default browser.
-runApp(paste(find.package("chipPCR")[1],"/AmpSim.gui", sep = ""))
-
-# Call shiny app AmpSim directly from gist
-runGist('https://gist.github.com/michbur/e1def41598f1d0c1e2e6')
-\end{verbatim}
-\end{figure*}
 
 \section*{Result and discussion}
 
