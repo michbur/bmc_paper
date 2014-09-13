@@ -297,40 +297,39 @@ roediger_highly_2013, roediger_bead_qPCR_2013, rodiger_nucleic_2014}.
 
 Real-time technologies enable the quantification of nucleic acids by calculation 
 of specific curve parameters like the quantification point (Cq) and the 
-amplification efficiency (AE) as described elsewhere 
-\cite{ruijter_2013,tellinghuisen_2014}. Fundamental steps of amplification curve 
-analysis are: (1) raw data read-in, (2) amplification curve pre-processing 
-(e.g., noise reduction, outlier removal), (3) amplification curve processing 
-(e.g., Cq and AE calculation), (4) post-processing and quantification of 
-secondary parameters (e.g., Delta-Delta-Ct for gene expression analysis), and 
-(5) data export and visualization.
+amplification efficiency (AE) \cite{ruijter_2013,tellinghuisen_2014}. 
+Fundamental steps of amplification curve analysis are: (1) raw data read-in, (2) 
+amplification curve pre-processing (e.g., noise reduction, outlier removal), (3) 
+amplification curve processing (e.g., Cq and AE calculation), (4) 
+post-processing and quantification of secondary parameters (e.g., Delta-Delta-Ct 
+for gene expression analysis), and (5) data export and visualization.
 
   \textbf{R} is one of the most used tools in bioinformatics and is known to be 
 an early adopter of emerging technologies \cite{pabinger_2014}. Most \textbf{R} 
 packages focus on the read-in and (post)-processing of data sets, which 
-originate from commercial qPCR systems. Sophisticated 
-\textbf{R} packages for the steps 1. and 3.--5. are available 
-from Bioconductor and CRAN. This includes packages to read-in qPCR data and to 
-perform a selection of optimal reference genes for the data normalization. One 
-of the most comprehensive packages is \emph{qpcR} \cite{ritz_2008}, which 
-provides methods quantification and automatic optimization procedures to fit 
-curves. Other packages were designed as frameworks for high-throughput 
-analysis. The \emph{HTqPCR} package \cite{Dvinge_2009} can be used for the 
-high-throughput data analysis (e.g., normalization, tested for differential 
-expression) and visualization of different cards (samples). \emph{ReadqPCR} and 
-\emph{NormqPCR} packages \cite{perkins_2012}) allow high-throughput qPCR data 
-analysis. Main features include methods to select reference genes, 
-normalization methods, and algorithms for differential expression between 
-samples. The popular Delta-Delta-Ct ($ddCt$) algorithm \cite{livak_2001} is an 
-approximation method to determine relative gene expression. qPCR is the method 
-of choice for \emph{exact} gene expression analysis and an important step to 
-validate experiments from microarrays, bead arrays and related technologies. qIA 
-has an important role in point of care diagnostics.
-Implementations are available from the \emph{ddCt}, \emph{NormqPCR} and 
-\emph{qPCR.CT} package. The packages can be used to collect, analyze and 
-visualize qPCRs. The \emph{SLqPCR} package can be used to normalize qPCR data 
-and to compute the gene expression stability data. Other methods than the 
-$ddCt$~algorithm have been proposed elsewhere \cite{heckmann_2011}.
+originate from commercial qPCR systems. Sophisticated \textbf{R} packages for 
+the steps 1. and 3.--5. are available from Bioconductor and CRAN. This includes 
+packages to read-in qPCR data \cite{blagodatskikh_2014} and to perform a 
+selection of optimal reference genes for the data normalization. One of the most 
+comprehensive packages is \emph{qpcR} \cite{ritz_2008}, which provides methods 
+quantification and automatic optimization procedures to fit curves. Other 
+packages were designed as frameworks for high-throughput analysis. The 
+\emph{HTqPCR} package \cite{Dvinge_2009} can be used for the high-throughput 
+data analysis (e.g., normalization, tested for differential expression) and 
+visualization of different cards (samples). \emph{ReadqPCR} and \emph{NormqPCR} 
+packages \cite{perkins_2012}) allow high-throughput qPCR data analysis. Main 
+features include methods to select reference genes, normalization methods, and 
+algorithms for differential expression between samples. The popular 
+Delta-Delta-Ct ($ddCt$) algorithm \cite{livak_2001} is an approximation method 
+to determine relative gene expression. qPCR is the method of choice for 
+\emph{exact} gene expression analysis and an important step to validate 
+experiments from microarrays, bead arrays and related technologies. qIA has an 
+important role in point of care diagnostics. Implementations are available from 
+the \emph{ddCt}, \emph{NormqPCR} and \emph{qPCR.CT} package. The packages can be 
+used to collect, analyze and visualize qPCRs. The \emph{SLqPCR} package can be 
+used to normalize qPCR data and to compute the gene expression stability data. 
+Other methods than the $ddCt$~algorithm have been proposed elsewhere 
+\cite{heckmann_2011}.
 
 Novel developed qPCR and qIA technologies initially depend on tools to 
 pre-process the raw data. Pre-processing specifically addresses raw data 
@@ -363,7 +362,8 @@ information and use case examples.
 \section*{Implementation}
 
 $\emph{chipPCR}$ package was implemented in the \textbf{R} software environment 
-for statistical computing and graphics. The supplemental material, available as the 
+for statistical computing and graphics according to the guidelines as described 
+elsewhere \cite{RDCT2014a}. The supplemental material, available as the 
 packages vignettes, use Donald Knuth's literate programming 
 principle~\cite{Knuth1984} to present the source code in the most convenient way 
 for the users. The package is available at CRAN 
@@ -432,7 +432,7 @@ the ellipse parameter.
 parsers since \textbf{R} has numerous tools and auxiliary packages for customized 
 parsers. Rather we have chose to rely entirely on \textbf{R} workspaces as 
 default data format and standard import and export as described elsewhere 
-\cite{RDCT2010c}. The results of $\emph{chipPCR}$ functions are usually S4 objects 
+\cite{RDCT2014c}. The results of $\emph{chipPCR}$ functions are usually S4 objects 
 accompanied with specifically tailored summary and plot methods.
 
 To spread the use among novice and less routinized users we believe that a 
