@@ -292,8 +292,9 @@ a cycle-based (discontinuous) measurement of qPCRs. The number of measure points
 in most cases higher than qPCR. Both amplification methods are used in different 
 real-time monitoring technologies, such as our previously reported VideoScan 
 technology, microfluidic systems, point-of-care devices and microbead-chip 
-technologies and commercial real-time thermo cyclers \cite{chang_2012, 
-roediger_highly_2013, roediger_bead_qPCR_2013, rodiger_nucleic_2014}.
+technologies and commercial real-time thermo cyclers 
+\cite{rodiger_nucleic_2014,chang_2012, roediger_highly_2013, 
+roediger_bead_qPCR_2013}.
 
 Real-time technologies enable the quantification of nucleic acids by calculation 
 of specific curve parameters like the quantification point (Cq) and the 
@@ -309,27 +310,16 @@ an early adopter of emerging technologies \cite{pabinger_2014}. Most \textbf{R}
 packages focus on the read-in and (post)-processing of data sets, which 
 originate from commercial qPCR systems. Sophisticated \textbf{R} packages for 
 the steps 1. and 3.--5. are available from Bioconductor and CRAN. This includes 
-packages to read-in qPCR data \cite{blagodatskikh_2014} and to perform a 
-selection of optimal reference genes for the data normalization. One of the most 
-comprehensive packages is \emph{qpcR} \cite{ritz_2008}, which provides methods 
-quantification and automatic optimization procedures to fit curves. Other 
-packages were designed as frameworks for high-throughput analysis. The 
-\emph{HTqPCR} package \cite{Dvinge_2009} can be used for the high-throughput 
-data analysis (e.g., normalization, tested for differential expression) and 
-visualization of different cards (samples). \emph{ReadqPCR} and \emph{NormqPCR} 
-packages \cite{perkins_2012}) allow high-throughput qPCR data analysis. Main 
-features include methods to select reference genes, normalization methods, and 
-algorithms for differential expression between samples. The popular 
-Delta-Delta-Ct ($ddCt$) algorithm \cite{livak_2001} is an approximation method 
-to determine relative gene expression. qPCR is the method of choice for 
-\emph{exact} gene expression analysis and an important step to validate 
-experiments from microarrays, bead arrays and related technologies. qIA has an 
-important role in point of care diagnostics. Implementations are available from 
-the \emph{ddCt}, \emph{NormqPCR} and \emph{qPCR.CT} package. The packages can be 
-used to collect, analyze and visualize qPCRs. The \emph{SLqPCR} package can be 
-used to normalize qPCR data and to compute the gene expression stability data. 
-Other methods than the $ddCt$~algorithm have been proposed elsewhere 
-\cite{heckmann_2011}.
+packages to read-in qPCR data and to perform a selection of optimal reference 
+genes for the data normalization. One of the most comprehensive packages is 
+\emph{qpcR} \cite{ritz_2008}, which provides methods quantification and 
+automatic optimization procedures to fit curves. Other packages were designed as 
+frameworks for data read-in \& storage, high-throughput analysis, gene 
+normalization, analysis of differential gene expression, melting curve analysis 
+and visualization 
+\cite{Dvinge_2009,perkins_2012,blagodatskikh_2014,heckmann_2011,pan_2012, 
+Zhang_2010,mccall_2014,roediger_RJ_2013}. However, there is no \textbf{R} 
+package for pre-processing and quality analysis of amplification curve data.
 
 Novel developed qPCR and qIA technologies initially depend on tools to 
 pre-process the raw data. Pre-processing specifically addresses raw data 
@@ -339,18 +329,18 @@ analysis steps (e.g., smoothing, imputation of missing values), data reduction
 experimental instruments is often not ready for end-user analysis and 
 presentation. However, during the early stages of the development it is 
 important to use as many raw data as possible. Pre-processing algorithms remove 
-stochastic errors and artifacts (e.g., noise, photo-bleaching effects, degassing 
+stochastic errors and artefacts (e.g., noise, photo-bleaching effects, degassing 
 effects, different signal levels) illustrated in Figure~\ref{figure:problems}. 
 Misinterpretations are more likely if non or manual (``arbitrary'') corrections 
 are performed. A manual alteration is in contradiction to reproducible research. 
 The presence of noise may lead to false conclusions and performance estimation. 
 Noise is challenging because derivative processes as used for ``cycle of 
 quantification'' methods (e.g., Second Derivative Maximum method) lead to an 
-amplification of noise \cite{roediger_RJ_2013, larionov_2005, tuomi_2010, 
-ruijter_2013, tellinghuisen_2014}.
+amplification of noise \cite{ruijter_2013, tellinghuisen_2014,roediger_RJ_2013, 
+larionov_2005, tuomi_2010}.
 
 The $\emph{chipPCR}$ package ($\emph{chipPCR}$: ``Lab-on-a-\textbf{Chip}'' \& 
-PCR) was developed to automatize pre-processing, to ease data 
+\textbf{PCR}) was developed to automatize pre-processing, to ease data 
 analysis/visualization and to offer a quality control for the statistical data 
 analysis of qPCR and qIA experiments. $\emph{chipPCR}$ is primarily targeted at 
 developers of experimental nucleic acid amplification systems but non the less 
@@ -363,19 +353,18 @@ information and use case examples.
 
 $\emph{chipPCR}$ package was implemented in the \textbf{R} software environment 
 for statistical computing and graphics according to the guidelines as described 
-elsewhere \cite{RDCT2014a}. The supplemental material, available as the 
-packages vignettes, use Donald Knuth's literate programming 
-principle~\cite{Knuth1984} to present the source code in the most convenient way 
-for the users. The package is available at CRAN 
+elsewhere \cite{RDCT2014a}. The supplemental material, available as the packages 
+vignettes, use Donald Knuth's literate programming principle~\cite{Knuth1984} to 
+present the source code in the most convenient way for the users. The package is 
+available at CRAN 
 (\url{http://cran.r-project.org/web/packages/chipPCR/index.html}) along with an 
 extensive documentation and examples. The latest source code is hosted at GitHub 
 (\url{https://github.com/michbur/chipPCR}) with an issue tracker for bug reports 
 or feature requests. For the present paper $\emph{chipPCR}$ version~0.0.8 was 
-used. The naming convention in $\emph{chipPCR}$ is \textit{period.separated} 
-names \cite{Baaaath_2012}. However, due to the organic growth of the package  
-selected elements violate this convention (e.g., functions names). 
-$\emph{chipPCR}$ is a relative of \emph{MBmca} \cite{roediger_RJ_2013} and 
-\emph{dpcR} but is mainly focused on the processing of amplification curve data.
+used. The main naming convention in $\emph{chipPCR}$ is 
+\textit{period.separated} names \cite{Baaaath_2012}. $\emph{chipPCR}$ is a 
+relative of \emph{MBmca} \cite{roediger_RJ_2013} and \emph{dpcR} but is mainly 
+focused on the processing of amplification curve data.
 
   $\emph{chipPCR}$ uses \textbf{R}’s object model, designated \emph{S4} class 
 system, which is implemented in the \emph{methods} package. In contrast to 
@@ -476,8 +465,7 @@ encompass the VideoScan heating/cooling unit (VideoScan HCU)
 manual 
 of $\emph{chipPCR}$). The experiments were performed under different condition 
 including conventional qPCR, isothermal amplification by helicase dependent 
-amplification (HDA) \cite{rodiger_nucleic_2014}. The overview can be 
-conveniently invoked via \textsl{?chipPCR.datasets}
+amplification (HDA) \cite{rodiger_nucleic_2014}.
 
 \section*{Result and discussion}
 
@@ -490,7 +478,7 @@ environment, RScript or related approaches. However, due to the use of the
 connected computers or as local service. This allows to analyze, pre-process 
 and to visualize results. We used the $\emph{chipPCR}$ package to 
 pre-process and analysis of qPCR data (see supplement), qIA 
-data (supplement Section~\ref{sec:HDA}) and ccPCR (supplement 
+data (supplement Section~\ref{sec:HDA}) and ccPCR data (supplement 
 Section~\ref{sec:ccPCR}).
 
 \subsection*{Multiple comparison of the cycle dependent variance of the 
@@ -559,7 +547,7 @@ sequence, to reduce the risk of bias, or natural sequence. The number of
 replicate rating runs is user definable. A curve and prompts an input field for 
 the user. This function can be used to the human rating and the rating of a 
 machine. Results of the analysis can be used for further processing 
-(Figure~S\ref{figure:MFIaggr2}).
+(see supplement Section~\ref{sec:humanrater}).
 
 \subsection*{Imputation of missing values in amplification curves}
 
@@ -582,13 +570,13 @@ Experiments showed that cubic spline interpolation yielded the most probable
 values and therefore led to the least effect on tested statistical parameters 
 (Cq, background signal, Pearson correlation coefficient) the exponential phase 
 and is therefore the recommended approach to remove missing values 
-(Figure~\ref{figure:??}). We observed no significant bias by cubic spline 
-interpolation (Table~S\ref{table:??}). The performance of \textsl{fixNA} using 
-cubic splines was better than a linear interpolation (Figure~S\ref{figure:??}). 
+(Figure~\ref{figure:fixNA_data}). We observed no significant bias by cubic spline 
+interpolation (Table~\ref{table:fixNA}). The performance of \textsl{fixNA} using 
+cubic splines was better than a linear interpolation (Figure~\ref{figure:fixNA}). 
 However, the linear approximation might be applicable in measurements with high 
 sample rates (e.g., isothermal amplification) (not shown). Any method requires a 
 minimum number of data points as foundation for a meaningful imputation. 
-\textsl{fixNA} tries to take care of such pitfalls. By rule of thumbs we 
+\textsl{fixNA} attampts to take care of such pitfalls. By rule of thumbs we 
 determined that the number of missing elements in relation to the total number 
 of elements. In case more than 30~\% of all values are NAs gives \textsl{fixNA} 
 a warning.
@@ -732,9 +720,9 @@ first and second approximate derivative and a correction factor are used to
 estimate the range before the exponential phase. \textsl{bg.max} finds the 
 background range without modeling of a fit function. The start of the background 
 range is defined be a fixed value. Since many signals tend to overshot in the 
-first cycles a default value of two is chosen. \textsl{bg.max} tries also to 
-estimate the end of an amplification reaction (Figure~\ref{figure:bgmax}). See 
-also supplement Section~\ref{sec:bgmax}.
+first cycles a default value of two is chosen. \textsl{bg.max} attampts to 
+estimate the end of an amplification reaction (Figure~\ref{figure:bgmax}, 
+supplement Section~\ref{sec:bgmax}).
 
 \subsection*{Proposed work-flow}
 
@@ -754,7 +742,7 @@ package for the pre-processing and raw data quality analysis of amplification
 curve data. Others and we share the philosophy that software in research should 
 not be a black-box and but part of an transparent ecosystem for reproducible 
 research and exploration of new information from existing data 
-\cite{Thioulouse_2010, roediger_RJ_2013, hofmann_2013, Leeper_2014, liu_2014}. 
+\cite{roediger_RJ_2013, hofmann_2013, Leeper_2014,Thioulouse_2010,liu_2014}. 
 In particular, the smoothing methods and algorithms for the derivatives are 
 often not documented and therefore hard to judge by others. The $\emph{chipPCR}$ 
 package is open source (with GPL-3 license) and freely available through CRAN. 
@@ -774,11 +762,12 @@ comprehensive GUI. We argue that that our \emph{shiny} GUI approach might be a
 promising approach. Similar applies to a standard for data exchange. A 
 standardized might be embedded in structures for models (e.g., Predictive Model 
 Markup Language (PMML) \cite{Guazzelli_2009}) and data exchange (e.g., XML-based 
-Real-Time PCR Data Markup Language (RDML) \cite{lefever_2009}, binary formats 
-\cite{michna_2013}). However, work on this hasn't started yet. In 
-high-throughput systems might computing speed be an issue. Therefore further 
-parallelization of computing processes as described elsewhere 
-\cite{Schmidberger_2009, boehringer_2013} is part of future developments. 
+Real-Time PCR Data Markup Language (RDML) 
+\cite{blagodatskikh_2014,lefever_2009}, binary formats \cite{michna_2013}). 
+However, work on this hasn't started yet. In high-throughput systems might 
+computing speed be an issue. Further parallelization of 
+processes as described elsewhere \cite{Schmidberger_2009, boehringer_2013} is 
+part of future developments. 
 
 \section*{Availability and requirements}
 Project name: chipPCR, 
@@ -787,7 +776,7 @@ Project homepage (development):
 Project homepage at CRAN: 
 \url{http://cran.r-project.org/web/packages/chipPCR/index.html}, 
 Operating System: Platform independent, 
-Other requirement: R 3.0.0 or higher, 
+Other requirement: R 3.1.0 or higher, 
 License: GPL-3
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
