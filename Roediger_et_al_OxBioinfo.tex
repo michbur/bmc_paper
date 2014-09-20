@@ -186,7 +186,7 @@ Wroc\l{}aw},
 \begin{abstractbox}
 
 \begin{abstract} % abstract
-\parttitle{Background} %if any
+\parttitle{Background}
 The quantitative real-time polymerase chain reaction (qPCR) and isothermal 
 amplification are standard methods for quantification of nucleic acids. Numerous 
 real-time read-out technologies with different technical foundation have been 
@@ -197,7 +197,7 @@ for amplification data pre-processing. It is a major setback especially during
 development of new instruments, when the precise control on raw data is 
 indispensable.
 
-\parttitle{Results} %if any
+\parttitle{Results}
 $\emph{chipPCR}$ is an \textbf{R} package for pre-processing and quality 
 analysis of amplification curve data from conventional quantitative polymerase 
 chain reactions (qPCR) and quantitative isothermal amplification (qIA). The 
@@ -233,6 +233,11 @@ both real and simulated data sets. The structure of the packages is open for
 integration to Web based and standalone \emph{shiny} applications. The 
 \textbf{R} package along codes used for creation of figures used in publication 
 is freely available.
+
+\parttitle{Availability} http://cran.r-project.org/web/packages/chipPCR
+Contact: stefan.roediger@hs-lausitz.de
+\parttitle{Supplementary information}: Supplementary data are available at
+Bioinformatics online.
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -294,20 +299,12 @@ is freely available.
 
 Quantitative polymerase chain reaction (qPCR) and quantitative isothermal 
 amplification (qIA) are standard methods to amplify nucleic acids (e.g., genomic 
-DNA, copy DNA). Recently amplification methods with a continuous temperature 
-gradient (e.g., microfluidics, capillary convective PCR (ccPCR)) emerged 
-\cite{bustin_miqe_2009, rodiger_nucleic_2014, chou_rapid_2011}. Isothermal 
-amplifications are monocyclic reactions at a constant temperature. Conversely, 
-PCR is a polycyclic reaction with thermal cycling condition steps (denaturation, 
-annealing, elongation) and measurements at discrete cycle steps. The curve shape 
-of a qIA and ccPCR do not necessarily follow a S-shaped structure and the 
-measurement is time-based (continuous, not mandatory equidistant) in contrast to 
-a cycle-based (discontinuous) measurement of qPCRs. The number of measure points 
-in most cases higher than qPCR. Both amplification methods are used in different 
-real-time monitoring technologies, such as our previously reported VideoScan 
-technology, microfluidic systems, point-of-care devices and microbead-chip 
-technologies and commercial real-time thermo cyclers 
-\cite{rodiger_nucleic_2014,chang_2012, roediger_highly_2013, 
+DNA, copy DNA). Recently, amplification methods with a continuous temperature 
+gradient (e.g., microfluidics) emerged \cite{rodiger_nucleic_2014, chou_rapid_2011}. Both 
+amplification methods are used in different real-time monitoring technologies, 
+such as our previously reported VideoScan technology, microfluidic systems, 
+point-of-care devices, microbead-chip technologies and commercial real-time 
+thermo cyclers \cite{rodiger_nucleic_2014,chang_2012, roediger_highly_2013, 
 roediger_bead_qPCR_2013}.
 
 Real-time technologies enable the quantification of nucleic acids by calculation 
@@ -317,41 +314,30 @@ Fundamental steps of amplification curve analysis are: (1) raw data read-in, (2)
 amplification curve pre-processing (e.g., noise reduction, outlier removal), (3) 
 amplification curve processing (e.g., Cq and AE calculation), (4) 
 post-processing and quantification of secondary parameters (e.g., Delta-Delta-Ct 
-for gene expression analysis), and (5) data export and visualization.
+for gene expression analysis), and (5) data export, visualization and report generation.
 
   \textbf{R} is one of the most used tools in bioinformatics and is known to be 
-an early adopter of emerging technologies \cite{pabinger_2014}. Most \textbf{R} 
-packages focus on the read-in and (post)-processing of data sets, which 
-originate from commercial qPCR systems. Sophisticated \textbf{R} packages for 
-the steps 1. and 3.--5. are available from Bioconductor and CRAN. This includes 
-packages to read-in qPCR data and to perform a selection of optimal reference 
-genes for the data normalization. One of the most comprehensive packages is 
-\emph{qpcR} \cite{ritz_2008}, which provides methods quantification and 
-automatic optimization procedures to fit curves. Other packages were designed as 
-frameworks for data read-in \& storage, high-throughput analysis, gene 
-normalization, analysis of differential gene expression, melting curve analysis 
-and visualization 
+an early adopter of emerging technologies such as digital PCR and  NanoString 
+nCounter Platform \cite{waggott_2012,pabinger_2014}. At same time it is widely 
+used for established methods, such as qPCR. Most \textbf{R} packages focus on 
+the read-in and (post)-processing of data sets, which originate from commercial 
+qPCR systems. Sophisticated \textbf{R} packages for the steps 1. and 3.--5. are 
+available from Bioconductor and CRAN 
 \cite{Dvinge_2009,perkins_2012,blagodatskikh_2014,heckmann_2011,pan_2012, 
-Zhang_2010,mccall_2014,roediger_RJ_2013}. However, there is no \textbf{R} 
-package for pre-processing and quality analysis of amplification curve data.
-
-Novel developed qPCR and qIA technologies initially depend on tools to 
-pre-process the raw data. Pre-processing specifically addresses raw data 
-inspection, steps to transform raw data in a compatible format for successive 
-analysis steps (e.g., smoothing, imputation of missing values), data reduction 
-(e.g., removal of invalid sets) and data quality management. The data quality of 
-experimental instruments is often not ready for end-user analysis and 
-presentation. However, during the early stages of the development it is 
-important to use as many raw data as possible. Pre-processing algorithms remove 
-stochastic errors and artefacts (e.g., noise, photo-bleaching effects, degassing 
-effects, different signal levels) illustrated in Figure~\ref{figure:problems}. 
-Misinterpretations are more likely if non or manual (``arbitrary'') corrections 
-are performed. A manual alteration is in contradiction to reproducible research. 
-The presence of noise may lead to false conclusions and performance estimation. 
-Noise is challenging because derivative processes as used for ``cycle of 
-quantification'' methods (e.g., Second Derivative Maximum method) lead to an 
-amplification of noise \cite{ruijter_2013, tellinghuisen_2014,roediger_RJ_2013, 
-larionov_2005, tuomi_2010}.
+Zhang_2010,mccall_2014,roediger_RJ_2013,gehlenborg_2013,huntley_2013,zhang_2013}
+. However, there is no \textbf{R} package for pre-processing and quality 
+analysis of amplification curve data. Novel developed qPCR and qIA technologies 
+initially depend on tools to pre-process the raw data. Pre-processing 
+specifically addresses raw data inspection, steps to transform raw data in a 
+compatible format for successive analysis steps (e.g., smoothing, imputation of 
+missing values), data reduction (e.g., removal of invalid sets) and data quality 
+management. The data quality of experimental instruments is often not ready for 
+end-user analysis and presentation. It is important to use as many raw data as 
+possible. Pre-processing algorithms remove stochastic errors and artefacts 
+(e.g., noise, photo-bleaching effects, degassing effects, different signal 
+levels) illustrated in Figure~\ref{figure:problems}. Misinterpretations are more 
+likely if non or manual (``arbitrary'') corrections are performed. A manual 
+alteration is in contradiction to reproducible research. 
 
 The $\emph{chipPCR}$ package ($\emph{chipPCR}$: ``Lab-on-a-\textbf{Chip}'' \& 
 \textbf{PCR}) was developed to automatize pre-processing, to ease data 
@@ -362,6 +348,13 @@ at users who have access to the raw data of commercial systems. This manuscript
 highlights pinnacles of the $\emph{chipPCR}$ package. Due to the vast 
 amount of information we refer the interested reader to the supplement for further 
 information and use case examples.
+
+Pre-processing is in most commercial cyclers an black box. This has limitations, 
+such as hard to reproduce analysis on other platforms, difficulties during the 
+adoption to changing experimental setups and limited sophisticated statistical 
+tools. Moreover, it is desirable set up workflows in an open environment, which 
+enables downstream analyses and which offers powerful tools for data 
+visualizations and automatic report generation.
 
 \section*{Implementation}
 
@@ -396,6 +389,9 @@ comparison to \emph{S3} classes. However, \emph{S4} provides better assurance
 that each object in a class has the required slots, that data in the slots have 
 consistent names and classes, and the possibility to include additional 
 information (e.g., results, parameters) \cite{Karatzoglou_2004}.
+
+Selected functionality is used in the $\emph{dpcR}$ 
+\cite{burdukiewicz_2014} and $\emph{RDML}$ \cite{blagodatskikh_2014} packages.
 
 Central functions of this package encompass: 
 
@@ -432,11 +428,12 @@ of our custom made plots simple, many parameters can be adjusted directly or by
 the ellipse parameter.
 
  $\emph{chipPCR}$ has no build-in functionality for data import or specialized 
-parsers since \textbf{R} has numerous tools and auxiliary packages for customized 
-parsers. Rather we have chose to rely entirely on \textbf{R} workspaces as 
-default data format and standard import and export as described elsewhere 
-\cite{RDCT2014c}. The results of $\emph{chipPCR}$ functions are usually S4 objects 
-accompanied with specifically tailored summary and plot methods.
+parsers since \textbf{R} has numerous tools and auxiliary packages for 
+customized parsers. Rather we have chose to rely on \textbf{R} workspaces, and 
+dedicated \textbf{R} packages as default data format and standard import and 
+export as described elsewhere \cite{perkins_2012, RDCT2014c, 
+blagodatskikh_2014}. The results of $\emph{chipPCR}$ functions are usually S4 
+objects accompanied with specifically tailored summary and plot methods.
 
 To spread the use among novice and less routinized users we believe that a 
 graphical user interface (GUI) is important. Currently there are several 
@@ -498,55 +495,6 @@ Section~\ref{sec:ccPCR}).
 \subsection*{Multiple comparison of the cycle dependent variance of the 
 amplification curves}
 
- \textsl{MFIaggr} is a powerful analytical and graphical tool for fast multiple 
-comparison of the cycle dependent signal dispersion and distribution. The 
-continuous response variable $y'$ is used to describe the relationships to one 
-or more continuous predictor variables $y_1, ..., y_n$. Use cases include the 
-comparison of independent reaction vessels or the analysis of replicate 
-experiments. The basic idea is to analyze only a region of interest (ROI) from a 
-data set. \textsl{MFIaggr} is a relative of the \textsl{MFIerror} function from 
-the \emph{MBmca} package. However, this functions enables a fine grained 
-analysis of specific parts of the curve data. The function returns an object of 
-the class list with the columns ``Cycle'', ``Location'' (Mean, Median), 
-``Deviation'' (Standard Deviation, Median Absolute Deviation) and ``Coefficient 
-of Variation''. Using the option $rob = TRUE$ the median and the median absolute 
-deviation (MAD) are calculated instead of the mean and standard deviation. 
-\textsl{MFIaggr} has parameter $llul$ to define the lower and upper data limit 
-(cycle) for a ROI. The results for the ROI can be invoke by $@stats$. The output 
-includes the mean, median, standard deviation (sd), median absolute deviation 
-(mad), inter quartile range (IQR), medcouple (robust measure of skewness), 
-skewness (Pearson's second skewness coefficient; 
-$skewness~=~3~(mean(x)~-~median(x))~/~sd(x)$), signal-to-noise ratio (SNR), 
-variance-to-mean ratio (VRM), number of missing values (NAs) and results from a 
-linear fit of the ROI (intercept, slope, r.squared). Moreover, we included 
-the Breusch-Pagan test to test for heteroskedasticity in a linear regression 
-model (see Section~S\ref{sec:MFIaggr}). In our example we analyzed the 
-raw fluorescence from 96 replicates of a 
-qPCR experiment for the human gene \textit{Vimentin}. The \textsl{MFIaggr} plot 
-shows that the first ten cycles (noise) follow a normal distribution 
-(Figure~\ref{figure:MFIaggr}). In contrast, the analysis of all cycles shows 
-expectedly a distribution, which significantly differs from a normal 
-distribution (Figure~\ref{figure:MFIaggr_all}). Setting the option $CV = FLASE$ 
-shows the relative standard deviation (RSD,~\%). Ideally the variance between 
-the amplification curves is low. Other results of 
-\textsl{MFIaggr} include the density analysis ($@density$), the quantile 
-($@qqnorm.data$), and the results of the linear regression ($@lm.roi$) from the 
-ROI. In particular, this function might be useful for quality management during 
-the development of high-throughput technologies. An analysis via a the 
-\emph{shiny} \textsl{MFIaggr.gui} app is shown in Figure~\ref{figure:MFIaggr2}.
-
-\begin{figure*}
-\begin{verbatim}
-par(las = 0, bty = "n", cex.axis = 1.2, cex.lab = 1.2, 
-    font = 2, cex.main = 1.2, oma = c(1,1,1,1))
-
-plot(MFIaggr(VIMCFX96_60[, 1], VIMCFX96_60[, 2:ncol(VIMCFX96_60)], 
-     llul = c(1,10)), CV = FALSE)
-
-plot(MFIaggr(VIMCFX96_60[, 1], VIMCFX96_60[, 2:ncol(VIMCFX96_60)], 
-     llul = c(1,40)), CV = FALSE)
-\end{verbatim}
-\end{figure*}
 
 
 
@@ -596,18 +544,11 @@ of elements. In case more than 30~\% of all values are NAs gives \textsl{fixNA}
 a warning.
 
 \subsection*{Smoothing and filtering}
-
-  Amplification curve data of experimental thermo-cyclers may deliver results, 
+Amplification curve data of experimental thermo-cyclers may deliver results, 
 which are hard to interpret due to noise. For data presentation it 
-is often useful to smooth or filter the data. Smoothing and filtering are 
-different approaches with a similar outcome. Both pre-process an input signal as 
-output for subsequent analysis steps. Filtering uses methods of signal 
-processing and takes a data input and apply a function to form an output. 
-Smoothing in contrast uses statistical approaches, like local 
-regression models (e.g., least squares estimate) or cubic splines. 
-Therefore we developed the \textsl{smoother} function, which is a wrapper for 
+is often useful to smooth or filter the data. Therefore we developed the \textsl{smoother} function, which is a wrapper for 
 smoother functions and filters commonly used to process amplification curve 
-data. \textsl{smoother} inherited traits (Table~\ref{table:tab1})  of the 
+data (supplement Section~\ref{sec:smoothing_filterring}). \textsl{smoother} inherited traits (supplement Table~\ref{table:tab1})  of the 
 parent functions. However, the functionality of \textsl{smoother} greatly 
 outgrowths applications only in amplification curve analysis. Incorporating most 
 of the best proven algorithms, we offer the user a powerful tool to access the 
@@ -616,21 +557,11 @@ methods while minimizing the drawback of learning syntax of specific functions.
 \textsl{CPP}. Figure~\ref{figure:smoother} shows results of the 
 \textsl{smoother} function an amplification curve data. Many functions (e.g., 
 Savitsky-Golay filter) of $\emph{chipPCR}$ assume uniform (equally spaced) 
-sampling. Therefore it is recommended to pre-process the data to have equally 
-spaced values. The function \textsl{smoother} and \textsl{CPP} (inherited from 
+sampling. The function \textsl{smoother} and \textsl{CPP} (inherited from 
 \textsl{smoother}) give a warning in such cases. The \textsl{smoother} function 
 enables users to tune behavior of the chosen smoothing algorithm by using nearly 
 all parameters available in called subroutines and at the same time uniforms 
-input and output. It should be noted that smoothing may alter the curve shape 
-and thus lead to artificial results. Smoothed data are easier to read 
-but introduce a bias to the pre-processed data. Therefore the prime 
-use of smoothers is processing data for visualization purposes. However, it is 
-not recommended to smooth signals unsupervised prior to statistical procedures 
-(e.g., least-squares curve fitting). All smoothing algorithms are ``lossy'' to a 
-certain extent and may change the curve shape significantly. In particular, the 
-residual evaluation of a fit may lead to false prediction, because noise after 
-smoothing may be mistaken for signal. Signals after curve smoothing can be used 
-to locate peaks but it should cautiously be used to measure peaks.
+input and output.
 
 \subsection*{Normalization of amplification curve data}
 
@@ -640,36 +571,15 @@ variances in dye quantities (Figure~\ref{figure:normalization}~\emph{A}).
 Therefore, normalization of amplification curve data is a common task during the 
 data analysis. To scale the fluorescence between 0 and 1 a \emph{Min-Max 
 normalization} (Equation~\ref{eq:normalization}) can be used 
-\cite{roediger_RJ_2013}. We propose an alternative normalization based on 
-quantiles (Equation~\ref{eq:quantile_normalization}). Quantiles are less 
-affected by outliers. The method can be invoked by the parameter $norm = 
-"luqn"$. Although this does not scale all values between zero and one we found 
-it to be useful for noisy data. The parameter $qnL$ is symmetrically used to set 
-the level for the quantiles. By default the 3~\% and 97~\% quantiles are used 
-for the normalization. In addition a normalization to maximum 
+\cite{roediger_RJ_2013}. In addition, we propose an alternative normalization based on 
+quantiles (Equation~\ref{eq:quantile_normalization}). We argue that quantiles are less 
+affected by outliers. In addition a normalization to maximum 
 (Equation~\ref{eq:max_normalization}, 
 Figure~\ref{figure:normalization}~\emph{D}) and by standard score 
 (Equation~\ref{eq:zscore_normalization}, 
 Figure~\ref{figure:normalization}~\emph{F}).
 
-\begin{equation} \label{eq:normalization}
-RFU_{minmax} = \frac{RFU - \min(RFU)}{\max(RFU) - \min(RFU)}
-\end{equation}
-
-\begin{equation} \label{eq:max_normalization}
-RFU_{max} = \frac{RFU}{\max(RFU)}
-\end{equation}
-
-\begin{equation} \label{eq:quantile_normalization}
-RFU_{luqn} = \frac{RFU - Q_{p}(RFU)}{Q_{1 - p}(RFU) - 
-Q_{p}(RFU)}
-\end{equation}
-
-\begin{equation} \label{eq:zscore_normalization}
-RFU_{zscore} = \frac{RFU - \bar{x}_{RFU}}{s_{RFU}}
-\end{equation}
-
-  The slope in a curve can be corrected by a linear regression. \textsl{CPP} 
+  The slope in a curve can be corrected by a linear regression. \textsl{lm.coefs} 
 offers four linear regression models to calculate the slope based on the 
 background range. This includes a ordinary least squares method (\textsl{lm}, 
 \emph{stats}) but also three robust methods. The robust regression methods are 
@@ -677,40 +587,24 @@ considered to be less vulnerable to outliers. This feature is especially useful,
 when the background range contains considerable noise. The methods are (I) a 
 nonparametric rank-based estimator \cite{Kloke_2012}, (II) quantile regression 
 \cite{Koenker_2008} and (III) a MM-type estimators for linear regression 
-\cite{Todorov_2009}. By default the MM-type estimator is used. In all cases 
-takes \textsl{CPP} a defined range of the amplification curve to extrapolate the 
-linear trend over the entire data set. However, this step his to be performed 
-with caution since this operation effects the amplification efficiency. The 
-background is assumed to be constant for the entire measurement. 
+\cite{Todorov_2009}. 
 
 \subsection*{Interpolation of derivatives}
- 
-  Many methods for curves analysis require the calculation of derivatives. It 
-is 
+  Many methods for curves analysis require the calculation of derivatives. It is 
 possible to solve this by fitting a curve to a function and performing symbolic 
-derivation. Unfortunately, this approach causes information loss through the 
-fit 
-and unnecessary adds additional assumptions regarding the relation between 
-cycle number and fluorescence level. Hence, we integrated the \textsl{inder} 
-function. \textsl{inder} (``in'' and ``der'' = interpolate derivatives) finds 
-numeric derivatives by a five-point stencil, a commonly used finite difference 
-method. These methods approximate derivative in a given point by adding up 
-products of nearby values of function and their weights~\cite{Dahlquist_2008}. 
-This function can be used to estimate the approximate cycle of quantification 
-(Cq). Differentiation is a method for background suppression and reduction of 
-the inter sample background amplitude variations 
-(Figure~\ref{figure:inder_fit}~A~and~B). Smoothing may enhance the calculation 
-of derivatives calculation and optimize the signal-to-noise ratio. Therefore, 
-we 
-implemented spline interpolation. Friedman's SuperSmoother is also implemented. 
-However, the use of this smoother is limited for the use in other functions 
-such 
-as \textsl{bg.max}. The parameter $Nip$ (default $Nip = 4$) is used to define 
-how often an interpolation takes place at n equidistant points within the first 
-and the last cycle. A high Nip may improve the precision. However, $Nip$ less 
-than 2 and higher than 20 are not meaningful for conventional qPCR with 30 to 
-50 
-cycles. In context of qIA, a higher $Nip$ might be appropriate.
+derivation. Unfortunately, this approach causes information loss through the fit 
+and unnecessary adds additional assumptions regarding the relation between cycle 
+number and fluorescence level. Hence, we integrated the \textsl{inder} function. 
+\textsl{inder} (``in'' and ``der'' = interpolate derivatives) finds numeric 
+derivatives by a five-point stencil, a commonly used finite difference method 
+(supplement Section~\ref{sec:inder}). These methods approximate derivative in a 
+given point by adding up products of nearby values of function and their 
+weights~\cite{Dahlquist_2008}. This function can be used to estimate the 
+approximate cycle of quantification (Cq). Differentiation is a method for 
+background suppression and reduction of the inter sample background amplitude 
+variations (Figure~\ref{figure:inder_fit}~A~and~B). Smoothing may enhance the 
+calculation of derivatives calculation and optimize the signal-to-noise ratio. 
+Therefore, we implemented spline interpolation.
 
 \subsection*{Estimating the start and the end of amplification process}
 
@@ -814,9 +708,7 @@ Part of this work was funded by the BMBF InnoProfile-Projekt 03 IPT 611X.
 Grateful thanks belong to all authors of the cited \textbf{R} packages, the 
 \textbf{R} community and \textbf{RKWard} developers. We would like to thank 
 Claudia Deutschmann (Brandenburg University of Technology Cottbus - Senftenberg, 
-Germany), Ralf Himmelreich (Fraunhofer ICT-IMM, Germany) and Katharina Klat 
-(Darmstadt University of Applied Sciences, Germany) for the contribution of 
-data.
+Germany) for the contribution of data.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                  The Bibliography                       %%
 %%                                                         %%
@@ -855,46 +747,6 @@ data.
 %%
 %% Do not use \listoffigures as most will included as separate files
 
-\section*{Figures}
-  \begin{figure*}[h]
-  \includegraphics[clip=true,trim=0cm 0cm 0cm 0cm,width=16cm]{problems}
-  \caption{\label{figure:problems}
-  \csentence{Analysis and interpretation of real-time amplification curves.} 
-Analysis and interpretation of real-time amplification curves. \emph{(A)} The 
-fluorescence values are plotted against the cycle. The amplification curvecd  
-has a sigmoidal shape 
-(\textcolor{black}{\textendash},~\textcolor{red}{\textendash}). Amplification 
-curve raw data are affected by many influences. This includes noise introduced 
-by the detection system and sensor errors. Measurements can occasionally contain 
-missing values (``NA'', \textcolor{red}{\textendash}) and outliers (orange 
-circle, \textcolor{black}{\textendash}). Outliers are often present in the first 
-cycle due to sensor adjustments. The signal difference between the background 
-phase (first cycles) and the plateau phase (last cycles) can be expressed as 
-signal-to-noise ratio (SNR). The SNR between different between samples (e.g., 
-\textcolor{black}{\textendash} and \textcolor{black}{\textendash}) can vary. For 
-interpretation it is better to compensate the differences. Negative samples 
-(\textcolor{blue}{\textendash}) need to be (automatically) identified. 
-\emph{(B)} pre-processed raw data. NAs were imputed and the noise slightly 
-removed. The curves were adjusted to have the same baseline and plateau level. 
-The quantification point (Cq) of the positive reactions are determined in the 
-exponential phase (``Threshold method'' is used in this example). Negative 
-sample are automatically set to zero.
-}
-      \end{figure*}
-
-\begin{figure*}[h]
-  \includegraphics[clip=true,trim=0cm 0cm 0cm 0cm,width=16cm]{browser}
-  \caption{\label{figure:browser}
-  \csentence{Locally running \emph{shiny} \textsl{AmpSim.gui} app.} 
-\emph{(Top)} 
-The plot of the \textsl{AmpSim.gui} is shown in a standard browser 
-(\textbf{Iceweasel}, v. 29.0.1) along with the parameters (left panel). The 
-code 
-(``server.R'', ``ui.R'') of the \emph{shiny} app is accessible too. All 
-parameters (e.g., Cq value, Baseline) of the \textsl{AmpSim} function are 
-accessible. \emph{(Bottom)} In addition shows \textsl{AmpSim.gui} the plot 
-output and the textual results of \textsl{bg.max}}
-      \end{figure*}
       
 \begin{figure*}[h]
   \includegraphics[clip=true,trim=0cm 0cm 0cm 0cm,width=16cm]{MFIaggr}
@@ -912,24 +764,7 @@ that the data of the background range are normal distributed. Note that both
 the 
 $median \pm mad$ and the $mean \pm sd$ have similar results. }
       \end{figure*}       
-
-\begin{figure*}[h]
-  \includegraphics[clip=true,trim=0cm 0cm 0cm 0cm,width=16cm]{smoother}
-  \caption{\label{figure:smoother}
-  \csentence{Smoother and filter methods of the $\emph{chipPCR}$ package.} 
-\emph{(A)} Raw data were generated using the \textsl{AmpSim} simulation 
-function. \emph{(B)} The difference of the raw data to the smoothed data was 
-plotted. ``savgol'' (Savitzky-Golay Smoothing), ``lowess'' (locally-weighted 
-polynomial regression), ``mova3'' (moving average with window size of 3), 
-``smooth'' (cubic smoothing spline), ``spline'' (Interpolating cubic spline), 
-``supsmu'' (Friedman's SuperSmoother), ``whit1'' (weighted Whittaker smoothing 
-with a finite difference penalty of order 1), ``whit2'' (weighted Whittaker 
-smoothing with a finite difference penalty of order 2). The ``savgol'', 
-``smooth'', ``spline'' ``whit1'' , and ``whit2'' nearly preserved the original 
-curve. The other functions resulted in alteration in the transition phases of 
-the amplification curve. Optimized time series smoother, like the Kalman 
-filter \cite{Tusell_2010}, are not yet integrated. }
-      \end{figure*}       
+  
      
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                               %%
@@ -939,45 +774,7 @@ filter \cite{Tusell_2010}, are not yet integrated. }
 
 %% Use of \listoftables is discouraged.
 % %%
-\section*{Tables}
-\begin{table*}[b]
-\caption{\label{table:tab1} \csentence{Smoothing and filter methods of the 
-$\emph{chipPCR}$ package}. The parameter $lowess$ for LOWESS smoother 
-(locally-weighted polynomial regression) can be tuned by the parameters $f$ and 
-$iter$. The parameter $mova$ for moving average can be tuned by the parameter 
-$movaww$. $movaww$ is the window size used for the moving average. The parameter 
-$savgol$ for Savitzky-Golay smoothing filter can be tuned by the parameter $p$ 
-(see \textsl{sgolayfilt} (\emph{signal}) for details). The parameter $smooth$ 
-for cubic spline smooth can be tuned by the parameter $df.fact$. A $df.fact$ 
-value of 1 will leave the raw data almost unaffected while a value 0.5 will 
-smooth the curve considerably. The parameter $spline$ for standard cubic spline 
-smooth has currently no additional parameter. The parameter $supsmu$ for 
-Friedman's SuperSmoother can be tuned by the parameter \textsl{span}. The 
-parameter $whit1$ (first order finite difference penalty) and $whit2$ (second 
-order finite difference penalty) for Weighted Whittaker smoother smoothing 
-filter, derived from the \emph{ptw} package, can be tuned by the parameter 
-$lambda$. For further details on the smoothers refer to the documentation of the 
-parent functions.
-}
-\begin{tabular}{lccc}
-  \hline
-  Method & Parameter & value & Parent\\ \hline
-  LOWESS & $lowess$ & \textit{f} & \textsl{lowess}, \emph{stats} \\
-  Cubic spline & $smooth$ & \textit{df.fact} & \textsl{smooth.spline}, 
-\emph{stats} \\
-  Interpolating Splines & $spline$ & - & \textsl{spline}, \emph{stats} \\
-  Friedman's ``super smoother'' & $supsmu$ & \textit{span} & \textsl{supsmu}, 
-\emph{stats}\\
-  Savitsky-Golay & $savgol$ & - & \textsl{sgolayfilt}, \emph{signal} \\
-  Moving Average & $mova$ & \textit{movaww} (3, 5, ...) & \textsl{filter}, 
-\emph{stats} \\
-  Whittaker & $whit1$, $whit2$ & \textit{lambda} & \textsl{whit1}, 
-\textsl{whit2},
-\emph{ptw}  \\
-  All smoother & $all$ & defaults &
-  \\ \hline
-\end{tabular}
-\end{table*}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                               %%
