@@ -3,6 +3,17 @@ setwd("/tmp")
 require(chipPCR)
 require(qpcR)
 
+
+pdf(file = "MFIaggr_oxf.pdf", width = 12, height = 6)
+# 
+par(las = 0, bty = "n", cex.axis = 1.2, cex.lab = 1.2, 
+    font = 2, cex.main = 1.2, oma = c(0.2,0.2,0.2,0.2))
+
+plot(MFIaggr(reps384[, 1], reps384[, 2:ncol(reps384)], 
+     llul = c(1,14)), CV = FALSE)
+
+dev.off()
+
 # Figures for chipPCR, The R Journal
 
 ###########################################################################
@@ -36,10 +47,10 @@ res.neg <- AmpSim(cyc = 1:40, b.eff = -0.1, bl = 0.05, ampl = 0.4, Cq = 1,
 		      
 res.pos.CPP <- cbind(1:40, CPP(res.pos[, 1], res.pos[, 2], 
 		     bg.outliers = TRUE, smoother = TRUE, method = "smooth", 
-		      method.norm = "minmax", method.reg = "lmrob")$y)
+		      method.norm = "minm", method.reg = "lmrob")$y)
 		      
 res.low.NA <- cbind(1:40, CPP(res.low[, 1], res.low[, 2], smoother = TRUE, 
-		    method = "smooth", bg.outliers = TRUE, method.norm = "minmax", 
+		    method = "smooth", bg.outliers = TRUE, method.norm = "minm", 
 		    method.reg = "lmrob")$y)
 		      
 res.neg.exc <- cbind(1:40, amptester(res.neg[, 2]))
@@ -770,12 +781,12 @@ plot(NA, NA, xlim = c(1,40), ylim = c(0, 1.15), xlab = "Cycle",
      ylab = "RFU", main = "MinMax-Normalization")
 mtext("C", cex = 2, side = 3, adj = 0, font = 2) 
 apply(tmp[, -1], 2, function(x) lines(tmp[, 1], CPP(tmp[, 1], x, 
-	method.norm = "minmax")$y))
+	method.norm = "minm")$y))
 	
 plot(NA, NA, xlim = c(1,40), ylim = c(0, 1.15), xlab = "Cycle", 
      ylab = "RFU", main = "Max-Normalization")
 mtext("D", cex = 2, side = 3, adj = 0, font = 2) 
-apply(tmp[, -1], 2, function(x) lines(tmp[, 1], CPP(tmp[, 1], x,, 
+apply(tmp[, -1], 2, function(x) lines(tmp[, 1], CPP(tmp[, 1], x, 
 	method.norm = "max")$y))
      
 plot(NA, NA, xlim = c(1,40), ylim = c(0, 1.15), xlab = "Cycle", 
