@@ -36,8 +36,8 @@ tool for precise control of raw data is indispensable.
 $\emph{chipPCR}$ is an \textbf{R} package for pre-processing and quality 
 analysis of amplification curve data. The package takes advantage of 
 \textbf{R}'s \emph{S4} object model and offers an extensible environment. 
-It contains tools for the raw data exploration: functions to normalize, baseline, 
-impute missing values, smooth amplification curves and a detect the start and end 
+It contains tools for the raw data exploration: normalization, baselining, 
+imputation of missing values, smoothing amplification curves and detecting the start and end 
 of an amplification curve. Capabilities of software are enhanced by implementation
 of algorithms yet not present in \textbf{R}, as a 5-point stencil
 for derivative interpolation. Simulation  tools, statistical tests, plots for data quality management, amplification efficiency/quantification cycle 
@@ -47,7 +47,7 @@ GUI's (web-based and standalone \emph{shiny} applications) and for report
 generation.
 
 \section{Availability:}
-Stabel: http://cran.r-project.org/web/packages/chipPCR
+Stable: http://cran.r-project.org/web/packages/chipPCR
 Source code: https://github.com/michbur/chipPCR
 
 \section{Contact:} \href{stefan.roediger@hs-lausitz.de}{stefan.roediger@hs-lausitz.de}
@@ -87,7 +87,7 @@ inspection, raw data transformation in a format for successive analysis steps
 and data quality management. Misinterpretations are more likely if ``arbitrary'' 
 corrections are performed. A manual alteration is in contradiction to 
 reproducible research. The $\emph{chipPCR}$ package (``Lab-on-a-\textbf{Chip}'' 
-\& \textbf{PCR}) was developed to fill this gab and to automatize 
+\& \textbf{PCR}) was developed to fill this gap and to automatize 
 pre-processing, data analysis/visualization and to offer a quality control for 
 the statistical data analysis of qPCR and qIA experiments. \textbf{R} is very 
 powerful to reproduce analysis on different platforms, to adopt to changing 
@@ -108,7 +108,7 @@ but focusses on pre-processing of amplification curves. The package contains
 pre-processor functions (smoothing, imputation, background correction, 
 normalization), a function for single-blinded randomized rating, quality 
 analysis summary functions, a function to calculate the amplification 
-efficiency, and functions for amplification curve simulation, and report 
+efficiency, functions for amplification curve simulation and report 
 generation (Suppl. Sect.~\ref{sec:functions}). The supplemental material 
 (packages vignette), uses Donald Knuth's literate programming 
 principle~\citep{Knuth1984} to present the source code in a convenient way. 
@@ -116,7 +116,7 @@ $\emph{chipPCR}$'s naming convention is \textit{period.separated}
 \citep{Baaaath_2012}. We use \textbf{R}'s object model \emph{S4} class system 
 (see \emph{methods} package) to separate between interface and implementation. 
 It requires a higher effort than \emph{S3} classes, but assures better control 
-on the object structure and the method dispatch. As a perquisite for 
+on the object structure and the method dispatch. As a prequisite for 
 high-throughput technologies, we avoided loops in the core structures and left 
 options for partially parallel computing usage (\textsl{smoother} function) to 
 keep the code fast. $\emph{chipPCR}$ includes a set of classes for plotting. The 
@@ -151,15 +151,15 @@ dependent amplification (HDA)) (Suppl. Sect.~\ref{sec:XX}).
 comparison of the cycle dependent signal dispersion and distribution 
 (Fig.~\ref{fig:01}). The continuous response variable $y'_i$ is used to 
 describe the relationships to one or more continuous predictor variables $y_1, 
-..., y_n$. Use cases include the comparison of independent reaction vessels or 
+\dots, y_n$. Use cases include the comparison of independent reaction vessels or 
 the analysis of replicate experiments (Suppl. Sect.~\ref{sec:MFIaggr}). In 
 particular, this function might be useful for quality management during the 
-development of high-throughput technologies. An analysis via a the \emph{shiny} 
+development of high-throughput technologies. An analysis via the \emph{shiny} 
 \textsl{MFIaggr.gui} app is shown in Fig.~\ref{figure:MFIaggr2}.
 
 \begin{figure}[!tpb]%figure1
 \centerline{\includegraphics{fig01.jpg}}
-\caption{Amplification curve analysis of 379 replicates. Cycles 1 to 14 was 
+\caption{Amplification curve analysis of 379 replicates. Cycles 1 to 14 were 
 selected as region of interest (ROI) for \textsl{MFIaggr} to analyzes the 
 cycle-dependent variance (left panel) and gives a density plot (right upper 
 panel) and quantile-quantile analysis (right lower panel). The plots indicates 
