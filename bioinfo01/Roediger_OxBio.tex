@@ -68,7 +68,7 @@ the amplification efficiency (AE)
 \citep{roediger_highly_2013,rodiger_nucleic_2014,pabinger_2014}. Fundamental 
 steps of amplification curve analysis are: (1) raw data read-in, (2) 
 pre-processing (e.g., noise reduction), (3) amplification curve processing 
-(e.g., Cq calculation), (4) post-processing and quantification, (5) data 
+(e.g., Cq calculation), (4) post-processing, (5) data 
 export/report generation. \textbf{R} belongs to the most used bioinformatic	
 s tools and is a rapid adopter for various technologies like digital PCR, 
 NanoString nCounter Platform, and qPCR \citep{waggott_2012,pabinger_2014}. Most 
@@ -81,7 +81,7 @@ of amplification curve data. Pre-processing is in most commercial cyclers a
 ``black box'', which sets severe limits to reproducible research 
 \citep{Leeper_2014}. Developmental qPCR and qIA technologies depend on tools to 
 pre-process the raw data. Pre-processing algorithms remove stochastic errors and 
-artefacts (Fig.~\ref{figure:problems}). Pre-processing addresses raw data 
+artefacts (Suppl. Sect.~2). Pre-processing addresses raw data % (Fig.~\ref{figure:problems})
 inspection, raw data transformation in a format for successive analysis steps 
 (e.g., smoothing, imputation), data reduction (e.g., removal of invalid sets) 
 and data quality management. Misinterpretations are more likely if ``arbitrary'' 
@@ -109,14 +109,14 @@ pre-processor functions (smoothing, imputation, background correction,
 normalization), a function for single-blinded randomized rating, quality 
 analysis summary functions, a function to calculate the amplification 
 efficiency, functions for amplification curve simulation and report 
-generation (Suppl. Sect.~\ref{sec:functions}). The supplemental material 
+generation (Suppl. Sect.~3). The supplemental material % Suppl. Sect.~\ref{sec:functions}
 (packages vignette), uses Donald Knuth's literate programming 
 principle~\citep{Knuth1984} to present the source code in a convenient way. 
 $\emph{chipPCR}$'s naming convention is \textit{period.separated} 
 \citep{Baaaath_2012}. We use \textbf{R}'s object model \emph{S4} class system 
 (see \emph{methods} package) to separate between interface and implementation. 
 It requires a higher effort than \emph{S3} classes, but assures better control 
-on the object structure and the method dispatch. As a prequisite for 
+on the object structure and the method dispatch. As a perquisite for 
 high-throughput technologies, we avoided loops in the core structures and left 
 options for partially parallel computing usage (\textsl{smoother} function) to 
 keep the code fast. $\emph{chipPCR}$ includes a set of classes for plotting. The 
@@ -129,7 +129,7 @@ GUI-technologies available in \textbf{R} \citep{rodiger_rkward_2012,
 shiny_2014}. Some of them are available as the web-based services. It is 
 possible to run the GUI-applications as service on a server without installing 
 \textbf{R} (e.g., http://michbur.shinyapps.io/MFIaggr\_gui/), on the local 
-desktop (e.g., Fig.~\ref{figure:browser}), or as deployed from an external 
+desktop (e.g., Fig.~S2, S6), or as deployed from an external % Fig.~\ref{figure:browser}
 source for a local \textbf{R} installation. The functions \textsl{AmpSim}, 
 \textsl{th.cyc}, \textsl{bg.max} and \textsl{amptester} are part of online GUIs. 
 We hope to build monolithic systems to parse, pre-process and analyze 
@@ -137,24 +137,25 @@ amplification curve data in a combined work-flow.
 
 We have chosen not to rely on specialized parser but use native \textbf{R} 
 workspaces, and dedicated \textbf{R} packages as default data format for import 
-and export as described elsewhere \shortcites{perkins_2012, RCT_2013}. 
+and export as described elsewhere \citep{perkins_2012, RCT_2013}. 
 $\emph{chipPCR}$ presents \emph{S4} objects with tailored summary and plot 
 methods. Data sets are an essential element of reproducible research 
 \citep{Leeper_2014}. Our package contains 22 data sets from commercial and 
 experimental cyclers along with the experimental settings (e.g., helicase 
-dependent amplification (HDA)) (Suppl. Sect.~\ref{sec:XX}).
+dependent amplification (HDA)) (Suppl. Sect.~10). % Suppl. Sect.~\ref{sec:XX}
 \end{methods}
 
 \section{Example: quality analysis}
 
 \textsl{MFIaggr} is a powerful analytical and graphical tool for fast multiple 
 comparison of the cycle dependent signal dispersion and distribution 
-(Fig.~\ref{fig:01}). The continuous response variable $y$ is used to 
-describe the relationships to $n$ continuous predictor variables $x_i$, where $i \in \{1, ..., n\}$. Use cases include the comparison of independent reaction vessels or 
-the analysis of replicate experiments (Suppl. Sect.~\ref{sec:MFIaggr}). In 
+(Fig.~\ref{fig:01}). The continuous response variable $y$ is used to describe 
+the relationships to $n$ continuous predictor variables $x_i$, where $i \in \{1, 
+..., n\}$. Use cases include the comparison of independent reaction vessels or 
+the analysis of replicate experiments (Suppl. Sect.~6). In % Suppl. Sect.~\ref{sec:MFIaggr}
 particular, this function might be useful for quality management during the 
 development of high-throughput technologies. An analysis via the \emph{shiny} 
-\textsl{MFIaggr.gui} app is shown in Fig.~\ref{figure:MFIaggr2}.
+\textsl{MFIaggr.gui} app is shown in Fig.~S6. % Fig.~\ref{figure:MFIaggr2}
 
 \begin{figure}[!tpb]%figure1
 \centerline{\includegraphics{fig01.jpg}}
