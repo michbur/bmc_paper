@@ -27,7 +27,7 @@ Wroc\l{}aw, Wroc\l{}aw, Poland}
 The quantitative real-time polymerase chain reaction (qPCR) and quantitative 
 isothermal amplification (qIA) are standard methods for quantification of 
 nucleic acids. Numerous real-time read-out technologies with different technical 
-foundation have been developed. Despite the continuous interest in amplification 
+foundations have been developed. Despite the continuous interest in amplification 
 based techniques, there are only few tools for amplification data 
 pre-processing. Especially, during development of new instruments a transparent 
 tool for precise control of raw data is indispensable.
@@ -37,14 +37,13 @@ $\emph{chipPCR}$ is an \textbf{R} package for pre-processing and quality
 analysis of amplification curve data. The package takes advantage of 
 \textbf{R}'s \emph{S4} object model and offers an extensible environment. 
 It contains tools for the raw data exploration: normalization, baselining, 
-imputation of missing values, smoothing amplification curves and detecting the start and end 
-of an amplification curve. Capabilities of software are enhanced by implementation
-of algorithms yet not present in \textbf{R}, as a 5-point stencil
-for derivative interpolation. Simulation  tools, statistical tests, plots for data quality management, amplification efficiency/quantification cycle 
+imputation of missing values, smoothing amplification curves and detecting the start 
+and end of an amplification curve. Capabilities of the software are enhanced by 
+implementation of algorithms yet not present in \textbf{R}, as a 5-point stencil
+for derivative interpolation. Simulation tools, statistical tests, plots for data quality management, amplification efficiency/quantification cycle 
 calculation, and 22 data sets from various qPCR and qIA experiments are also part of 
 the package. The core functionalities of $\emph{chipPCR}$ are integrated in
-GUI's (web-based and standalone \emph{shiny} applications) and for report 
-generation.
+GUI's (web-based and standalone \emph{shiny} applications) streamlining analysis and report generation.
 
 \section{Availability:}
 Stable: http://cran.r-project.org/web/packages/chipPCR
@@ -65,7 +64,7 @@ VideoScan technology, microfluidic systems, point-of-care devices, and qPCR
 cyclers. Real-time technologies enable the quantification of nucleic acids by 
 calculation of specific curve parameters like the quantification point (Cq) and 
 the amplification efficiency (AE) 
-\citep{roediger_highly_2013,rodiger_nucleic_2014,pabinger_2014}. Fundamental 
+\citep{roediger_highly_2013,rodiger_nucleic_2014,pabinger_2014}. The fundamental 
 steps of amplification curve analysis are: (1) raw data read-in, (2) 
 pre-processing (e.g., noise reduction), (3) amplification curve processing 
 (e.g., Cq calculation), (4) post-processing, (5) data 
@@ -89,9 +88,8 @@ corrections are performed. A manual alteration is in contradiction to
 reproducible research. The $\emph{chipPCR}$ package (``Lab-on-a-\textbf{Chip}'' 
 \& \textbf{PCR}) was developed to fill this gap and to automatize 
 pre-processing, data analysis/visualization and to offer a quality control for 
-the statistical data analysis of qPCR and qIA experiments. \textbf{R} is very 
-powerful to reproduce analysis on different platforms, to adopt to changing 
-experimental setups and offers sophisticated statistical tools. Moreover, it is 
+the statistical data analysis of qPCR and qIA experiments. \textbf{R} offers 
+sophisticated statistical tools and allows reproducing analysis on different platforms as well as adopting to changing experimental setups. Moreover, it is 
 desirable to set up workflows in an open environment, which enables downstream 
 analyses and which offers powerful tools for data visualizations and automatic 
 report generation. The target audience encompasses developers and users who 
@@ -147,10 +145,9 @@ dependent amplification (HDA)) (Suppl. Sect.~10). % Suppl. Sect.~\ref{sec:XX}
 
 \section{Example: quality analysis}
 
-\textsl{MFIaggr} is a powerful analytical and graphical tool for fast multiple 
+\textsl{MFIaggr} is a versatile analytical and graphical tool for fast multiple 
 comparison of the cycle dependent signal dispersion and distribution 
-(Fig.~\ref{fig:01}). The continuous response variable $y$ is used to describe 
-the relationships to $n$ continuous predictor variables $x_i$, where $i \in \{1, 
+(Fig.~\ref{fig:01}). The continuous explanatory variable $x$ (cycle number) is used to describe its relationships to $n$ continuous predictor variables $y_i$ (fluorescence values), where $i \in \{1, 
 ..., n\}$. Use cases include the comparison of independent reaction vessels or 
 the analysis of replicate experiments (Suppl. Sect.~6). In % Suppl. Sect.~\ref{sec:MFIaggr}
 particular, this function might be useful for quality management during the 
