@@ -79,16 +79,14 @@ available \citep{pabinger_2014,perkins_2012,mccall_2014,gehlenborg_2013}.
 However, there is no 
 \textbf{R} package for pre-processing and quality analysis of amplification 
 curve data. Pre-processing is in most commercial cyclers a ``black box'', which 
-sets serve limits to reproducible research \citep{Leeper_2014}. Developmental qPCR and qIA 
+sets severe limits to reproducible research \citep{Leeper_2014}. Developmental qPCR and qIA 
 technologies depend on tools to pre-process the raw data. Pre-processing 
 algorithms remove stochastic errors and artefacts 
 (Fig.~\ref{figure:problems}). Pre-processing addresses raw data inspection, 
 raw data transformation in a format for successive analysis steps (e.g., 
 smoothing, imputation), data reduction (e.g., removal of invalid sets) and data 
-quality management. The data quality of experimental instruments is often not 
-ready for end-user analysis but it is important to use as many raw data as 
-possible. Misinterpretations are more likely if ``arbitrary'' corrections are 
-performed. A manual alteration is in contradiction to reproducible research. The 
+quality management. Misinterpretations are more likely if ``arbitrary'' corrections
+are performed. A manual alteration is in contradiction to reproducible research. The 
 $\emph{chipPCR}$ package (``Lab-on-a-\textbf{Chip}'' \& \textbf{PCR}) was 
 developed to fill this gab and to automatize pre-processing, data analysis/visualization and to offer 
 a quality control for the statistical data analysis of qPCR and qIA experiments. 
@@ -112,43 +110,27 @@ principle~\citep{Knuth1984} to present the source code in a convenient way.
 $\emph{chipPCR}$'s naming convention is \textit{period.separated} 
 \citep{Baaaath_2012}. We use \textbf{R}'s object model \emph{S4} class system 
 (see \emph{methods} package) to separate between interface and implementation. 
-Other than in \textbf{R}'s \emph{S3} class system, needs \emph{S4} to declare 
-classes, slots, methods relationships explicitly and to establish formal 
-declarations of methods. Therefore, the number and types of slots in an instance 
-of a class have to be established at the time the class definition and the 
-objects from the class are validated against this definition and have to comply 
-to it at any time. \emph{S4} methods are declared by calls to \textsl{setMethod} 
-together with the names and signatures of the arguments. Signatures are used for 
-identification of classes of one or more arguments of the methods. 
-\textsl{setGeneric} can be used to declare generic functions. \emph{S4} classes 
-require a higher effort than \emph{S3} classes, but assures strictly objects in 
-a class have the required slots, that data in the slots have consistent names 
-and classes, and enable to include additional information (e.g., results, 
-parameters). As perquisite for high-throughput technologies we avoided loops in 
-the core structures and use partially parallel computing (\textsl{smoother} 
-function) to keep the code fast. $\emph{chipPCR}$ includes a set of classes for 
+It requires a higher effort than \emph{S3} classes, but assures better control 
+on the object structure and the method dispatch. As a prequisite for high-throughput
+technologies we avoided loops in the core structures and left options for partially
+parallel computing usage (\textsl{smoother} function) to keep the code fast.
+$\emph{chipPCR}$ includes a set of classes for 
 plotting. The output of our custom made plots is minimalistic, but many 
 parameters can be adjusted directly or by the ellipse parameter.
 
-Graphical user interface (GUI) are important to spread software. \textbf{R} 
-offers several GUI projects to chose from \citep{rodiger_rkward_2012}. Recently, 
-the \emph{shiny} \citep{shiny_2014} framework to build and deploy GUI's for the 
-desktop (web browser) or services for interactive web applications emerged. 
-\emph{shiny} enables to build plugin-like applications with highly customizable 
-widgets (e.g., sliders, plots, reports) for a efficient extension. \emph{shiny} 
-applications update live and interactively. The user interfaces can be built 
-entirely using \textbf{R} and operates in any \textbf{R} environment (cross-platform). Currently, 
-the functions \textsl{AmpSim}, \textsl{th.cyc}, \textsl{bg.max} and 
-\textsl{amptester} are part of \emph{shiny} GUIs. It is possible to run the 
-applications as service on a server (e.g., 
+Our goal is to make our software avaible also for researchers not
+fluent in \textbf{R}. We implemented core functionality of our package in various
+GUI-technologies avaible in \textbf{R} \citep{rodiger_rkward_2012, shiny_2014}. 
+Some of them are avaible as the web-based services. It is possible to run the 
+GUI-applications as service on a server without installing \textbf{R} (e.g., 
 http://michbur.shinyapps.io/MFIaggr\_gui/), on the local desktop (e.g., 
 Fig.~\ref{figure:browser}), or as deployed from an external source for a local 
-\textbf{R} installation. For further details refer to  (Suppl. 
-Section~\ref{sec:AmpSim}). \emph{shiny} in combination with \textbf{R} is a 
-foundation to build monolithic systems to parse, pre-process and analyze 
-amplification curve data in a combined work-flow. Some functionality of 
-$\emph{chipPCR}$ is used in experimental plugins 
+\textbf{R} installation. The functions \textsl{AmpSim}, \textsl{th.cyc}, 
+\textsl{bg.max} and \textsl{amptester} are part of online GUIs.  Some 
+functionality of $\emph{chipPCR}$ is used in experimental plugins 
 for the \textbf{RKWard} GUI \citep{pabinger_2014}. 
+We hope to build monolithic systems to parse, pre-process and analyze 
+amplification curve data in a combined work-flow. 
 
 We have chosen not to rely on specialized parser but use native \textbf{R} 
 workspaces, and dedicated \textbf{R} packages as default data format for import 
@@ -194,11 +176,11 @@ showed that $\emph{chipPCR}$ is build from smaller blocks and show how users can
 do estimation of background by hand, solely by \textsl{inder}, \textsl{smoother} 
 (\textsl{smoother} will be a method of smoothing in \textsl{inder}) and by 
 putting data in \textsl{bg} object with \textsl{summary-der} for $SDm$ and 
-$SDM$. It should be quite easy even for an inexperienced user. We claim that the 
-modular structure of $\emph{chipPCR}$ package allows user to perform flexible 
-data analysis adjusted to their needs. A limitation of all \textbf{R} packages 
-related to qPCR and qIA is the lack of a comprehensive GUI, which we filled with
-our \emph{shiny} GUI approach.
+$SDM$. We claim that the modular structure of $\emph{chipPCR}$ package allows user 
+to perform flexible data analysis adjusted to their needs.
+Thanks to the GUI it should be easy even for an users without any \textbf{R} 
+experience ommiting the biggest limitation of all \textbf{R} packages 
+related to qPCR and qIA.
 
 
 \section*{Acknowledgement}
