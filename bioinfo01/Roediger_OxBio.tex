@@ -9,7 +9,7 @@
 \firstpage{1}
 
 \title[chipPCR]{chipPCR: an R Package to Pre-Process Amplification Curve Data}
-\author[R\"odiger \textit{et~al.}]{Stefan R\"odiger\,$^{1}$\footnote{to whom correspondence should be addressed}, Micha\l{} Burdukiewicz\,$^{2}$ and PeterSchierack\,$^1$}
+\author[R\"odiger \textit{et~al.}]{Stefan R\"odiger\,$^{1}$\footnote{to whom correspondence should be addressed}, Micha\l{} Burdukiewicz\,$^{2}$ and Peter Schierack\,$^1$}
 \address{$^{1}$Faculty of Natural Sciences, Brandenburg University of Technology 
 Cottbus--Senftenberg, Senftenberg, Germany\\
 $^{2}$Department of Genomics, Faculty of Biotechnology, University of 
@@ -36,13 +36,13 @@ tool for precise control of raw data is indispensable.
 $\emph{chipPCR}$ is an \textbf{R} package for pre-processing and quality 
 analysis of amplification curve data. The package takes advantage of 
 \textbf{R}'s \emph{S4} object model and offers an extensible environment. 
-Functions to simulate, normalize, baseline, impute missing values, to smooth 
-amplification curves and a function to to detect the start and end of an 
-amplification curve are part of the software. We implemented a 5-point stencil 
-for derivative interpolation, which is unique in \textbf{R}. Statistical tests, 
-plots for data quality management, amplification efficiency/quantification cycle 
-calculation, and 22 data sets from various qPCR and qIA experiments are part of 
-the package. The structure of $\emph{chipPCR}$ was designed for integration as 
+It contains tools for the raw data exploration: functions to normalize, baseline, 
+impute missing values, smooth amplification curves and a detect the start and end 
+of an amplification curve. Capabilities of software are enhanced by implementation
+of algorithms yet not present in \textbf{R}, as a 5-point stencil
+for derivative interpolation. Simulation  tools, statistical tests, plots for data quality management, amplification efficiency/quantification cycle 
+calculation, and 22 data sets from various qPCR and qIA experiments are also part of 
+the package. The core functionalities of $\emph{chipPCR}$ are integrated in
 GUI's (web-based and standalone \emph{shiny} applications) and for report 
 generation.
 
