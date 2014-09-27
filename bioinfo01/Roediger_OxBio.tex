@@ -36,7 +36,7 @@ tool for precise control of raw data is indispensable.
 $\emph{chipPCR}$ is an \textbf{R} package for pre-processing and quality 
 analysis of amplification curve data. The package takes advantage of 
 \textbf{R}'s \emph{S4} object model and offers an extensible environment. 
-It contains tools for the raw data exploration: normalization, baselining, 
+The package contains tools for the raw data exploration: normalization, baselining, 
 imputation of missing values, smoothing amplification curves and detecting the start 
 and end of an amplification curve. Capabilities of the software are enhanced by 
 implementation of algorithms yet not present in \textbf{R}, as a 5-point stencil
@@ -54,7 +54,6 @@ Source code: https://github.com/michbur/chipPCR
 \section{Supplementary:} Supplementary data are available at Bioinformatics online.
 \end{abstract}
 
-
 \section{Introduction}
 
 Quantitative polymerase chain reaction (qPCR) and quantitative isothermal 
@@ -69,12 +68,13 @@ steps of amplification curve analysis are: (1) raw data read-in, (2)
 pre-processing (e.g., noise reduction), (3) amplification curve processing 
 (e.g., Cq calculation), (4) post-processing, (5) data 
 export/report generation. \textbf{R} belongs to the most used bioinformatic	
-s tools and is a rapid adopter for various technologies like digital PCR, 
+tools and is a rapid adopter for various technologies like digital PCR, 
 NanoString nCounter Platform, and qPCR \citep{waggott_2012,pabinger_2014}. Most 
 qPCR \textbf{R} packages focus on the read-in and (post)-processing of data from 
-commercial qPCR systems. \textbf{R} packages for the steps 1. and 3.--5. are 
-available \citep{pabinger_2014,perkins_2012,mccall_2014,gehlenborg_2013}.
+commercial qPCR systems.
 
+\textbf{R} packages for the steps 1. and 3.--5. are 
+available \citep{pabinger_2014,perkins_2012,mccall_2014,gehlenborg_2013}.
 However, there is no \textbf{R} package for pre-processing and quality analysis 
 of amplification curve data. Pre-processing is in most commercial cyclers a 
 ``black box'', which sets severe limits to reproducible research 
@@ -86,12 +86,13 @@ inspection, raw data transformation in a format for successive analysis steps
 and data quality management. Misinterpretations are more likely if ``arbitrary'' 
 corrections are performed. A manual alteration is in contradiction to 
 reproducible research. The $\emph{chipPCR}$ package (``Lab-on-a-\textbf{Chip}'' 
-\& \textbf{PCR}) was developed to fill this gap and to automatize 
+\& \textbf{PCR}) was developed to fill this gap by automatize 
 pre-processing, data analysis/visualization and to offer a quality control for 
 the statistical data analysis of qPCR and qIA experiments. \textbf{R} offers 
-sophisticated statistical tools and allows reproducing analysis on different platforms as well as adopting to changing experimental setups. Moreover, it is 
-desirable to set up workflows in an open environment, which enables downstream 
-analyses and which offers powerful tools for data visualizations and automatic 
+sophisticated statistical tools and allows reproducing analysis on different 
+platforms as well as adopting to changing experimental setups. Moreover, it is 
+desirable to set up workflows in an open environment, which offers GUIs, downstream 
+analyses facilities, powerful tools for data visualizations and automatic 
 report generation. The target audience encompasses developers and users who 
 process raw data of commercial systems.
 
@@ -122,7 +123,7 @@ output of our custom made plots is minimalistic, but many parameters can be
 adjusted directly or by the ellipse parameter.
 
 Our goal is to make our software available also for researchers not fluent in 
-\textbf{R}. We implemented core functionality of our package in various 
+\textbf{R}. Therefore, we implemented core functionality of our package in selected 
 GUI-technologies available in \textbf{R} \citep{rodiger_rkward_2012, 
 shiny_2014}. Some of them are available as the web-based services. It is 
 possible to run the GUI-applications as service on a server without installing 
