@@ -4,7 +4,8 @@ require(chipPCR)
 require(qpcR)
 
 
-pdf(file = "MFIaggr_oxf.pdf", width = 12, height = 6)
+#pdf(file = "MFIaggr_oxf.pdf", width = 12, height = 6)
+pdf(file = "MFIaggr_oxf.pdf", width = 3.52, height = 1.76)
 # 
 par(las = 0, bty = "n", cex.axis = 1.2, cex.lab = 1.2, 
     font = 2, cex.main = 1.2, oma = c(0.2,0.2,0.2,0.2))

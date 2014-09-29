@@ -25,7 +25,7 @@ Wroc\l{}aw, Wroc\l{}aw, Poland}
 
 \section{Motivation:}
 The quantitative real-time polymerase chain reaction (qPCR) and quantitative 
-isothermal amplification (qIA) are standard methods for quantification of 
+isothermal amplification (qIA) are standard methods for the quantification of 
 nucleic acids. Numerous real-time read-out technologies with different technical 
 foundations have been developed. Despite the continuous interest in amplification 
 based techniques, there are only few tools for amplification data 
@@ -36,8 +36,8 @@ tool for precise control of raw data is indispensable.
 $\emph{chipPCR}$ is an \textbf{R} package for pre-processing and quality 
 analysis of amplification curve data. The package takes advantage of 
 \textbf{R}'s \emph{S4} object model and offers an extensible environment. 
-The package contains tools for the raw data exploration: normalization, baselining, 
-imputation of missing values, smoothing amplification curves and detecting the start 
+$\emph{chipPCR}$ contains tools for the raw data exploration: normalization, baselining, 
+imputation of missing values, a powerful wrapper for the amplification curve smoother and a function to detect the start 
 and end of an amplification curve. Capabilities of the software are enhanced by 
 implementation of algorithms yet not present in \textbf{R}, as a 5-point stencil
 for derivative interpolation. Simulation tools, statistical tests, plots for data quality management, amplification efficiency/quantification cycle 
@@ -63,7 +63,7 @@ VideoScan technology, microfluidic systems, point-of-care devices, and qPCR
 cyclers. Real-time technologies enable the quantification of nucleic acids by 
 calculation of specific curve parameters like the quantification point (Cq) and 
 the amplification efficiency (AE) 
-\citep{roediger_highly_2013,rodiger_nucleic_2014,pabinger_2014}. The fundamental 
+\citep{roediger_highly_2013,rodiger_nucleic_2014,pabinger_2014}. Fundamental 
 steps of amplification curve analysis are: (1) raw data read-in, (2) 
 pre-processing (e.g., noise reduction), (3) amplification curve processing 
 (e.g., Cq calculation), (4) post-processing, (5) data 
@@ -71,9 +71,7 @@ export/report generation. \textbf{R} belongs to the most used bioinformatic
 tools and is a rapid adopter for various technologies like digital PCR, 
 NanoString nCounter Platform, and qPCR \citep{waggott_2012,pabinger_2014}. Most 
 qPCR \textbf{R} packages focus on the read-in and (post)-processing of data from 
-commercial qPCR systems.
-
-\textbf{R} packages for the steps 1. and 3.--5. are 
+commercial qPCR systems. \textbf{R} packages for the steps 1. and 3.--5. above are 
 available \citep{pabinger_2014,perkins_2012,mccall_2014,gehlenborg_2013}.
 However, there is no \textbf{R} package for pre-processing and quality analysis 
 of amplification curve data. Pre-processing is in most commercial cyclers a 
@@ -85,7 +83,9 @@ inspection, raw data transformation in a format for successive analysis steps
 (e.g., smoothing, imputation), data reduction (e.g., removal of invalid sets) 
 and data quality management. Misinterpretations are more likely if ``arbitrary'' 
 corrections are performed. A manual alteration is in contradiction to 
-reproducible research. The $\emph{chipPCR}$ package (``Lab-on-a-\textbf{Chip}'' 
+reproducible research.
+
+The $\emph{chipPCR}$ package (``Lab-on-a-\textbf{Chip}'' 
 \& \textbf{PCR}) was developed to fill this gap by automatize 
 pre-processing, data analysis/visualization and to offer a quality control for 
 the statistical data analysis of qPCR and qIA experiments. \textbf{R} offers 
@@ -99,7 +99,7 @@ process raw data of commercial systems.
 \section{Implementation}
 \begin{methods}
 
-$\emph{chipPCR}$ package was implemented in the \textbf{R} software environment 
+We implemented the $\emph{chipPCR}$ package in the \textbf{R} software environment 
 as described elsewhere \citep{RCT_2013,rodiger_rkward_2012}. $\emph{chipPCR}$ is 
 a relative of the \emph{MBmca} \citep{roediger_RJ_2013}, the $\emph{RDML}$  
 \citep{blagodatskikh_2014}, and the \emph{dpcR} \citep{pabinger_2014} packages 
@@ -109,78 +109,82 @@ normalization), a function for single-blinded randomized rating, quality
 analysis summary functions, a function to calculate the amplification 
 efficiency, functions for amplification curve simulation and report 
 generation (Suppl. Sect.~3). The supplemental material % Suppl. Sect.~\ref{sec:functions}
-(packages vignette), uses Donald Knuth's literate programming 
-principle~\citep{Knuth1984} to present the source code in a convenient way. 
+(package \textit{vignette}) uses Donald Knuth's literate programming 
+principle~\citep{Knuth1984} to present the source code conveniently. 
 $\emph{chipPCR}$'s naming convention is \textit{period.separated} 
 \citep{Baaaath_2012}. We use \textbf{R}'s object model \emph{S4} class system 
 (see \emph{methods} package) to separate between interface and implementation. 
 It requires a higher effort than \emph{S3} classes, but assures better control 
 on the object structure and the method dispatch. As a perquisite for 
 high-throughput technologies, we avoided loops in the core structures and left 
-options for partially parallel computing usage (\textsl{smoother} function) to 
+options for partially parallel computing usage (e.g., \textsl{smoother} function) to 
 keep the code fast. $\emph{chipPCR}$ includes a set of classes for plotting. The 
 output of our custom made plots is minimalistic, but many parameters can be 
 adjusted directly or by the ellipse parameter.
 
 Our goal is to make our software available also for researchers not fluent in 
-\textbf{R}. Therefore, we implemented core functionality of our package in selected 
-GUI-technologies available in \textbf{R} \citep{rodiger_rkward_2012, 
-shiny_2014}. Some of them are available as the web-based services. It is 
-possible to run the GUI-applications as service on a server without installing 
-\textbf{R} (e.g., http://michbur.shinyapps.io/MFIaggr\_gui/), on the local 
+\textbf{R}. Therefore, we implemented core functionality of our package in 
+selected GUI technologies available in \textbf{R} \citep{rodiger_rkward_2012} as 
+desktop application or web-based service. $\emph{chipPCR}$ offers means to run 
+the GUI applications as service on a server without installing \textbf{R} (e.g., 
+http://michbur.shinyapps.io/MFIaggr\_gui/), on the local 
 desktop (e.g., Fig.~S2, S6), or as deployed from an external % Fig.~\ref{figure:browser}
 source for a local \textbf{R} installation. The functions \textsl{AmpSim}, 
 \textsl{th.cyc}, \textsl{bg.max} and \textsl{amptester} are part of online GUIs. 
-We hope to build monolithic systems to parse, pre-process and analyze 
+We aimed to build monolithic systems to parse, pre-process and analyze 
 amplification curve data in a combined work-flow. 
 
-We have chosen not to rely on specialized parser but use native \textbf{R} 
+We avoided relying on specialized parsers but rather use native \textbf{R} 
 workspaces, and dedicated \textbf{R} packages as default data format for import 
 and export as described elsewhere \citep{perkins_2012, RCT_2013}. 
 $\emph{chipPCR}$ presents \emph{S4} objects with tailored summary and plot 
 methods. Data sets are an essential element of reproducible research 
 \citep{Leeper_2014}. Our package contains 22 data sets from commercial and 
 experimental cyclers along with the experimental settings (e.g., helicase 
-dependent amplification (HDA)) (Suppl. Sect.~10). % Suppl. Sect.~\ref{sec:XX}
+dependent amplification (HDA)) (see Suppl.). % Suppl. Sect.~\ref{sec:XX}
 \end{methods}
 
 \section{Example: quality analysis}
 
 \textsl{MFIaggr} is a versatile analytical and graphical tool for fast multiple 
 comparison of the cycle dependent signal dispersion and distribution 
-(Fig.~\ref{fig:01}). The continuous explanatory variable $x$ (cycle number) is used to describe its relationships to $n$ continuous predictor variables $y_i$ (fluorescence values), where $i \in \{1, 
-..., n\}$. Use cases include the comparison of independent reaction vessels or 
+(Fig.~\ref{fig:01}). The continuous explanatory variable $x$ (cycle number) is 
+used to describe its relationships to $n$ continuous predictor variables $y_i$ 
+(fluorescence values), where $i \in \{1, ..., n\}$. Use cases include the 
+comparison of independent reaction vessels or 
 the analysis of replicate experiments (Suppl. Sect.~6). In % Suppl. Sect.~\ref{sec:MFIaggr}
 particular, this function might be useful for quality management during the 
 development of high-throughput technologies. An analysis via the \emph{shiny} 
 \textsl{MFIaggr.gui} app is shown in Fig.~S6. % Fig.~\ref{figure:MFIaggr2}
 
 \begin{figure}[!tpb]%figure1
-\centerline{\includegraphics{fig01.jpg}}
+\centerline{\includegraphics[width=8.7cm]{fig01.eps}}
 \caption{Amplification curve analysis of 379 replicates. Cycles 1 to 14 were 
-selected as region of interest (ROI) for \textsl{MFIaggr} to analyzes the 
+selected as region of interest (ROI) for \textsl{MFIaggr} to analyze the 
 cycle-dependent variance (left panel) and gives a density plot (right upper 
-panel) and quantile-quantile analysis (right lower panel). The plots indicates 
-that the data of the background range are normal distributed.}\label{fig:01}
+panel) and quantile-quantile analysis (right lower panel), including a 
+comprehensive statistical analysis as textual output (not shown). Plots 
+indicate that the data of the background range are normal 
+distributed.}\label{fig:01}
 \end{figure}
 
 \section{Results and Conclusions}
 
 There is an ongoing development for qPCR and qIA technologies. $\emph{chipPCR}$ 
-is the first \textbf{R} package for the pre-processing and raw data quality 
-analysis of amplification curve data of such systems. Though, $\emph{chipPCR}$ 
-primarily targets pre-processing we also implemented standard methods to process 
-amplification curve data. Functions of $\emph{chipPCR}$ are embeddable in 
+is the first \textbf{R} package for the pre-processing and quality 
+analysis of amplification curve raw data. $\emph{chipPCR}$ 
+primarily targets pre-processing but standard methods to process 
+amplification curves were also implemented. Functions of $\emph{chipPCR}$ are embeddable in 
 customized routines with other packages (see Suppl.). For example, the packages 
-\emph{dpcR} and \emph{MBmca} depend on $\emph{chipPCR}$ technology. 
+\emph{RDML} and \emph{MBmca} depend on $\emph{chipPCR}$ technology. 
 $\emph{chipPCR}$ is build from smaller blocks. We claim that the modular 
-structure of $\emph{chipPCR}$ package allows user to perform flexible data 
+structure of $\emph{chipPCR}$ package allows users to perform flexible data 
 analysis adjusted to their needs. Users can do estimations by hand. For example 
 for quantification cycle (second derivative maximum, $SDM$) estimation, solely 
 the $\emph{chipPCR}$ functions \textsl{inder} and \textsl{smoother} are needed. 
 \textsl{smoother} will be a method of smoothing in \textsl{inder} and by putting 
 data in the \textsl{bg} object with summary method \textsl{summary-der} the user 
-obtains the $SDM$. Thanks to the GUI it should be easy even for an users without 
+obtains the $SDM$. Thanks to the GUI it should be easy even for an user without 
 any \textbf{R} experience omitting the biggest limitation of all \textbf{R} 
 packages related to qPCR and qIA.
 
@@ -188,7 +192,7 @@ packages related to qPCR and qIA.
 \section*{Acknowledgement}
 Grateful thanks belong to the \textbf{R} community.
 
-\paragraph{Funding\textcolon} This work was funded by the BMBF InnoProfile--Projekt 03 IPT 611X.
+\paragraph{Funding\textcolon} This work was funded by the BMBF InnoProfileTransfer--Projekt 03 IPT 611X.
 
 \paragraph{Conflict of Interest\textcolon} none declared.
 
