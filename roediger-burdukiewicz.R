@@ -4,11 +4,10 @@ require(chipPCR)
 require(qpcR)
 
 
-#pdf(file = "MFIaggr_oxf.pdf", width = 12, height = 6)
-pdf(file = "MFIaggr_oxf.pdf", width = 3.52, height = 1.76)
-# 
+pdf(file = "MFIaggr_oxf.pdf", width = 9, height = 4.5)
+
 par(las = 0, bty = "n", cex.axis = 1.2, cex.lab = 1.2, 
-    font = 2, cex.main = 1.2, oma = c(0.2,0.2,0.2,0.2))
+    font = 2, cex.main = 1.2, oma = c(0.1,0.1,0.1,0.1))
 
 plot(MFIaggr(reps384[, 1], reps384[, 2:ncol(reps384)], 
      llul = c(1,14)), CV = FALSE)
