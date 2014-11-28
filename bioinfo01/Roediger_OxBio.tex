@@ -1,9 +1,6 @@
 \documentclass{bioinfo}
 \copyrightyear{2014}
 \pubyear{2014}
-% \usepackage{xr}
-% \externaldocument{chipPCR}
-
 
 \begin{document}
 \firstpage{1}
@@ -52,7 +49,7 @@ generation.
 Stable: http://cran.r-project.org/web/packages/chipPCR
 Source code: https://github.com/michbur/chipPCR
 
-\section{Contact:} \href{stefan.roediger@hs-lausitz.de}{stefan.roediger@hs-lausitz.de}
+\section{Contact:} \href{stefan.roediger@b-tu.de}{stefan.roediger@b-tu.de}
 
 \section{Supplementary:} Supplementary data are available at Bioinformatics online.
 \end{abstract}
@@ -62,15 +59,15 @@ Source code: https://github.com/michbur/chipPCR
 Quantitative polymerase chain reaction (qPCR) and quantitative isothermal 
 amplification (qIA) are standard methods to amplify nucleic acids. These methods 
 are used in real-time monitoring technologies, such as our previously reported 
-VideoScan technology, microfluidic systems, point-of-care devices, and qPCR 
+VideoScan technology \citep{roediger_highly_2013}, microfluidic systems, point-of-care devices, and qPCR 
 cyclers. Real-time technologies enable the quantification of nucleic acids by 
 calculation of specific curve parameters like the quantification point (Cq) and 
 the amplification efficiency (AE) 
-\citep{roediger_highly_2013,pabinger_2014,rodiger_nucleic_2014}. Fundamental 
+\citep{pabinger_2014,rodiger_nucleic_2014}. Fundamental 
 steps of amplification curve analysis are: (1) raw data read-in, (2) 
 pre-processing (e.g., noise reduction), (3) amplification curve processing 
-(e.g., Cq calculation), (4) post-processing, (5) data 
-export/report generation. \textbf{R} belongs to the most used bioinformatic	
+(e.g., Cq calculation), (4) post-processing and (5) data 
+export/report generation. \textbf{R} belongs to the most used bioinformatics	
 tools and is a rapid adopter for various technologies like digital PCR, 
 NanoString nCounter Platform, and qPCR \citep{waggott_2012,pabinger_2014}. Most 
 qPCR \textbf{R} packages focus on the read-in and (post)-processing of data from 
@@ -107,7 +104,7 @@ environment. $\emph{chipPCR}$ is a relative of the \emph{MBmca}
 \citep{roediger_RJ_2013}, the $\emph{RDML}$ \citep{blagodatskikh_2014}, and the 
 \emph{dpcR} \citep{pabinger_2014} packages but focusses on pre-processing of 
 amplification curves. The package contains pre-processor functions (smoothing, 
-imputation, background correction, normalization), a function for single-blinded 
+imputation, background correction and normalization), a function for single-blinded 
 randomized rating, quality analysis summary functions, a function to calculate 
 the amplification efficiency, functions for amplification curve simulation and 
 report 
@@ -130,8 +127,8 @@ Our goal is to make our software available also for researchers not fluent in
 selected GUI technologies available in \textbf{R} \citep{rodiger_rkward_2012} as 
 desktop application or web-based service. $\emph{chipPCR}$ offers means to run 
 the GUI applications as service on a server without installing \textbf{R} (e.g., 
-http://michbur.shinyapps.io/MFIaggr\_gui/), on the local 
-desktop (e.g., Fig.~S2, S6), or as deployed from an external % Fig.~\ref{figure:browser}
+http://michbur.shinyapps.io/MFIaggr\_gui), on the local 
+desktop (e.g., Fig.~S2,~S6), or as deployed from an external % Fig.~\ref{figure:browser}
 source for a local \textbf{R} installation. The functions \textsl{AmpSim}, 
 \textsl{th.cyc}, \textsl{bg.max} and \textsl{amptester} are part of online GUIs. 
 We aimed to build monolithic systems to parse, pre-process and analyze 
@@ -139,7 +136,7 @@ amplification curve data in a combined work-flow.
 
 We avoided relying on specialized parsers but rather use native \textbf{R} 
 workspaces, and dedicated \textbf{R} packages as default data format for import 
-and export \citep{perkins_2012,RCT_2013,blagodatskikh_2014}. 
+and export \citep{perkins_2012,blagodatskikh_2014,RCT_2013}. 
 $\emph{chipPCR}$ presents \emph{S4} objects with tailored summary and plot 
 methods. Data sets are an essential element of reproducible research 
 \citep{Leeper_2014}. Our package contains 22 data sets from commercial and 
