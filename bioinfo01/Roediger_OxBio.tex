@@ -27,8 +27,8 @@ Wroc\l{}aw, Wroc\l{}aw, Poland}
 The quantitative real-time polymerase chain reaction (qPCR) and quantitative 
 isothermal amplification (qIA) are standard methods for the quantification of 
 nucleic acids. Numerous real-time read-out technologies with different technical 
-foundations have been developed. Despite the continuous interest in amplification 
-based techniques, there are only few tools for amplification data 
+foundations have been developed. Despite the continuous interest in 
+amplification based techniques, there are only few tools for amplification data 
 pre-processing. Especially, during development of new instruments a transparent 
 tool for precise control of raw data is indispensable.
 
@@ -36,14 +36,17 @@ tool for precise control of raw data is indispensable.
 $\emph{chipPCR}$ is an \textbf{R} package for pre-processing and quality 
 analysis of amplification curve data. The package takes advantage of 
 \textbf{R}'s \emph{S4} object model and offers an extensible environment. 
-$\emph{chipPCR}$ contains tools for the raw data exploration: normalization, baselining, 
-imputation of missing values, a powerful wrapper for the amplification curve smoother and a function to detect the start 
-and end of an amplification curve. Capabilities of the software are enhanced by 
-implementation of algorithms yet not present in \textbf{R}, as a 5-point stencil
-for derivative interpolation. Simulation tools, statistical tests, plots for data quality management, amplification efficiency/quantification cycle 
-calculation, and 22 data sets from various qPCR and qIA experiments are also part of 
-the package. The core functionalities of $\emph{chipPCR}$ are integrated in
-GUIs (web-based and standalone \emph{shiny} applications) streamlining analysis and report generation.
+$\emph{chipPCR}$ contains tools for the raw data exploration: normalization, 
+baselining, imputation of missing values, a powerful wrapper for the 
+amplification curve smoother and a function to detect the start and end of an 
+amplification curve. Capabilities of the software are enhanced by implementation 
+of algorithms yet not present in \textbf{R}, as a 5-point stencil for derivative 
+interpolation. Simulation tools, statistical tests, plots for data quality 
+management, amplification efficiency/quantification cycle calculation, and 22 
+data sets from various qPCR and qIA experiments are also part of the package. 
+The core functionalities of $\emph{chipPCR}$ are integrated in GUIs (web-based 
+and standalone \emph{shiny} applications) streamlining analysis and report 
+generation.
 
 \section{Availability:}
 Stable: http://cran.r-project.org/web/packages/chipPCR
@@ -63,7 +66,7 @@ VideoScan technology, microfluidic systems, point-of-care devices, and qPCR
 cyclers. Real-time technologies enable the quantification of nucleic acids by 
 calculation of specific curve parameters like the quantification point (Cq) and 
 the amplification efficiency (AE) 
-\citep{roediger_highly_2013,rodiger_nucleic_2014,pabinger_2014}. Fundamental 
+\citep{roediger_highly_2013,pabinger_2014,rodiger_nucleic_2014}. Fundamental 
 steps of amplification curve analysis are: (1) raw data read-in, (2) 
 pre-processing (e.g., noise reduction), (3) amplification curve processing 
 (e.g., Cq calculation), (4) post-processing, (5) data 
@@ -71,8 +74,8 @@ export/report generation. \textbf{R} belongs to the most used bioinformatic
 tools and is a rapid adopter for various technologies like digital PCR, 
 NanoString nCounter Platform, and qPCR \citep{waggott_2012,pabinger_2014}. Most 
 qPCR \textbf{R} packages focus on the read-in and (post)-processing of data from 
-commercial qPCR systems. \textbf{R} packages for the steps 1. and 3.--5. above are 
-available \citep{pabinger_2014,perkins_2012,mccall_2014,gehlenborg_2013}.
+commercial qPCR systems. \textbf{R} packages for the steps 1 and 3--5 above are 
+available \citep{perkins_2012,gehlenborg_2013,mccall_2014,pabinger_2014}.
 However, there is no \textbf{R} package for pre-processing and quality analysis 
 of raw amplification curve data. Pre-processing is in most commercial cyclers a 
 ``black box'', which sets severe limits to reproducible research 
@@ -192,7 +195,7 @@ packages related to qPCR and qIA.
 \section*{Acknowledgement}
 Grateful thanks belong to the \textbf{R} community.
 
-\paragraph{Funding\textcolon} This work was funded by the BMBF InnoProfileTransfer--Projekt 03 IPT 611X.
+\paragraph{Funding\textcolon} This work was funded by the BMBF InnoProfile--Transfer--Projekt 03 IPT 611X.
 
 \paragraph{Conflict of Interest\textcolon} none declared.
 
