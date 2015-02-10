@@ -604,7 +604,7 @@
   Journal                  = {{The R Journal}},
   Year                     = {2014},
   Number                   = {1},
-  Pages                    = {NN--NN},
+  Pages                    = {151--158},
   Volume                   = {6},
 
   Url                      = {http://journal.r-project.org/archive/accepted/leeper.pdf}
@@ -897,7 +897,6 @@
   Year                     = {2012},
 
   Month                    = jul,
-  Note                     = {{PMID:} 22748112},
   Number                   = {1},
   Pages                    = {296},
   Volume                   = {13},
@@ -1472,9 +1471,8 @@
   Author                   = {Daryl Waggott and Kenneth Chu and Shaoming Yin and Bradly G. Wouters and Fei-Fei Liu and Paul C. Boutros},
   Journal                  = {Bioinformatics},
   Year                     = {2012},
-
   Month                    = apr,
-  Pages                    = {bts188},
+  Pages                    = {1546--1548},
 
   Abstract                 = {Motivation: The {NanoString} {nCounter} Platform is a new and promising technology for measuring nucleic acid abundances. It has several advantages over {PCR}-based techniques, including avoidance of amplification, direct sequence interrogation and digital detection for absolute quantification. These features minimize aspects of experimental error that hold promise for dealing with challenging experimental conditions, such as archival Formalin-Fixed Paraffin-Embedded ({FFPE}) samples. However, systematic inter-sample technical artifacts caused by variability in sample preservation, bio-molecular extraction, and platform fluctuations must be removed to ensure robust data. Results: To facilitate this process and to address these issues for {NanoString} datasets, we have written a pre-processing package called {NanoStringNorm} in the R statistical language. Key features include an extensible environment for method comparison and new algorithm development, integrated gene and sample diagnostics, and facilitated downstream statistical analysis. The package is open-source, is available through the {CRAN} package repository, includes unit-tests to ensure numerical accuracy, and provides visual and numeric diagnostics. Availability: http://cran.r-project.org/web/packages/{NanoStringNorm} Contact: Paul.Boutros@oicr.on.ca Supplementary: Supplementary data available at Bioinformatics online.},
   Doi                      = {10.1093/bioinformatics/bts188},
@@ -1608,4 +1606,22 @@
 	pmcid = {PMC308365},
 	note = {00249 {PMID}: 7937094},
 	pages = {3801--3805}
+}
+
+@article{spiess_impact_2014,
+	title = {Impact of Smoothing on Parameter Estimation in Quantitative {DNA} Amplification Experiments},
+	issn = {0009-9147, 1530-8561},
+	url = {http://www.clinchem.org/content/early/2014/12/01/clinchem.2014.230656},
+	doi = {10.1373/clinchem.2014.230656},
+	abstract = {Background: Quantification cycle (Cq) and amplification efficiency ({AE}) are parameters mathematically extracted from raw data to characterize quantitative {PCR} ({qPCR}) reactions and quantify the copy number in a sample. Little attention has been paid to the effects of preprocessing and the use of smoothing or filtering approaches to compensate for noisy data. Existing algorithms largely are taken for granted, and it is unclear which of the various methods is most informative. We investigated the effect of smoothing and filtering algorithms on amplification curve data.
+Methods: We obtained published high-replicate {qPCR} datasets from standard block thermocyclers and other cycler platforms and statistically evaluated the impact of smoothing on Cq and {AE}.
+Results: Our results indicate that selected smoothing algorithms affect estimates of Cq and {AE} considerably. The commonly used moving average filter performed worst in all {qPCR} scenarios. The Savitzky–Golay smoother, cubic splines, and Whittaker smoother resulted overall in the least bias in our setting and exhibited low sensitivity to differences in {qPCR} {AE}, whereas other smoothers, such as running mean, introduced an {AE}-dependent bias.
+Conclusions: The selection of a smoothing algorithm is an important step in developing data analysis pipelines for real-time {PCR} experiments. We offer guidelines for selection of an appropriate smoothing algorithm in diagnostic {qPCR} applications. The findings of our study were implemented in the R packages {chipPCR} and {qpcR} as a basis for the implementation of an analytical strategy.},
+	language = {en},
+	urldate = {2014-12-04},
+	journal = {Clinical Chemistry},
+	author = {Spiess, Andrej-Nikolai and Deutschmann, Claudia and Burdukiewicz, Micha\l{} and Himmelreich, Ralf and Klat, Katharina and Schierack, Peter and R\"{o}diger, Stefan},
+	month = dec,
+	year = {2015},
+	file = {Snapshot:/home/tux/.mozilla/firefox/5dy1pecg.default/zotero/storage/U8CNM62E/clinchem.2014.230656.html:text/html}
 }

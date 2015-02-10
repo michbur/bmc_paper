@@ -22,16 +22,16 @@ Wroc\l{}aw, Wroc\l{}aw, Poland}
 
 \section{Motivation:}
 The quantitative real-time polymerase chain reaction (qPCR) and quantitative 
-isothermal amplification (qIA) are standard methods for the quantification of 
-nucleic acids. Numerous real-time read-out technologies with different technical 
-foundations have been developed. Despite the continuous interest in 
+isothermal amplification (qIA) are standard methods for nucleic acids 
+quantification. Numerous real-time read-out technologies with different 
+technical foundations have been developed. Despite the continuous interest in 
 amplification based techniques, there are only few tools for amplification data 
 pre-processing. Especially, during development of new instruments a transparent 
 tool for precise control of raw data is indispensable.
 
 \section{Results:}
-$\emph{chipPCR}$ is an \textbf{R} package for pre-processing and quality 
-analysis of amplification curve data. The package takes advantage of 
+$\emph{chipPCR}$ is an \textbf{R} package for amplification curve data pre-processing and quality 
+analysis. The package is takes advantage of 
 \textbf{R}'s \emph{S4} object model and offers an extensible environment. 
 $\emph{chipPCR}$ contains tools for the raw data exploration: normalization, 
 baselining, imputation of missing values, a powerful wrapper for the 
@@ -39,7 +39,7 @@ amplification curve smoother and a function to detect the start and end of an
 amplification curve. Capabilities of the software are enhanced by implementation 
 of algorithms yet not present in \textbf{R}, as a 5-point stencil for derivative 
 interpolation. Simulation tools, statistical tests, plots for data quality 
-management, amplification efficiency/quantification cycle calculation, and 22 
+management, amplification efficiency/quantification cycle calculation, and 
 data sets from various qPCR and qIA experiments are also part of the package. 
 The core functionalities of $\emph{chipPCR}$ are integrated in GUIs (web-based 
 and standalone \emph{shiny} applications) streamlining analysis and report 
@@ -69,36 +69,33 @@ pre-processing (e.g., noise reduction), (3) amplification curve processing
 (e.g., Cq calculation), (4) post-processing and (5) data 
 export/report generation. \textbf{R} belongs to the most used bioinformatics	
 tools and is a rapid adopter for various technologies like digital PCR, 
-NanoString nCounter Platform, and qPCR \citep{waggott_2012,pabinger_2014}. Most 
-qPCR \textbf{R} packages focus on the read-in and (post)-processing of data from 
-commercial qPCR systems. \textbf{R} packages for the steps 1 and 3--5 above are 
-available \citep{perkins_2012,gehlenborg_2013,mccall_2014,pabinger_2014}.
+NanoString nCounter Platform, and qPCR \citep{waggott_2012,pabinger_2014}. 
+Available \textbf{R} packages focus on the read-in and (post)-processing of data 
+from commercial qPCR systems. \textbf{R} packages for the steps 1 and 3--5 above 
+are available \citep{perkins_2012,gehlenborg_2013,mccall_2014,pabinger_2014}. 
 However, there is no \textbf{R} package for pre-processing and quality analysis 
 of raw amplification curve data. Pre-processing is in most commercial cyclers a 
 ``black box'', which sets severe limits to reproducible research 
 \citep{Leeper_2014}. Developmental qPCR and qIA technologies depend on tools to 
 pre-process the raw data. Pre-processing algorithms remove stochastic errors and 
-artefacts (Suppl. Sect.~2). Pre-processing addresses raw data % (Fig.~\ref{figure:problems})
-inspection, raw data transformation in a format for successive analysis steps 
-(e.g., smoothing, imputation), data reduction (e.g., removal of invalid sets) 
-and data quality management. Misinterpretations are more likely if ``arbitrary'' 
-corrections are performed. A manual alteration is in contradiction to 
-reproducible research.
+artefacts (Suppl. Sect.~2). Pre-processing addresses raw data inspection, raw data transformation in a format for 
+successive analysis steps (e.g., smoothing \citep{spiess_impact_2014}, 
+imputation), data reduction (e.g., removal of invalid sets) and data quality 
+management. Misinterpretations are more likely if ``arbitrary'' corrections are 
+performed. A manual alteration is in contradiction to reproducible research.
 
-The $\emph{chipPCR}$ package (``Lab-on-a-\textbf{Chip}'' 
-\& \textbf{PCR}) was developed to automatize 
-pre-processing, analysis, visualization, and to offer quality control for 
-the statistical data analysis of qPCR and qIA experiments. \textbf{R} offers 
-sophisticated statistical tools and allows reproducing analysis on different 
-platforms as well as adopting to changing experimental setups. Moreover, it is 
-desirable to set up workflows in an open environment, which offers GUIs, downstream 
-analyses facilities, powerful tools for data visualizations and automatic 
-report generation. The target audience encompasses developers and users who 
-process raw data of commercial systems.
+The $\emph{chipPCR}$ package (``Lab-on-a-\textbf{Chip}'' \& \textbf{PCR}) was 
+developed to automatize pre-processing, analysis, visualization, and quality 
+control qPCR and qIA experiments. \textbf{R} offers sophisticated statistical 
+tools and allows reproducing analysis on different platforms as well as adopting 
+to changing experimental setups. Moreover, it is desirable to set up workflows 
+in an open environment, which offers GUIs, downstream analyses facilities, 
+powerful tools for data visualizations and report generation. The 
+target audience encompasses developers and users who process raw data of 
+commercial systems.
 
 \section{Implementation}
 \begin{methods}
-
 We implemented the $\emph{chipPCR}$ package in the \textbf{R} software 
 environment. $\emph{chipPCR}$ is a relative of the \emph{MBmca} 
 \citep{roediger_RJ_2013}, the $\emph{RDML}$ \citep{blagodatskikh_2014}, and the 
@@ -115,8 +112,8 @@ $\emph{chipPCR}$'s naming convention is \textit{period.separated}
 \citep{Baaaath_2012}. We use \textbf{R}'s object model \emph{S4} class system 
 (see Supplement) to separate between interface and implementation. \emph{S4} 
 classes require a higher effort than \emph{S3}, but assures better control on 
-the object structure and the method dispatch. For fast code and high-throughput 
-applications, we avoided loops in the core structures and left options for 
+the object structure and the method dispatch. For fast code in high-throughput 
+applications, we avoided loops and left options for 
 partially parallel computing usage (e.g., \textsl{smoother} function). 
 $\emph{chipPCR}$ includes a set of classes for plotting. The output of our 
 custom made plots is minimalistic, but many parameters can be adjusted directly 
@@ -136,7 +133,7 @@ amplification curve data in a combined work-flow.
 
 We avoided relying on specialized parsers but rather use native \textbf{R} 
 workspaces, and dedicated \textbf{R} packages as default data format for import 
-and export \citep{perkins_2012,blagodatskikh_2014,RCT_2013}. 
+and export \citep{perkins_2012,rodiger_rkward_2012,blagodatskikh_2014}. 
 $\emph{chipPCR}$ presents \emph{S4} objects with tailored summary and plot 
 methods. Data sets are an essential element of reproducible research 
 \citep{Leeper_2014}. Our package contains 22 data sets from commercial and 
@@ -159,24 +156,22 @@ development of high-throughput technologies. An analysis via the \emph{shiny}
 
 \begin{figure}[!tpb]%figure1
 \centerline{\includegraphics[width=8.7cm]{fig01.eps}}
-\caption{Output of \textsl{MFIaggr} from an amplification curve analysis of 379 replicates. Cycles 1 to 14 were 
-selected as region of interest (ROI) for \textsl{MFIaggr} to analyze the 
-cycle-dependent variance (left panel) and gives a density plot (right upper 
-panel) and quantile-quantile analysis (right lower panel), including a 
+\caption{\textsl{MFIaggr} plot for 379 replicate amplification curves. Cycles 1 to 14 were 
+selected as region of interest (ROI) to analyze the 
+cycle-dependent variance (left panel), the density plot (top-right 
+panel) and quantile-quantile analysis (bottom-right panel), including a 
 comprehensive statistical analysis as textual output (not shown). Plots 
 indicate that the data of the background range are normal 
-distributed. There is no significant heteroscedasticity.}\label{fig:01}
+distributed. The heteroscedasticity is not significant.}\label{fig:01}
 \end{figure}
-
 \section{Results and Conclusions}
 
-There is an ongoing development for qPCR and qIA technologies. $\emph{chipPCR}$ 
+$\emph{chipPCR}$ 
 is the first \textbf{R} package for the pre-processing and quality 
 analysis of amplification curve raw data. $\emph{chipPCR}$ 
 primarily targets pre-processing but standard methods to process 
 amplification curves were also implemented. Functions of $\emph{chipPCR}$ are embeddable in 
-customized routines with other packages (see Suppl.). For example, the packages 
-\emph{RDML} and \emph{MBmca} depend on $\emph{chipPCR}$ technology. 
+customized routines with other packages (see Suppl.), such as the \emph{RDML} and \emph{MBmca} packages. 
 $\emph{chipPCR}$ is build from smaller blocks. We claim that the modular 
 structure of $\emph{chipPCR}$ package allows users to perform flexible data 
 analysis adjusted to their needs. Users can do estimations by hand. For example 
@@ -190,12 +185,13 @@ packages related to qPCR and qIA.
 
 
 \section*{Acknowledgement}
+\begin{methods}
 Grateful thanks belong to the \textbf{R} community.
 
 \paragraph{Funding\textcolon} This work was funded by the BMBF InnoProfile--Transfer--Projekt 03 IPT 611X.
 
 \paragraph{Conflict of Interest\textcolon} none declared.
-
+\end{methods}
 
 \bibliographystyle{natbib}
 %\bibliographystyle{achemnat}
