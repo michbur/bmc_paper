@@ -57,31 +57,31 @@ Source code: https://github.com/michbur/chipPCR
 \section{Introduction}
 
 Quantitative polymerase chain reaction (qPCR) and quantitative isothermal 
-amplification (qIA) are standard methods to amplify nucleic acids. qPCR and qIA are used in 
-real-time monitoring technologies, such as our previously reported VideoScan 
-technology \citep{roediger_highly_2013,spiess_impact_2014}, microfluidic systems and point-of-care 
-devices to quantify nucleic acids by specific curve parameters like the 
-quantification point (Cq) and the amplification efficiency (AE) 
+amplification (qIA) are standard methods to amplify nucleic acids. qPCR and qIA 
+are used in real-time monitoring technologies, such as our previously reported 
+VideoScan technology \citep{roediger_highly_2013,spiess_impact_2014}, 
+microfluidics and point-of-care devices to quantify nucleic acids by specific 
+curve parameters like the quantification point (Cq) 
 \citep{pabinger_2014,rodiger_nucleic_2014}. Fundamental steps of amplification 
-curve analysis are: (1) raw data read-in, (2) pre-processing (e.g., noise 
-reduction), (3) amplification curve processing 
-(e.g., Cq calculation), (4) post-processing and (5) data 
-export/report generation. Reliable data flow between all steps is a requirement for the 
-proper optimization of amplification reaction\citep{cobb_1994}. \textbf{R} is widely used bioinformatics 
-and an rapid adopter for novel technologies (e.g., digital PCR, 
-NanoString nCounter Platform) \citep{waggott_2012,pabinger_2014}. 
-Available \textbf{R} packages focus on the read-in and (post)-processing of data 
-from commercial qPCR systems. \textbf{R} packages for the steps 1 and 3--5 above 
-are available \citep{perkins_2012,gehlenborg_2013,mccall_2014,pabinger_2014}. 
-However, there is no \textbf{R} package for pre-processing and quality analysis 
-of raw amplification curve data. Pre-processing in most commercial cyclers is a 
-black box, which sets severe limits to reproducible research 
-\citep{Leeper_2014}. Developmental equipment depends on software to 
-pre-process the raw data. Pre-processing algorithms remove stochastic errors and 
-artefacts (Suppl. Sect.~2). Pre-processing covers raw data inspection and 
-transformation in a format for successive analysis steps (e.g., smoothing, 
-imputation), data reduction (e.g., removal of invalid sets) and data quality 
-management \citep{spiess_impact_2014}. Misinterpretations are more likely if 
+curve analysis are: 1) raw data read-in, 2) pre-processing (e.g., noise 
+reduction), 3) amplification curve processing (e.g., Cq calculation), 4) 
+post-processing and 5) data export/report generation. Reliable data flow between 
+all steps is a requirement for the proper optimization of amplification reaction 
+\citep{cobb_1994}. \textbf{R} is widely used bioinformatics and an rapid adopter 
+for novel technologies (e.g., digital PCR, NanoString nCounter Platform) 
+\citep{waggott_2012,pabinger_2014}. Available \textbf{R} packages focus on the 
+read-in and (post)-processing of data from commercial qPCR systems. \textbf{R} 
+packages for the steps 1 and 3--5 are available 
+\citep{perkins_2012,gehlenborg_2013,mccall_2014,pabinger_2014}. However, there 
+is no \textbf{R} package for raw amplification curve data pre-processing and 
+quality analysis. Pre-processing in most commercial cyclers is a black box, 
+which sets severe limits to reproducible research \citep{Leeper_2014}. 
+Developmental equipment depends on software to pre-process the raw data. 
+Pre-processing algorithms remove stochastic errors and artefacts (Suppl. 
+Sect.~2). Pre-processing covers raw data inspection and transformation in a 
+format for successive analysis steps (e.g., smoothing, imputation), data 
+reduction (e.g., removal of invalid sets) and data quality 
+management. Misinterpretations are more likely if 
 arbitrary corrections are performed. A manual alteration is in contradiction to 
 reproducible research.
 
@@ -101,14 +101,12 @@ environment. $\emph{chipPCR}$ is a relative of the \emph{MBmca}
 \citep{roediger_RJ_2013}, the $\emph{RDML}$ \citep{blagodatskikh_2014}, and the 
 \emph{dpcR} \citep{pabinger_2014} packages but focusses on pre-processing of 
 amplification curves. The package contains pre-processor functions (smoothing, 
-imputation, background correction and normalization), a function for single-blinded 
-randomized rating, quality analysis summary functions, a function to calculate 
-the amplification efficiency, functions for amplification curve simulation and 
-report 
-generation (Suppl. Sect.~4). The supplemental material % Suppl. Sect.~\ref{sec:functions}
-(package \textit{vignette}) uses Donald Knuth's literate programming 
-principle~\citep{Knuth1984} to present the source code conveniently. 
-$\emph{chipPCR}$'s naming convention is \textit{period.separated} 
+imputation, background correction and normalization), a single-blinded 
+randomized rating function, quality analysis summary functions, an amplification 
+efficiency function, an amplification curve simulation function and report 
+generation (Suppl. Sect.~4). The supplemental material uses Donald Knuth's 
+literate programming principle~\citep{Knuth1984} to present the source code 
+conveniently. $\emph{chipPCR}$'s naming convention is \textit{period.separated} 
 \citep{Baaaath_2012}. We use \textbf{R}'s object model \emph{S4} class system 
 (see Supplement) to separate between interface and implementation. \emph{S4} 
 classes require a higher effort than \emph{S3}, but assures better control on 
