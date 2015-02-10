@@ -66,7 +66,7 @@ curve parameters like the quantification point (Cq)
 curve analysis are: 1) raw data read-in, 2) pre-processing (e.g., noise 
 reduction), 3) amplification curve processing (e.g., Cq calculation), 4) 
 post-processing and 5) data export/report generation. Reliable data flow between 
-all steps is a requirement for the proper optimization of amplification reaction 
+all steps is a requirement for the proper optimization (e.g., Taguchi method) of amplification reactions 
 \citep{cobb_1994}. \textbf{R} is widely used bioinformatics and an rapid adopter 
 for novel technologies (e.g., digital PCR, NanoString nCounter Platform) 
 \citep{waggott_2012,pabinger_2014}. Available \textbf{R} packages focus on the 
@@ -78,7 +78,7 @@ quality analysis. Pre-processing in most commercial cyclers is a black box,
 which sets severe limits to reproducible research \citep{Leeper_2014}. 
 Developmental equipment depends on software to pre-process the raw data. 
 Pre-processing algorithms remove stochastic errors and artefacts (Suppl. 
-Sect.~2). Pre-processing covers raw data inspection and transformation in a 
+Sect.~2) and provide means for raw data inspection and transformation in a 
 format for successive analysis steps (e.g., smoothing, imputation), data 
 reduction (e.g., removal of invalid sets) and data quality 
 management. Misinterpretations are more likely if 
@@ -101,7 +101,7 @@ environment. $\emph{chipPCR}$ is a relative of the \emph{MBmca}
 \citep{roediger_RJ_2013}, the $\emph{RDML}$ \citep{blagodatskikh_2014}, and the 
 \emph{dpcR} \citep{pabinger_2014} packages but focusses on pre-processing of 
 amplification curves. The package contains pre-processor functions (smoothing, 
-imputation, background correction and normalization), a single-blinded 
+imputation, background range detection, baseline correction and normalization), a single-blinded 
 randomized rating function, quality analysis summary functions, an amplification 
 efficiency function, an amplification curve simulation function and report 
 generation (Suppl. Sect.~4). The supplemental material uses Donald Knuth's 
