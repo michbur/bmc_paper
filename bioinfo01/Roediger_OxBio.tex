@@ -57,15 +57,15 @@ Source code: https://github.com/michbur/chipPCR
 \section{Introduction}
 
 Quantitative polymerase chain reaction (qPCR) and quantitative isothermal 
-amplification (qIA) are standard methods to amplify nucleic acids. \citep{cobb_1994}, These methods 
-are used in real-time monitoring technologies, such as our previously reported 
-VideoScan technology \citep{roediger_highly_2013}, microfluidic systems, point-of-care devices, and qPCR 
-cyclers. Real-time technologies enable the quantification of nucleic acids by 
-calculation of specific curve parameters like the quantification point (Cq) and 
-the amplification efficiency (AE) 
-\citep{pabinger_2014,rodiger_nucleic_2014}. Fundamental 
-steps of amplification curve analysis are: (1) raw data read-in, (2) 
-pre-processing (e.g., noise reduction), (3) amplification curve processing 
+amplification (qIA) are standard methods to amplify nucleic acids. Proper 
+experimental design is a perquisite \citep{cobb_1994}. qPCR and qIA are used in 
+real-time monitoring technologies, such as our previously reported VideoScan 
+technology \citep{roediger_highly_2013,spiess_impact_2014}, microfluidic systems, point-of-care 
+devices, and qPCR cyclers to quantify nucleic acids by specific curve parameters like the 
+quantification point (Cq) and the amplification efficiency (AE) 
+\citep{pabinger_2014,rodiger_nucleic_2014}. Fundamental steps of amplification 
+curve analysis are: (1) raw data read-in, (2) pre-processing (e.g., noise 
+reduction), (3) amplification curve processing 
 (e.g., Cq calculation), (4) post-processing and (5) data 
 export/report generation. \textbf{R} belongs to the most used bioinformatics	
 tools and is a rapid adopter for various technologies like digital PCR, 
@@ -87,13 +87,12 @@ reproducible research.
 
 The $\emph{chipPCR}$ package (``Lab-on-a-\textbf{Chip}'' \& \textbf{PCR}) was 
 developed to automatize pre-processing, analysis, visualization, and quality 
-control qPCR and qIA experiments. \textbf{R} offers sophisticated statistical 
-tools and allows reproducing analysis on different platforms as well as adopting 
-to changing experimental setups. Moreover, it is desirable to set up workflows 
-in an open environment, which offers GUIs, downstream analyses facilities, 
-powerful tools for data visualizations and report generation. The 
-target audience encompasses developers and users who process raw data of 
-commercial systems.
+control of qPCR and qIA experiments. \textbf{R} offers sophisticated statistical 
+tools and for reproducible cross-platform analysis and the adoption to changing 
+experimental setups. Moreover, it is desirable to set up workflows in an open 
+environment, which offers GUIs, downstream analyses facilities, powerful tools 
+for data visualizations and report generation. The target audience encompasses 
+developers and users who process raw data of commercial systems.
 
 \section{Implementation}
 \begin{methods}
@@ -139,7 +138,7 @@ $\emph{chipPCR}$ presents \emph{S4} objects with tailored summary and plot
 methods. Since data sets are an essential element of reproducible research 
 \citep{Leeper_2014}, we included 22 data sets from commercial and 
 experimental cyclers (e.g., helicase 
-dependent amplification (HDA)) (see Suppl.). % Suppl. Sect.~\ref{sec:XX}
+dependent amplification (HDA)) (see Suppl.).
 \end{methods}
 
 \section{Example: quality analysis}
@@ -149,11 +148,10 @@ comparison of the cycle dependent signal dispersion and distribution
 (Fig.~\ref{fig:01}). The continuous explanatory variable $x$ (cycle number) is 
 used to describe its relationships to $n$ continuous predictor variables $y_i$ 
 (fluorescence values), where $i \in \{1, ..., n\}$. Use cases include the 
-comparison of independent reaction vessels or 
-the analysis of replicate experiments (Suppl. Sect.~6). In % Suppl. Sect.~\ref{sec:MFIaggr}
-particular, this function might be useful for quality management during the 
-development of high-throughput technologies. An analysis via the \emph{shiny} 
-\textsl{MFIaggr.gui} app is shown in Fig.~S6. % Fig.~\ref{figure:MFIaggr2}
+comparison of independent reaction vessels or the analysis of replicate 
+experiments (Suppl. Sect.~6). In particular, this function might be useful for 
+quality management during the development of high-throughput technologies. An 
+analysis via the \emph{shiny} \textsl{MFIaggr.gui} app is shown in Fig.~S7.
 
 \begin{figure}[!tpb]%figure1
 \centerline{\includegraphics[width=8.7cm]{fig01.eps}}

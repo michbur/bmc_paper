@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.10.24)  10 FEB 2015 10:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.10.24)  10 FEB 2015 11:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -369,70 +369,50 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 70.
 
-Underfull \hbox (badness 3407) in paragraph at lines 59--87
-\OT1/ptm/m/n/9 nucleic acids. (Cobb and Clarkson, 1994), These methods
- []
-
-
-Underfull \hbox (badness 2662) in paragraph at lines 59--87
-\OT1/ptm/m/n/9 are used in real-time monitoring technologies, such as our
- []
-
-
-Underfull \hbox (badness 1097) in paragraph at lines 59--87
-\OT1/ptm/m/n/9 to the most used bioinformatics tools and is a rapid adopter
- []
-
-
-Underfull \hbox (badness 1454) in paragraph at lines 59--87
-\OT1/ptm/m/n/9 remove stochastic errors and artefacts (Suppl. Sect. 2). Pre-
- []
-
-
-Underfull \hbox (badness 2042) in paragraph at lines 88--97
+Underfull \hbox (badness 2042) in paragraph at lines 88--96
 \OT1/ptm/m/n/9 encompasses developers and users who process raw data of
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 100.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 99.
 
-Underfull \hbox (badness 1371) in paragraph at lines 100--122
+Underfull \hbox (badness 1371) in paragraph at lines 99--121
 \OT1/ptm/m/n/8 but focusses on pre-processing of amplification curves. The pack
 age
  []
 
 
-Underfull \hbox (badness 2181) in paragraph at lines 100--122
+Underfull \hbox (badness 2181) in paragraph at lines 99--121
 \OT1/ptm/m/n/8 contains pre-processor functions (smoothing, imputation, backgro
 und
  []
 
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 122.
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 121.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsphv.fd
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 122.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 121.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Underfull \hbox (badness 1286) in paragraph at lines 123--134
+Underfull \hbox (badness 1286) in paragraph at lines 122--133
 []\OT1/ptm/m/n/8 We aim to make our software available for researchers not flue
 nt
  []
 
 
-Underfull \hbox (badness 1502) in paragraph at lines 123--134
+Underfull \hbox (badness 1502) in paragraph at lines 122--133
 \OT1/ptm/m/n/8 in \OT1/ptm/b/n/8 R\OT1/ptm/m/n/8 . Therefore, we implemented co
 re functionality of our package
  []
 
 
-Underfull \hbox (badness 1881) in paragraph at lines 123--134
+Underfull \hbox (badness 1881) in paragraph at lines 122--133
 \OT1/ptm/m/n/8 desktop application or web-based service. $[]$ offers means to
  []
 
@@ -444,13 +424,13 @@ Package epstopdf Info: Source file: <fig01.eps>
 (epstopdf)                    size: 82586 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig01-eps-converted-to.pdf
  fig01.eps>
-(epstopdf)             \includegraphics on input line 159.
+(epstopdf)             \includegraphics on input line 158.
 Package epstopdf Info: Output file is already uptodate.
 <fig01-eps-converted-to.pdf, id=18, 650.43pt x 325.215pt>
 File: fig01-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig01-eps-converted-to.pdf>
-Package pdftex.def Info: fig01-eps-converted-to.pdf used on input line 159.
+Package pdftex.def Info: fig01-eps-converted-to.pdf used on input line 158.
 (pdftex.def)             Requested size: 247.53888pt x 123.76659pt.
  (./Roediger_OxBio.bbl
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
@@ -535,7 +515,7 @@ exlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf
 /type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/time
 s/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Roediger_OxBio.pdf (3 pages, 233811 bytes).
+Output written on Roediger_OxBio.pdf (3 pages, 233785 bytes).
 PDF statistics:
  86 PDF objects out of 1000 (max. 8388607)
  62 compressed objects within 1 object stream
