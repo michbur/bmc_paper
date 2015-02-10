@@ -1,0 +1,96 @@
+\begin{thebibliography}{}
+
+\bibitem[B{\aa}{\aa}th(2012)B{\aa}{\aa}th]{Baaaath_2012}
+B{\aa}{\aa}th, R. (2012).
+\newblock {The State of Naming Conventions in {R}}.
+\newblock {\em {The R Journal}\/}, {\bf 4}(2), 74--75.
+
+\bibitem[Blagodatskikh {\em et~al.}(2014)Blagodatskikh, Roediger, and
+  Burdukiewicz]{blagodatskikh_2014}
+Blagodatskikh, K.~A., Roediger, S., and Burdukiewicz, M. (2014).
+\newblock {Importing real-time thermo cycler ({qPCR}) data from {RDML} format
+  files}.
+
+\bibitem[Gehlenborg {\em et~al.}(2013)Gehlenborg, Noble, Getz, Chin, and
+  Park]{gehlenborg_2013}
+Gehlenborg, N., Noble, M.~S., Getz, G., Chin, L., and Park, P.~J. (2013).
+\newblock {Nozzle: a report generation toolkit for data analysis pipelines}.
+\newblock {\em Bioinformatics\/}, {\bf 29}(8), 1089--1091.
+
+\bibitem[Knuth(1984)Knuth]{Knuth1984}
+Knuth, D.~E. (1984).
+\newblock {Literate Programming}.
+\newblock {\em The Computer Journal\/}, {\bf 27}(2), 97--111.
+
+\bibitem[Leeper(2014)Leeper]{Leeper_2014}
+Leeper, T.~J. (2014).
+\newblock {Archiving Reproducible Research and Dataverse with {R}}.
+\newblock {\em {The R Journal}\/}, {\bf 6}(1), NN--NN.
+
+\bibitem[McCall {\em et~al.}(2014)McCall, McMurray, Land, and
+  Almudevar]{mccall_2014}
+McCall, M.~N., McMurray, H.~R., Land, H., and Almudevar, A. (2014).
+\newblock {On non-detects in {qPCR} data}.
+\newblock {\em Bioinformatics\/}.
+
+\bibitem[Pabinger {\em et~al.}(2014)Pabinger, R{\"o}diger, Kriegner,
+  Vierlinger, and Weinh{\"a}usel]{pabinger_2014}
+Pabinger, S., R{\"o}diger, S., Kriegner, A., Vierlinger, K., and
+  Weinh{\"a}usel, A. (2014).
+\newblock {A survey of tools for the analysis of quantitative {PCR} ({qPCR})
+  data}.
+\newblock {\em Biomolecular Detection and Quantification\/}.
+
+\bibitem[Perkins {\em et~al.}(2012)Perkins, Dawes, {McMahon}, Bennett, Orengo,
+  and Kohl]{perkins_2012}
+Perkins, J.~R., Dawes, J.~M., {McMahon}, S.~B., Bennett, D.~L., Orengo, C., and
+  Kohl, M. (2012).
+\newblock {{ReadqPCR} and {NormqPCR:} {R} packages for the reading, quality
+  checking and normalisation of {RT-qPCR} quantification cycle (Cq) data}.
+\newblock {\em {BMC} Genomics\/}, {\bf 13}(1), 296.
+\newblock {PMID:} 22748112.
+
+\bibitem[{{R} Core Team}(2014){{R} Core Team}]{RCT_2013}
+{{R} Core Team} (2014).
+\newblock {R: A Language and Environment for Statistical Computing}.
+
+\bibitem[R{\"o}diger {\em et~al.}(2012)R{\"o}diger, Friedrichsmeier, Kapat, and
+  Michalke]{rodiger_rkward_2012}
+R{\"o}diger, S., Friedrichsmeier, T., Kapat, P., and Michalke, M. (2012).
+\newblock {{RKWard:} A Comprehensive Graphical User Interface and Integrated
+  Development Environment for Statistical Analysis with {R}}.
+\newblock {\em Journal of Statistical Software\/}, {\bf 49}(9), 1--34.
+
+\bibitem[R{\"o}diger {\em et~al.}(2013a)R{\"o}diger, Schierack, B{\"o}hm,
+  Nitschke, Berger, Fr{\"o}mmel, Schmidt, Ruhland, Schimke, Roggenbuck,
+  Lehmann, and Schr{\"o}der]{roediger_highly_2013}
+R{\"o}diger, S., Schierack, P., B{\"o}hm, A., Nitschke, J., Berger, I.,
+  Fr{\"o}mmel, U., Schmidt, C., Ruhland, M., Schimke, I., Roggenbuck, D.,
+  Lehmann, W., and Schr{\"o}der, C. (2013a).
+\newblock {A highly versatile microscope imaging technology platform for the
+  multiplex real-time detection of biomolecules and autoimmune antibodies}.
+\newblock {\em Advances in Biochemical Engineering/Biotechnology\/}, {\bf 133},
+  35--74.
+
+\bibitem[R{\"o}diger {\em et~al.}(2013b)R{\"o}diger, B{\"o}hm, and
+  Schimke]{roediger_RJ_2013}
+R{\"o}diger, S., B{\"o}hm, A., and Schimke, I. (2013b).
+\newblock {Surface Melting Curve Analysis with {R}}.
+\newblock {\em {The R Journal}\/}, {\bf 5}(2), 37--53.
+
+\bibitem[R{\"o}diger {\em et~al.}(2014)R{\"o}diger, Liebsch, Schmidt, Lehmann,
+  Resch-Genger, Schedler, and Schierack]{rodiger_nucleic_2014}
+R{\"o}diger, S., Liebsch, C., Schmidt, C., Lehmann, W., Resch-Genger, U.,
+  Schedler, U., and Schierack, P. (2014).
+\newblock {Nucleic acid detection based on the use of microbeads: a review}.
+\newblock {\em Microchimica Acta\/}, {\bf 181}(11-12), 1151--1168.
+
+\bibitem[Waggott {\em et~al.}(2012)Waggott, Chu, Yin, Wouters, Liu, and
+  Boutros]{waggott_2012}
+Waggott, D., Chu, K., Yin, S., Wouters, B.~G., Liu, F.-F., and Boutros, P.~C.
+  (2012).
+\newblock {{NanoStringNorm}: An Extensible {R} Package For the Pre-Processing
+  of {NanoString} {mRNA} and {miRNA} Data}.
+\newblock {\em Bioinformatics\/}, page bts188.
+
+\end{thebibliography}
