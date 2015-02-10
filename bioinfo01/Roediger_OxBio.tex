@@ -60,28 +60,28 @@ Quantitative polymerase chain reaction (qPCR) and quantitative isothermal
 amplification (qIA) are standard methods to amplify nucleic acids. Proper 
 experimental design is a perquisite \citep{cobb_1994}. qPCR and qIA are used in 
 real-time monitoring technologies, such as our previously reported VideoScan 
-technology \citep{roediger_highly_2013,spiess_impact_2014}, microfluidic systems, point-of-care 
-devices, and qPCR cyclers to quantify nucleic acids by specific curve parameters like the 
+technology \citep{roediger_highly_2013,spiess_impact_2014}, microfluidic systems and point-of-care 
+devices to quantify nucleic acids by specific curve parameters like the 
 quantification point (Cq) and the amplification efficiency (AE) 
 \citep{pabinger_2014,rodiger_nucleic_2014}. Fundamental steps of amplification 
 curve analysis are: (1) raw data read-in, (2) pre-processing (e.g., noise 
 reduction), (3) amplification curve processing 
 (e.g., Cq calculation), (4) post-processing and (5) data 
-export/report generation. \textbf{R} belongs to the most used bioinformatics	
-tools and is a rapid adopter for various technologies like digital PCR, 
-NanoString nCounter Platform, and qPCR \citep{waggott_2012,pabinger_2014}. 
+export/report generation. \textbf{R} is widely used bioinformatics 
+and an rapid adopter for novel technologies (e.g., digital PCR, 
+NanoString nCounter Platform) \citep{waggott_2012,pabinger_2014}. 
 Available \textbf{R} packages focus on the read-in and (post)-processing of data 
 from commercial qPCR systems. \textbf{R} packages for the steps 1 and 3--5 above 
 are available \citep{perkins_2012,gehlenborg_2013,mccall_2014,pabinger_2014}. 
 However, there is no \textbf{R} package for pre-processing and quality analysis 
-of raw amplification curve data. Pre-processing is in most commercial cyclers a 
+of raw amplification curve data. Pre-processing in most commercial cyclers is a 
 black box, which sets severe limits to reproducible research 
-\citep{Leeper_2014}. Developmental qPCR and qIA technologies depend on tools to 
+\citep{Leeper_2014}. Developmental equipment depends on software to 
 pre-process the raw data. Pre-processing algorithms remove stochastic errors and 
-artefacts (Suppl. Sect.~2). Pre-processing addresses raw data inspection, raw 
-data transformation in a format for successive analysis steps (e.g., smoothing 
-\citep{spiess_impact_2014}, imputation), data reduction (e.g., removal of 
-invalid sets) and data quality management. Misinterpretations are more likely if 
+artefacts (Suppl. Sect.~2). Pre-processing covers raw data inspection and 
+transformation in a format for successive analysis steps (e.g., smoothing, 
+imputation), data reduction (e.g., removal of invalid sets) and data quality 
+management \citep{spiess_impact_2014}. Misinterpretations are more likely if 
 arbitrary corrections are performed. A manual alteration is in contradiction to 
 reproducible research.
 
@@ -132,13 +132,13 @@ We aimed to build monolithic systems to parse, pre-process and analyze
 amplification curve data in a combined work-flow. 
 
 $\emph{chipPCR}$ relies solely on the native \textbf{R} 
-workspace and dedicated \textbf{R} packages as default format for data import 
-and export \citep{perkins_2012,rodiger_rkward_2012,blagodatskikh_2014}. 
+workspace and dedicated \textbf{R} packages as default data import 
+and export format \citep{perkins_2012,rodiger_rkward_2012,blagodatskikh_2014}. 
 $\emph{chipPCR}$ presents \emph{S4} objects with tailored summary and plot 
 methods. Since data sets are an essential element of reproducible research 
 \citep{Leeper_2014}, we included 22 data sets from commercial and 
 experimental cyclers (e.g., helicase 
-dependent amplification (HDA)) (see Suppl.).
+dependent amplification (HDA)).
 \end{methods}
 
 \section{Example: quality analysis}
