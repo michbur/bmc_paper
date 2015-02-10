@@ -57,7 +57,7 @@ Source code: https://github.com/michbur/chipPCR
 \section{Introduction}
 
 Quantitative polymerase chain reaction (qPCR) and quantitative isothermal 
-amplification (qIA) are standard methods to amplify nucleic acids. These methods 
+amplification (qIA) are standard methods to amplify nucleic acids. \citep{cobb_1994}, These methods 
 are used in real-time monitoring technologies, such as our previously reported 
 VideoScan technology \citep{roediger_highly_2013}, microfluidic systems, point-of-care devices, and qPCR 
 cyclers. Real-time technologies enable the quantification of nucleic acids by 
@@ -75,14 +75,15 @@ from commercial qPCR systems. \textbf{R} packages for the steps 1 and 3--5 above
 are available \citep{perkins_2012,gehlenborg_2013,mccall_2014,pabinger_2014}. 
 However, there is no \textbf{R} package for pre-processing and quality analysis 
 of raw amplification curve data. Pre-processing is in most commercial cyclers a 
-``black box'', which sets severe limits to reproducible research 
+black box, which sets severe limits to reproducible research 
 \citep{Leeper_2014}. Developmental qPCR and qIA technologies depend on tools to 
 pre-process the raw data. Pre-processing algorithms remove stochastic errors and 
-artefacts (Suppl. Sect.~2). Pre-processing addresses raw data inspection, raw data transformation in a format for 
-successive analysis steps (e.g., smoothing \citep{spiess_impact_2014}, 
-imputation), data reduction (e.g., removal of invalid sets) and data quality 
-management. Misinterpretations are more likely if ``arbitrary'' corrections are 
-performed. A manual alteration is in contradiction to reproducible research.
+artefacts (Suppl. Sect.~2). Pre-processing addresses raw data inspection, raw 
+data transformation in a format for successive analysis steps (e.g., smoothing 
+\citep{spiess_impact_2014}, imputation), data reduction (e.g., removal of 
+invalid sets) and data quality management. Misinterpretations are more likely if 
+arbitrary corrections are performed. A manual alteration is in contradiction to 
+reproducible research.
 
 The $\emph{chipPCR}$ package (``Lab-on-a-\textbf{Chip}'' \& \textbf{PCR}) was 
 developed to automatize pre-processing, analysis, visualization, and quality 
@@ -119,7 +120,7 @@ $\emph{chipPCR}$ includes a set of classes for plotting. The output of our
 custom made plots is minimalistic, but many parameters can be adjusted directly 
 or by the ellipse parameter.
 
-Our goal is to make our software available also for researchers not fluent in 
+We aim to make our software available for researchers not fluent in 
 \textbf{R}. Therefore, we implemented core functionality of our package in 
 selected GUI technologies available in \textbf{R} \citep{rodiger_rkward_2012} as 
 desktop application or web-based service. $\emph{chipPCR}$ offers means to run 
@@ -131,13 +132,13 @@ source for a local \textbf{R} installation. The functions \textsl{AmpSim},
 We aimed to build monolithic systems to parse, pre-process and analyze 
 amplification curve data in a combined work-flow. 
 
-We avoided relying on specialized parsers but rather use native \textbf{R} 
-workspaces, and dedicated \textbf{R} packages as default data format for import 
+$\emph{chipPCR}$ relies solely on the native \textbf{R} 
+workspace and dedicated \textbf{R} packages as default format for data import 
 and export \citep{perkins_2012,rodiger_rkward_2012,blagodatskikh_2014}. 
 $\emph{chipPCR}$ presents \emph{S4} objects with tailored summary and plot 
-methods. Data sets are an essential element of reproducible research 
-\citep{Leeper_2014}. Our package contains 22 data sets from commercial and 
-experimental cyclers along with the experimental settings (e.g., helicase 
+methods. Since data sets are an essential element of reproducible research 
+\citep{Leeper_2014}, we included 22 data sets from commercial and 
+experimental cyclers (e.g., helicase 
 dependent amplification (HDA)) (see Suppl.). % Suppl. Sect.~\ref{sec:XX}
 \end{methods}
 
@@ -166,22 +167,20 @@ distributed. The heteroscedasticity is not significant.}\label{fig:01}
 \end{figure}
 \section{Results and Conclusions}
 
-$\emph{chipPCR}$ 
-is the first \textbf{R} package for the pre-processing and quality 
-analysis of amplification curve raw data. $\emph{chipPCR}$ 
-primarily targets pre-processing but standard methods to process 
-amplification curves were also implemented. Functions of $\emph{chipPCR}$ are embeddable in 
-customized routines with other packages (see Suppl.), such as the \emph{RDML} and \emph{MBmca} packages. 
-$\emph{chipPCR}$ is build from smaller blocks. We claim that the modular 
-structure of $\emph{chipPCR}$ package allows users to perform flexible data 
-analysis adjusted to their needs. Users can do estimations by hand. For example 
-for Cq (SDM) estimation, solely 
-the $\emph{chipPCR}$ functions \textsl{inder} and \textsl{smoother} are needed. 
-\textsl{smoother} will be a method of smoothing in \textsl{inder} and by putting 
-data in the \textsl{bg} object with summary method \textsl{summary-der} the user 
-obtains the Cq. Thanks to the GUI it should be easy even for an user without 
-any \textbf{R} experience omitting the biggest limitation of all \textbf{R} 
-packages related to qPCR and qIA.
+$\emph{chipPCR}$ is the first \textbf{R} package for amplification curve raw 
+data pre-processing and quality analysis. $\emph{chipPCR}$ primarily targets 
+pre-processing but standard methods to process amplification curves were also 
+implemented. Functions of $\emph{chipPCR}$ are embeddable in customized routines 
+with other packages (see Suppl.), such as the \emph{RDML} and \emph{MBmca} 
+packages. We claim that the 
+modular structure of $\emph{chipPCR}$ package allows users to perform flexible 
+data analysis adjusted to their needs. Users can do estimations by hand. For 
+example for Cq (SDM) estimation, solely the $\emph{chipPCR}$ functions 
+\textsl{inder} and \textsl{smoother} are needed. \textsl{smoother} will be a 
+method of smoothing in \textsl{inder} and by putting data in the \textsl{bg} 
+object with summary method \textsl{summary-der} the user obtains the Cq. Thanks 
+to the GUI it should be easy even for an user without any \textbf{R} experience 
+omitting a big limitation of \textbf{R} packages related to qPCR and qIA.
 
 
 \section*{Acknowledgement}

@@ -11,6 +11,12 @@ Blagodatskikh, K.~A., Roediger, S., and Burdukiewicz, M. (2014).
 \newblock {Importing real-time thermo cycler ({qPCR}) data from {RDML} format
   files}.
 
+\bibitem[Cobb and Clarkson(1994)Cobb and Clarkson]{cobb_1994}
+Cobb, B.~D. and Clarkson, J.~M. (1994).
+\newblock A simple procedure for optimising the polymerase chain reaction
+  ({PCR}) using modified taguchi methods.
+\newblock {\em Nucleic Acids Research\/}, {\bf 22}(18), 3801--3805.
+
 \bibitem[Gehlenborg {\em et~al.}(2013)Gehlenborg, Noble, Getz, Chin, and
   Park]{gehlenborg_2013}
 Gehlenborg, N., Noble, M.~S., Getz, G., Chin, L., and Park, P.~J. (2013).
@@ -25,7 +31,7 @@ Knuth, D.~E. (1984).
 \bibitem[Leeper(2014)Leeper]{Leeper_2014}
 Leeper, T.~J. (2014).
 \newblock {Archiving Reproducible Research and Dataverse with {R}}.
-\newblock {\em {The R Journal}\/}, {\bf 6}(1), NN--NN.
+\newblock {\em {The R Journal}\/}, {\bf 6}(1), 151--158.
 
 \bibitem[McCall {\em et~al.}(2014)McCall, McMurray, Land, and
   Almudevar]{mccall_2014}
@@ -48,11 +54,6 @@ Perkins, J.~R., Dawes, J.~M., {McMahon}, S.~B., Bennett, D.~L., Orengo, C., and
 \newblock {{ReadqPCR} and {NormqPCR:} {R} packages for the reading, quality
   checking and normalisation of {RT-qPCR} quantification cycle (Cq) data}.
 \newblock {\em {BMC} Genomics\/}, {\bf 13}(1), 296.
-\newblock {PMID:} 22748112.
-
-\bibitem[{{R} Core Team}(2014){{R} Core Team}]{RCT_2013}
-{{R} Core Team} (2014).
-\newblock {R: A Language and Environment for Statistical Computing}.
 
 \bibitem[R{\"o}diger {\em et~al.}(2012)R{\"o}diger, Friedrichsmeier, Kapat, and
   Michalke]{rodiger_rkward_2012}
@@ -85,12 +86,20 @@ R{\"o}diger, S., Liebsch, C., Schmidt, C., Lehmann, W., Resch-Genger, U.,
 \newblock {Nucleic acid detection based on the use of microbeads: a review}.
 \newblock {\em Microchimica Acta\/}, {\bf 181}(11-12), 1151--1168.
 
+\bibitem[Spiess {\em et~al.}(2015)Spiess, Deutschmann, Burdukiewicz,
+  Himmelreich, Klat, Schierack, and R\"{o}diger]{spiess_impact_2014}
+Spiess, A.-N., Deutschmann, C., Burdukiewicz, M., Himmelreich, R., Klat, K.,
+  Schierack, P., and R\"{o}diger, S. (2015).
+\newblock Impact of smoothing on parameter estimation in quantitative {DNA}
+  amplification experiments.
+\newblock {\em Clinical Chemistry\/}.
+
 \bibitem[Waggott {\em et~al.}(2012)Waggott, Chu, Yin, Wouters, Liu, and
   Boutros]{waggott_2012}
 Waggott, D., Chu, K., Yin, S., Wouters, B.~G., Liu, F.-F., and Boutros, P.~C.
   (2012).
 \newblock {{NanoStringNorm}: An Extensible {R} Package For the Pre-Processing
   of {NanoString} {mRNA} and {miRNA} Data}.
-\newblock {\em Bioinformatics\/}, page bts188.
+\newblock {\em Bioinformatics\/}, pages 1546--1548.
 
 \end{thebibliography}
