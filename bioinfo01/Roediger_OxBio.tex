@@ -57,8 +57,7 @@ Source code: https://github.com/michbur/chipPCR
 \section{Introduction}
 
 Quantitative polymerase chain reaction (qPCR) and quantitative isothermal 
-amplification (qIA) are standard methods to amplify nucleic acids. Proper 
-experimental design is a perquisite \citep{cobb_1994}. qPCR and qIA are used in 
+amplification (qIA) are standard methods to amplify nucleic acids. qPCR and qIA are used in 
 real-time monitoring technologies, such as our previously reported VideoScan 
 technology \citep{roediger_highly_2013,spiess_impact_2014}, microfluidic systems and point-of-care 
 devices to quantify nucleic acids by specific curve parameters like the 
@@ -67,7 +66,8 @@ quantification point (Cq) and the amplification efficiency (AE)
 curve analysis are: (1) raw data read-in, (2) pre-processing (e.g., noise 
 reduction), (3) amplification curve processing 
 (e.g., Cq calculation), (4) post-processing and (5) data 
-export/report generation. \textbf{R} is widely used bioinformatics 
+export/report generation. Reliable data flow between all steps is a requirement for the 
+proper optimization of amplification reaction\citep{cobb_1994}. \textbf{R} is widely used bioinformatics 
 and an rapid adopter for novel technologies (e.g., digital PCR, 
 NanoString nCounter Platform) \citep{waggott_2012,pabinger_2014}. 
 Available \textbf{R} packages focus on the read-in and (post)-processing of data 
