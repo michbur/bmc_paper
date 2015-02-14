@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.10.24)  11 FEB 2015 00:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.10.24)  14 FEB 2015 01:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -360,27 +360,42 @@ Underfull \hbox (badness 10000) detected at line 19
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 23.
 
-Underfull \hbox (badness 1158) in paragraph at lines 23--31
-\OT1/phv/m/n/8 out technologies with different technical foundations have been
+Underfull \hbox (badness 1533) in paragraph at lines 31--46
+\OT1/phv/m/n/8 environment. $[]$ contains tools for raw data exploration:
  []
 
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 57.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 56.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 70.
 
-Underfull \hbox (badness 1635) in paragraph at lines 59--87
+Underfull \hbox (badness 1400) in paragraph at lines 58--87
+\OT1/ptm/m/n/9 isothermal amplification (qIA) are standard methods used for
+ []
+
+
+Underfull \hbox (badness 1635) in paragraph at lines 58--87
 \OT1/ptm/m/n/9 data flow between all steps is a requirement for the proper
  []
 
 
-Underfull \hbox (badness 1092) in paragraph at lines 59--87
-\OT1/ptm/m/n/9 optimization (e.g., Taguchi method) of amplification reactions
+Underfull \hbox (badness 1231) in paragraph at lines 88--96
+\OT1/ptm/m/n/9 statistical and reproducible cross-platform analysis, and quick
  []
 
 
-Underfull \hbox (badness 2042) in paragraph at lines 88--96
-\OT1/ptm/m/n/9 encompasses developers and users who process raw data of
+Underfull \hbox (badness 2150) in paragraph at lines 88--96
+\OT1/ptm/m/n/9 adaptation to changing experimental setups. Moreover, it is
+ []
+
+
+Underfull \hbox (badness 2635) in paragraph at lines 88--96
+\OT1/ptm/m/n/9 advantageous to set up workflows in an open environment,
+ []
+
+
+Underfull \hbox (badness 1917) in paragraph at lines 88--96
+\OT1/ptm/m/n/9 which offers GUIs, downstream analyses facilities, powerful
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
@@ -416,58 +431,41 @@ LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <7> not available
 
 
 ]
-Underfull \hbox (badness 1286) in paragraph at lines 120--131
-[]\OT1/ptm/m/n/8 We aim to make our software available for researchers not flue
-nt
- []
-
-
-Underfull \hbox (badness 1502) in paragraph at lines 120--131
-\OT1/ptm/m/n/8 in \OT1/ptm/b/n/8 R\OT1/ptm/m/n/8 . Therefore, we implemented co
-re functionality of our package
- []
-
-
-Underfull \hbox (badness 1881) in paragraph at lines 120--131
-\OT1/ptm/m/n/8 desktop application or web-based service. $[]$ offers means to
- []
-
 Package epstopdf Info: Source file: <fig01.eps>
 (epstopdf)                    date: 2015-02-11 00:59:39
 (epstopdf)                    size: 299873 bytes
 (epstopdf)             Output file: <fig01-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-02-11 00:58:08
-(epstopdf)                    size: 16182 bytes
+(epstopdf)                    date: 2015-02-11 00:59:56
+(epstopdf)                    size: 82691 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig01-eps-converted-to.pdf
  fig01.eps>
-(epstopdf)             \includegraphics on input line 155.
-runsystem(repstopdf --outfile=fig01-eps-converted-to.pdf fig01.eps)...executed 
-safely (allowed).
+(epstopdf)             \includegraphics on input line 154.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <fig01-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-02-11 00:59:56
-(epstopdf)                    size: 82691 bytes.
 <fig01-eps-converted-to.pdf, id=18, 650.43pt x 325.215pt>
 File: fig01-eps-converted-to.pdf Graphic file (type pdf)
 
 <use fig01-eps-converted-to.pdf>
-Package pdftex.def Info: fig01-eps-converted-to.pdf used on input line 155.
+Package pdftex.def Info: fig01-eps-converted-to.pdf used on input line 154.
 (pdftex.def)             Requested size: 247.53888pt x 123.76659pt.
- (./Roediger_OxBio.bbl
+
+Underfull \hbox (badness 2582) in paragraph at lines 164--177
+$[]$ \OT1/ptm/m/n/9 is the first \OT1/ptm/b/n/9 R \OT1/ptm/m/n/9 package for th
+e pre-processing and
+ []
+
+
+Underfull \hbox (badness 1803) in paragraph at lines 164--177
+\OT1/ptm/m/n/9 flexible data analysis adjusted to their needs. Users can do
+ []
+
+(./Roediger_OxBio.bbl
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 6.
-)
-Extra height:0.0pt when 636.98119pt
-(2)Left:636.98119pt Right:636.51544pt Output:636.98119pt
-- LAST -
-Extra skip:0.0pt
-Left:636.98119pt
-Right:636.51544pt
-Output:636.98119pt
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 200.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 104.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 200.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 104.
 
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
@@ -481,7 +479,42 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
  []
 
-[2 <./fig01-eps-converted-to.pdf>] (./Roediger_OxBio.aux)
+[2 <./fig01-eps-converted-to.pdf>])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 19.75772pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 20.75772pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:0.0pt when 21.75772pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+(2)Left:21.75772pt Right:21.51544pt Output:21.75772pt
+- LAST -
+Extra skip:0.0pt
+Left:21.75772pt
+Right:21.51544pt
+Output:21.75772pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (261.0pt too wide) has occurred while \output is active
+[][] 
+ []
+
+
+Overfull \vbox (1.0pt too high) has occurred while \output is active []
+
+ [3
+
+]
+(./Roediger_OxBio.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
@@ -490,11 +523,11 @@ LaTeX Font Warning: Size substitutions with differences
 Here is how much of TeX's memory you used:
  3305 strings out of 495021
  42054 string characters out of 6181343
- 132609 words of memory out of 5000000
+ 111393 words of memory out of 5000000
  6415 multiletter control sequences out of 15000+600000
  59136 words of font info for 116 fonts, out of 8000000 for 9000
  18 hyphenation exceptions out of 8191
- 38i,11n,28p,579b,306s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,11n,28p,583b,337s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/f
@@ -509,10 +542,10 @@ exlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf
 /type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/time
 s/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Roediger_OxBio.pdf (2 pages, 232752 bytes).
+Output written on Roediger_OxBio.pdf (3 pages, 233113 bytes).
 PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
- 60 compressed objects within 1 object stream
+ 86 PDF objects out of 1000 (max. 8388607)
+ 62 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
