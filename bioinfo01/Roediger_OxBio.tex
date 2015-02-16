@@ -40,7 +40,7 @@ algorithms unavailable in \textbf{R}, such as a 5-point stencil for
 derivative interpolation. Simulation tools, statistical tests, plots for data 
 quality management, amplification efficiency/quantification cycle calculation, 
 and data sets from various qPCR and qIA experiments are part of the 
-package. $\emph{chipPCR}$ core functionalities are integrated in GUIs 
+package. Core functionalities are integrated in GUIs 
 (web-based and standalone \emph{shiny} applications), thus streamlining analysis 
 and report generation.
 
@@ -166,14 +166,14 @@ quality analysis of amplification curve raw data. In addition, we implemented
 standard methods for amplification curve processing. The $\emph{chipPCR}$ 
 functions are embeddable in customized routines with other packages (see 
 Suppl.), such as the \emph{RDML} and \emph{MBmca} packages. The modular package 
-structure allows users to perform flexible data analysis adjusted to their 
-needs. Users can do estimations by hand. For example for Cq (SDM) estimation, 
-solely the $\emph{chipPCR}$ functions \textsl{inder} and \textsl{smoother} are 
-needed. \textsl{smoother} will be a method of smoothing in \textsl{inder}, and 
-by putting data in the \textsl{bg} object with summary method 
-\textsl{summary-der}, the user obtains the Cq. Through GUI's it should be easy 
-for users without any \textbf{R} experience omitting a big limitation of qPCR 
-and qIA \textbf{R} packages.
+structure enables flexible data analysis adaptable to the requirements. Users can 
+do estimations by hand. For example for Cq (SDM) estimation, solely the 
+$\emph{chipPCR}$ functions \textsl{inder} and \textsl{smoother} are needed. 
+\textsl{smoother} will be a method of smoothing in \textsl{inder}, and by 
+putting data in the \textsl{bg} object with summary method \textsl{summary-der}, 
+the user obtains the Cq. Through GUI's it should be easy for users without any 
+\textbf{R} experience omitting a big limitation of qPCR and qIA \textbf{R} 
+packages.
 
 
 \section*{Acknowledgement}
