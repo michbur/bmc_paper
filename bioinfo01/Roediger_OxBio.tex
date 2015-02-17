@@ -166,14 +166,13 @@ quality analysis of amplification curve raw data. In addition, we implemented
 standard methods for amplification curve processing. The $\emph{chipPCR}$ 
 functions are embeddable in customized routines with other packages (see 
 Suppl.), such as the \emph{RDML} and \emph{MBmca} packages. The modular package 
-structure enables flexible data analysis adaptable to the requirements. Users can 
-do estimations by hand. For example for Cq (SDM) estimation, solely the 
+structure enables flexible data analysis adaptable to the requirements. Users 
+can do estimations by hand. For example for Cq (SDM) estimation, solely the 
 $\emph{chipPCR}$ functions \textsl{inder} and \textsl{smoother} are needed. 
 \textsl{smoother} will be a method of smoothing in \textsl{inder}, and by 
 putting data in the \textsl{bg} object with summary method \textsl{summary-der}, 
-the user obtains the Cq. Through GUI's it should be easy for users without any 
-\textbf{R} experience omitting a big limitation of qPCR and qIA \textbf{R} 
-packages.
+the user obtains the Cq. Thanks to GUI's it should be easy for users without any 
+\textbf{R} experience.
 
 
 \section*{Acknowledgement}
