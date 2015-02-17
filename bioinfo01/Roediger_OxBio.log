@@ -1,91 +1,75 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.10.24)  17 FEB 2015 14:02
-=======
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2013.10.15)  17 FEB 2015 10:05
->>>>>>> 5d36151e6fe6bb46b3bea109bf661305cb330d75
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.10.24)  17 FEB 2015 14:07
 entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
 **Roediger_OxBio.tex
-(C:\Users\Michal\Documents\GitHub\bmc_paper\bioinfo01\Roediger_OxBio.tex
-LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
-abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
-croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
-ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
- lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
-german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
-ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
-an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
-ishmax, welsh, loaded.
-(C:\Users\Michal\Documents\GitHub\bmc_paper\bioinfo01\bioinfo.cls
+(./Roediger_OxBio.tex
+LaTeX2e <2014/05/01>
+Babel <3.9k> and hyphenation patterns for 2 languages loaded.
+(./bioinfo.cls
 Document Class: bioinfo 2003/02/08 0.1
-("C:\Program Files (x86)\miktex\tex\latex\base\inputenc.sty"
-Package: inputenc 2008/03/30 v1.1d Input encoding file
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2014/04/30 v1.2b Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
-)
-(C:\Users\Michal\Documents\GitHub\bmc_paper\bioinfo01\crop.sty
+) (./crop.sty
 Package: crop 2001/11/16 v1.6 cropmarks (mf)
 \CROP@width=\dimen102
 \CROP@height=\dimen103
 \CROP@index=\count79
 
-("C:\Program Files (x86)\miktex\tex\latex\graphics\graphics.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\miktex\tex\latex\graphics\trig.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files (x86)\miktex\tex\latex\00miktex\graphics.cfg"
-File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-("C:\Program Files (x86)\miktex\tex\latex\pdftex-def\pdftex.def"
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Program Files (x86)\miktex\tex\generic\oberdiek\infwarerr.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-("C:\Program Files (x86)\miktex\tex\generic\oberdiek\ltxcmds.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count80
 ))
 \CROP@offset=\count81
 Package crop Info: Local config file crop.cfg used on input line 344.
-
-(C:\Users\Michal\Documents\GitHub\bmc_paper\bioinfo01\crop.cfg))
+ (./crop.cfg))
 Package crop Info: using pdf(la)tex graphics driver on input line 33.
-
-(C:\Users\Michal\Documents\GitHub\bmc_paper\bioinfo01\graphicx.sty
+ (./graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
-
-("C:\Program Files (x86)\miktex\tex\latex\graphics\keyval.sty"
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
 \KV@toks@=\toks16
 )
 \Gin@req@height=\dimen104
 \Gin@req@width=\dimen105
-)
-("C:\Program Files (x86)\miktex\tex\latex\amsmath\amsmath.sty"
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip41
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files (x86)\miktex\tex\latex\amsmath\amstext.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files (x86)\miktex\tex\latex\amsmath\amsgen.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks17
 \ex@=\dimen106
 ))
-("C:\Program Files (x86)\miktex\tex\latex\amsmath\amsbsy.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen107
 )
-("C:\Program Files (x86)\miktex\tex\latex\amsmath\amsopn.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count82
@@ -125,8 +109,7 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
-)
-(C:\Users\Michal\Documents\GitHub\bmc_paper\bioinfo01\array.sty
+) (./array.sty
 Package: array 1998/05/13 v2.3m Tabular extension package (FMi)
 \col@sep=\dimen115
 \extrarowheight=\dimen116
@@ -134,25 +117,24 @@ Package: array 1998/05/13 v2.3m Tabular extension package (FMi)
 \extratabsurround=\skip44
 \backup@length=\skip45
 )
-(C:\Users\Michal\Documents\GitHub\bmc_paper\bioinfo01\color.sty
+(./color.sty
 Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
-
-("C:\Program Files (x86)\miktex\tex\latex\00miktex\color.cfg"
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 125.
 )
-("C:\Program Files (x86)\miktex\tex\latex\amsfonts\amssymb.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-("C:\Program Files (x86)\miktex\tex\latex\amsfonts\amsfonts.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(C:\Users\Michal\Documents\GitHub\bmc_paper\bioinfo01\flushend.sty
+(./flushend.sty
 Package: flushend 1997/10/01
 \@aaa=\box28
 \@ccc=\box29
@@ -161,13 +143,12 @@ Package: flushend 1997/10/01
 \atColsBreak=\toks23
 \@extra@skip=\dimen117
 \@nd@page@rule=\dimen118
-)
-(C:\Users\Michal\Documents\GitHub\bmc_paper\bioinfo01\stfloats.sty
+) (./stfloats.sty
 Package: stfloats 1999/10/22
 \@dblbotnum=\count94
 \c@dblbotnumber=\count95
 )
-("C:\Program Files (x86)\miktex\tex\latex\amscls\amsthm.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2004/08/06 v2.20
 \thm@style=\toks24
 \thm@bodyfont=\toks25
@@ -178,13 +159,12 @@ Package: amsthm 2004/08/06 v2.20
 \thm@postskip=\skip47
 \thm@headsep=\skip48
 \dth@everypar=\toks29
-)
-(C:\Users\Michal\Documents\GitHub\bmc_paper\bioinfo01\chngpage.sty
+) (./chngpage.sty
 Package: chngpage 2001/01/31 v1.1b change page layout
 \c@cp@cnt=\count96
 \c@cp@tempcnt=\count97
 )
-(C:\Users\Michal\Documents\GitHub\bmc_paper\bioinfo01\times.sty
+(./times.sty
 Package: times 2000/01/12 PSNFSS-v8.1 Times font as default roman (SPQR) 
 )
 \c@section=\count98
@@ -202,15 +182,15 @@ Package: times 2000/01/12 PSNFSS-v8.1 Times font as default roman (SPQR)
 \rotdimen=\dimen119
 \tempdime=\dimen120
 \temptbox=\box32
-
-(C:\Users\Michal\Documents\GitHub\bmc_paper\bioinfo01\natbib.sty
+ (./natbib.sty
 Package: natbib 2000/07/24 7.0a (PWD)
 \bibhang=\skip54
 \bibsep=\skip55
 LaTeX Info: Redefining \cite on input line 508.
 \c@NAT@ctr=\count105
-))
-(C:\Users\Michal\Documents\GitHub\bmc_paper\bioinfo01\Roediger_OxBio.aux)
+)) (./Roediger_OxBio.aux)
+\openout1 = `Roediger_OxBio.aux'.
+
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
@@ -225,10 +205,10 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 5.
 
-("C:\Program Files (x86)\miktex\tex\latex\psnfss\ot1ptm.fd"
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-("C:\Program Files (x86)\miktex\tex\context\base\supp-pdf.mkii"
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count106
 \scratchdimen=\dimen121
@@ -241,9 +221,57 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 \MPnumerator=\count110
 \makeMPintoPDFobject=\count111
 \everyMPtoPDFconversion=\toks31
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 LaTeX Font Info:    Try loading font information for OT1+phv on input line 19.
- ("C:\Program Files (x86)\miktex\tex\latex\psnfss\ot1phv.fd"
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9> not available
@@ -289,12 +317,12 @@ LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <6.5> not available
 (Font)              size <6> substituted on input line 19.
 
 LaTeX Font Info:    Try loading font information for U+msa on input line 19.
-("C:\Program Files (x86)\miktex\tex\latex\amsfonts\umsa.fd"
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 19.
 
-("C:\Program Files (x86)\miktex\tex\latex\amsfonts\umsb.fd"
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Calculating math sizes for size <9.09996> on input line 19.
@@ -331,26 +359,89 @@ Underfull \hbox (badness 10000) detected at line 19
 
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 23.
+
+Underfull \hbox (badness 1533) in paragraph at lines 31--46
+\OT1/phv/m/n/8 environment. $[]$ contains tools for raw data exploration:
+ []
+
+
+Underfull \hbox (badness 1389) in paragraph at lines 31--46
+\OT1/phv/m/n/8 amplification efficiency/quantification cycle calculation, and d
+ata
+ []
+
+
+Underfull \hbox (badness 1242) in paragraph at lines 31--46
+\OT1/phv/m/n/8 sets from various qPCR and qIA experiments are part of the
+ []
+
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 56.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 70.
+
+Underfull \hbox (badness 1400) in paragraph at lines 58--87
+\OT1/ptm/m/n/9 isothermal amplification (qIA) are standard methods used for
+ []
+
+
+Underfull \hbox (badness 1635) in paragraph at lines 58--87
+\OT1/ptm/m/n/9 data flow between all steps is a requirement for the proper
+ []
+
+
+Underfull \hbox (badness 1231) in paragraph at lines 88--96
+\OT1/ptm/m/n/9 statistical and reproducible cross-platform analysis, and quick
+ []
+
+
+Underfull \hbox (badness 2150) in paragraph at lines 88--96
+\OT1/ptm/m/n/9 adaptation to changing experimental setups. Moreover, it is
+ []
+
+
+Underfull \hbox (badness 2635) in paragraph at lines 88--96
+\OT1/ptm/m/n/9 advantageous to set up workflows in an open environment,
+ []
+
+
+Underfull \hbox (badness 1917) in paragraph at lines 88--96
+\OT1/ptm/m/n/9 which offers GUIs, downstream analyses facilities, powerful
+ []
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 99.
+
+Underfull \hbox (badness 1371) in paragraph at lines 99--119
+\OT1/ptm/m/n/8 but focusses on pre-processing of amplification curves. The pack
+age
+ []
+
+
+Underfull \hbox (badness 2181) in paragraph at lines 99--119
+\OT1/ptm/m/n/8 contains pre-processor functions (smoothing, imputation, backgro
+und
+ []
+
+
+Underfull \hbox (badness 2173) in paragraph at lines 99--119
+\OT1/ptm/m/n/8 randomized rating function, quality analysis summary functions, 
+an
+ []
+
 LaTeX Font Info:    Try loading font information for OMS+phv on input line 119.
 
-("C:\Program Files (x86)\miktex\tex\latex\psnfss\omsphv.fd"
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsphv.fd
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <7> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 119.
  [1
 
-{C:/Users/Michal/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-<<<<<<< HEAD
 Package epstopdf Info: Source file: <fig01.eps>
 (epstopdf)                    date: 2015-02-11 00:59:39
 (epstopdf)                    size: 299873 bytes
@@ -373,66 +464,14 @@ Underfull \hbox (badness 2582) in paragraph at lines 164--176
 $[]$ \OT1/ptm/m/n/9 is the first \OT1/ptm/b/n/9 R \OT1/ptm/m/n/9 package for th
 e pre-processing and
  []
-=======
->>>>>>> 5d36151e6fe6bb46b3bea109bf661305cb330d75
 
-! LaTeX Error: Unknown graphics extension: .eps.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.154 ...\includegraphics[width=8.7cm]{fig01.eps}}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-(C:\Users\Michal\Documents\GitHub\bmc_paper\bioinfo01\Roediger_OxBio.bbl
+(./Roediger_OxBio.bbl
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 6.
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:29.51544pt when 596.0979pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:29.51544pt when 597.0979pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:29.51544pt when 598.0979pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:29.51544pt when 599.0979pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:29.51544pt when 600.0979pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:29.51544pt when 601.0979pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:29.51544pt when 602.0979pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:29.51544pt when 603.0979pt
-Extra height:0.0pt when 604.0979pt
-(2)Left:604.0979pt Right:579.46387pt Output:604.0979pt
-- LAST -
-Extra skip:0.0pt
-Left:604.0979pt
-Right:579.46387pt
-Output:604.0979pt
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 197.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 104.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 197.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 104.
 
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
@@ -446,14 +485,48 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
  []
 
-[2] (C:\Users\Michal\Documents\GitHub\bmc_paper\bioinfo01\Roediger_OxBio.aux)
+[2 <./fig01-eps-converted-to.pdf>])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 19.75772pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 20.75772pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:0.0pt when 21.75772pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+(2)Left:21.75772pt Right:21.51544pt Output:21.75772pt
+- LAST -
+Extra skip:0.0pt
+Left:21.75772pt
+Right:21.51544pt
+Output:21.75772pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (261.0pt too wide) has occurred while \output is active
+[][] 
+ []
+
+
+Overfull \vbox (1.0pt too high) has occurred while \output is active []
+
+ [3
+
+]
+(./Roediger_OxBio.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
-<<<<<<< HEAD
  3305 strings out of 495021
  42054 string characters out of 6181343
  111394 words of memory out of 5000000
@@ -476,32 +549,9 @@ exlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf
 s/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
 Output written on Roediger_OxBio.pdf (3 pages, 233041 bytes).
-=======
- 2945 strings out of 493921
- 36979 string characters out of 3146476
- 128830 words of memory out of 3000000
- 6166 multiletter control sequences out of 15000+200000
- 59136 words of font info for 116 fonts, out of 3000000 for 9000
- 845 hyphenation exceptions out of 8191
- 36i,11n,28p,583b,306s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files (x86)/miktex/fonts/enc/dvips/fontname/8r.enc}<C:/Program Fi
-les (x86)/miktex/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files (x8
-6)/miktex/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files (x86)/mikt
-ex/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/miktex/fonts
-/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/miktex/fonts/type1/p
-ublic/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/miktex/fonts/type1/public/a
-msfonts/cm/cmsy7.pfb><C:/Program Files (x86)/miktex/fonts/type1/public/amsfonts
-/cm/cmsy9.pfb><C:/Program Files (x86)/miktex/fonts/type1/urw/helvetic/uhvb8a.pf
-b><C:/Program Files (x86)/miktex/fonts/type1/urw/helvetic/uhvbo8a.pfb><C:/Progr
-am Files (x86)/miktex/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files (x8
-6)/miktex/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Program Files (x86)/miktex/f
-onts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/miktex/fonts/type1/urw/
-times/utmr8a.pfb><C:/Program Files (x86)/miktex/fonts/type1/urw/times/utmr8a.pf
-b><C:/Program Files (x86)/miktex/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Roediger_OxBio.pdf (2 pages, 163669 bytes).
->>>>>>> 5d36151e6fe6bb46b3bea109bf661305cb330d75
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
+ 86 PDF objects out of 1000 (max. 8388607)
+ 62 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
