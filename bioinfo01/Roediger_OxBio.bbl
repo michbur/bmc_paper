@@ -5,12 +5,6 @@ B{\aa}{\aa}th, R. (2012).
 \newblock {The State of Naming Conventions in {R}}.
 \newblock {\em {The R Journal}\/}, {\bf 4}(2), 74--75.
 
-\bibitem[Blagodatskikh {\em et~al.}(2014)Blagodatskikh, Roediger, and
-  Burdukiewicz]{blagodatskikh_2014}
-Blagodatskikh, K.~A., Roediger, S., and Burdukiewicz, M. (2014).
-\newblock {Importing real-time thermo cycler ({qPCR}) data from {RDML} format
-  files}.
-
 \bibitem[Cobb and Clarkson(1994)Cobb and Clarkson]{cobb_1994}
 Cobb, B.~D. and Clarkson, J.~M. (1994).
 \newblock {A simple procedure for optimising the polymerase chain reaction
@@ -37,7 +31,7 @@ Leeper, T.~J. (2014).
   Almudevar]{mccall_2014}
 McCall, M.~N., McMurray, H.~R., Land, H., and Almudevar, A. (2014).
 \newblock {On non-detects in {qPCR} data}.
-\newblock {\em Bioinformatics\/}.
+\newblock {\em Bioinformatics\/}, {\bf 30}(16), 2310--6.
 
 \bibitem[Pabinger {\em et~al.}(2014)Pabinger, R{\"o}diger, Kriegner,
   Vierlinger, and Weinh{\"a}usel]{pabinger_2014}
@@ -45,7 +39,8 @@ Pabinger, S., R{\"o}diger, S., Kriegner, A., Vierlinger, K., and
   Weinh{\"a}usel, A. (2014).
 \newblock {A survey of tools for the analysis of quantitative {PCR} ({qPCR})
   data}.
-\newblock {\em Biomolecular Detection and Quantification\/}.
+\newblock {\em Biomolecular Detection and Quantification\/}, {\bf 1}(1),
+  23--33.
 
 \bibitem[Perkins {\em et~al.}(2012)Perkins, Dawes, {McMahon}, Bennett, Orengo,
   and Kohl]{perkins_2012}
@@ -86,13 +81,31 @@ R{\"o}diger, S., Liebsch, C., Schmidt, C., Lehmann, W., Resch-Genger, U.,
 \newblock {Nucleic acid detection based on the use of microbeads: a review}.
 \newblock {\em Microchimica Acta\/}, {\bf 181}(11-12), 1151--1168.
 
+\bibitem[R\"{o}diger {\em et~al.}(2015)R\"{o}diger, Burdukiewicz,
+  Blagodatskikh, and Schierack]{roediger_R_2015}
+R\"{o}diger, S., Burdukiewicz, M., Blagodatskikh, K.~A., and Schierack, P.
+  (2015).
+\newblock {R as an Environment for the Reproducible Analysis of DNA
+  Amplification Experiments}.
+\newblock {\em {The R Journal}\/}, {\bf 7}(2), 1--24.
+
+\bibitem[Ruijter {\em et~al.}(2013)Ruijter, Pfaffl, Zhao, Spiess, Boggy, Blom,
+  Rutledge, Sisti, Lievens, {De Preter}, Derveaux, Hellemans, and
+  Vandesompele]{ruijter_2013}
+Ruijter, J.~M., Pfaffl, M.~W., Zhao, S., Spiess, A.~N., Boggy, G., Blom, J.,
+  Rutledge, R.~G., Sisti, D., Lievens, A., {De Preter}, K., Derveaux, S.,
+  Hellemans, J., and Vandesompele, J. (2013).
+\newblock {Evaluation of {qPCR} curve analysis methods for reliable biomarker
+  discovery: bias, resolution, precision, and implications}.
+\newblock {\em Methods (San Diego, Calif.)\/}, {\bf 59}(1), 32--46.
+
 \bibitem[Spiess {\em et~al.}(2015)Spiess, Deutschmann, Burdukiewicz,
   Himmelreich, Klat, Schierack, and R\"{o}diger]{spiess_impact_2014}
 Spiess, A.-N., Deutschmann, C., Burdukiewicz, M., Himmelreich, R., Klat, K.,
   Schierack, P., and R\"{o}diger, S. (2015).
 \newblock Impact of smoothing on parameter estimation in quantitative {DNA}
   amplification experiments.
-\newblock {\em Clinical Chemistry\/}.
+\newblock {\em Clinical Chemistry\/}, {\bf 61}(2), 379--388.
 
 \bibitem[Waggott {\em et~al.}(2012)Waggott, Chu, Yin, Wouters, Liu, and
   Boutros]{waggott_2012}
@@ -100,6 +113,6 @@ Waggott, D., Chu, K., Yin, S., Wouters, B.~G., Liu, F.-F., and Boutros, P.~C.
   (2012).
 \newblock {{NanoStringNorm}: An Extensible {R} Package For the Pre-Processing
   of {NanoString} {mRNA} and {miRNA} Data}.
-\newblock {\em Bioinformatics\/}, pages 1546--1548.
+\newblock {\em Bioinformatics\/}, {\bf 28}(11), 1546--1548.
 
 \end{thebibliography}
